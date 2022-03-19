@@ -1,0 +1,62 @@
+/** Custom Css */
+
+/* Adiciona overflow no conteúdo do lead */
+#DataTables_Table_0 td div[style]{
+  overflow: scroll;
+  height: 200px;
+}
+
+.custom-file-label::after {
+  color: #fff;
+  content: "Carregar";
+  background-color: #007bff;
+}
+
+#previewImg {
+  width: 210px;
+  object-fit: cover;
+  height: 138px;
+  margin: 10px;
+  border-radius: 6px;
+}
+
+input[type="text"],
+select {
+  background-color: #fffcc8 !important;
+}
+
+.wrapVersions {
+  background-color: #ccc;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.car_galery {
+  width: 98%;
+}
+.car_galery ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.car_galery ul li {
+  display: flex;
+  margin-bottom: 8px;
+  width: 500px;
+}
+.car_galery ul li img {
+  width: 150px;
+  object-fit: cover;
+  height: 150px;
+  margin: 0 8px;
+}
+
+.emptyType {
+  filter: opacity(40%);
+  border: 2px dashed #f00;
+}
+.emptyType:hover {
+  filter: none;
+}

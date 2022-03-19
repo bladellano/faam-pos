@@ -1,0 +1,9 @@
+.vscode/
+/vendor/
+/cgi-bin
+/source/Config.php
+/storage/
+composer.lock
+error_log
+php.ini
+.htaccess
