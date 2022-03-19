@@ -1,5 +1,5 @@
 
-# Projeto Vega Kia Veículos - novos e semi-novos
+# Projeto Pós-graduação Faam
 
 Site e gerenciador de conteúdo do portal.
 
