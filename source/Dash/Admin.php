@@ -19,14 +19,14 @@ class Admin extends DashController
 
     public function home(): void
     {
-
-        $carsQtd = (new Car())->find()->count();
+        // die('Oi');
+        // $carsQtd = (new Car())->find()->count();
         $postsQtd = (new Post())->find()->count();
-        $bannersQtd = (new Banner())->find()->count();
-        $usersQtd = (new User())->find()->count();
-        $leadQtd = (new Lead())->find()->count();
+        // $bannersQtd = (new Banner())->find()->count();
+        // $usersQtd = (new User())->find()->count();
+        // $leadQtd = (new Lead())->find()->count();
 
-        echo $this->view->render("theme/admin/home", [
+      /*   echo $this->view->render("theme/admin/home", [
             "title" => "Dash",
             "products" =>  [],
             "titleHeader" => "Home",
@@ -36,7 +36,14 @@ class Admin extends DashController
             "bannersQtd" => $bannersQtd,
             "usersQtd" => $usersQtd,
             "leadQtd" => $leadQtd,
+        ]); */
+        echo $this->view->render("theme/admin/home", [
+            "title" => "Dash",
+            "products" =>  [],
+            "titleHeader" => "Home",
+            "postsQtd" => $postsQtd,
         ]);
+
     }
 
     /**

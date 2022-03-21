@@ -55,7 +55,7 @@
                                         <td><?= $b->id ?></td>
                                         <td><a href="banners/edit/<?=$b->id?>"><?= $b->title ?></a></td>
                                         <td><?= $b->description ?></td>
-                                        <td> <img height="100" width="200" src="<?= SITE['root'].DS.$b->image_thumb ?>" alt="SEM IMAGEM"></td>
+                                        <td> <img height="100" width="200" class="zoomImg" src="<?= SITE['root'].DS.$b->image_thumb ?>" alt="SEM IMAGEM"></td>
                                         <td style="text-align:center"> 
                                             <input 
                                                 type="radio" name="changeOrder" 

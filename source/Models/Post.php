@@ -8,12 +8,11 @@ class Post extends DataLayer
 {
     public function __construct()
     {
-        parent::__construct("posts", ["title", "description", "content"]);
+        parent::__construct("pos_posts", ["title", "description", "content", "type", "id_category"]);
     }
 
     public function save(): bool
     {
-
         if (empty($this->title) || !filter_var($this->title, FILTER_DEFAULT)) {
             $this->fail = new \Exception("Informe o título");
             return false;

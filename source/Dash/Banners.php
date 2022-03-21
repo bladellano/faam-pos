@@ -6,6 +6,7 @@ use Source\Dash\Controller as DashController;
 
 class Banners extends DashController
 {
+    private $path = 'banners';
 
     public function __construct($router)
     {
@@ -36,29 +37,23 @@ class Banners extends DashController
     {
   
         $banner = new \Source\Models\Banner;
-
-        $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['title']);
+        $user = \Source\Session\Session::get('user');
+        $slug = new \Ausi\SlugGenerator\SlugGenerator();
+        $uploadImg = new \CoffeeCode\Uploader\Image(STORAGE, $this->path);
 
         /** FILE */
         $file = $_FILES['file'] ?? NULL;
-        $uploadImg = new \CoffeeCode\Uploader\Image('storage/images', 'banners');
 
         if (!$file['error'] && in_array($file["type"], $uploadImg::isAllowed())) {
-
             $data['image'] = $uploadImg->upload($file, md5(uniqid(time())));
             $data['image_thumb'] = $uploadImg->upload($file, "thumb_" . md5(uniqid(time())), 600);
         }
 
+        $data['id_user'] = $user['id'];
+        $data['slug'] = $slug->generate($data['title']);
+
         foreach ($data as $key => $value) $banner->{$key} = $value;
-
-        if (in_array("", $data)) {
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => "Preencha todos os campos"
-            ]);
-            return;
-        }
-
+  
         if (!$banner->save()) {
             echo $this->ajaxResponse("message", [
                 "type" => "error",
@@ -115,13 +110,12 @@ class Banners extends DashController
     public function update($data): void
     {
 
-        $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['title']);
-
         $banner = (new \Source\Models\Banner())->findById($data['id']);
+        $slug = new \Ausi\SlugGenerator\SlugGenerator();
+        $uploadImg = new \CoffeeCode\Uploader\Image(STORAGE, $this->path);
 
         /** FILE */
         $file = $_FILES['file'] ?? NULL;
-        $uploadImg = new \CoffeeCode\Uploader\Image('storage/images', 'banners');
 
         if (!$file['error'] && in_array($file["type"], $uploadImg::isAllowed())) {
 
@@ -134,6 +128,7 @@ class Banners extends DashController
             $data['image_thumb'] = $uploadImg->upload($file, "thumb_" . md5(uniqid(time())), 600);
         }
 
+        $data['slug'] = $slug->generate($data['title']);
         unset($data['id']);
 
         foreach ($data as $key => $value) $banner->{$key} = $value;
@@ -157,7 +152,6 @@ class Banners extends DashController
 
     public function delete($data): void
     {
-
         $banner = (new \Source\Models\Banner())->findById($data['id']);
 
         if (file_exists($banner->image)) {

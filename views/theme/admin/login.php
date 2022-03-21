@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?=$title?> | <?=$titleHeader?></title>
+
+  <link rel="icon" type="image/x-icon" href="<?= asset("images/favicon.png", 'site'); ?>">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -65,23 +67,12 @@
         </div>
       </form>
 
-    <!--   <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
-      </div> -->
-      <!-- /.social-auth-links -->
-
       <p class="mb-1">
-        <a href="forgot-password.html">Esqueci a minha senha</a>
+        <a href="<?= SITE['root'] ?>/admin/forgot">Esqueci a minha senha</a>
       </p>
-      <p class="mb-0">
+      <!-- <p class="mb-0">
         <a href="#" class="text-center">Registre um novo usuário</a>
-      </p>
+      </p> -->
     </div>
     <!-- /.login-card-body -->
   </div>

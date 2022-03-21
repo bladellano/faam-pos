@@ -21,13 +21,17 @@ $(function () {
                 ajax_load("open");
             },
             success: function (su) {
+
                 ajax_load("close");
 
                 if (su.message) {
-                    console.log('su', su)
+
                     let view = '<div class="message ' + su.message.type + '">' + su.message.message + '</div>';
                     $(".login_form_callback").html(view);
                     $(".message").effect("bounce");
+
+                    if(su.message.type == 'error')
+                        alertify.error(su.message.message);
 
                     if (su.message.type != 'error') {
                         $('form').each((i, e) => {

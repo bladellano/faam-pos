@@ -3,13 +3,18 @@
 namespace Source\Dash;
 
 use Source\Dash\Controller as DashController;
+use Source\Models\Category;
+use stdClass;
 
 class Posts extends DashController
 {
+    private $path = 'posts';
+    private $categories;
 
     public function __construct($router)
     {
         parent::__construct($router);
+        $this->categories = (new Category())->find()->fetch(true);
     }
 
     public function home(): void
@@ -29,6 +34,7 @@ class Posts extends DashController
         echo $this->view->render("theme/admin/posts-create", [
             "title" => "Posts",
             "titleHeader" => "Cadastrar",
+            "categories" => $this->categories
         ]);
     }
 
@@ -36,12 +42,12 @@ class Posts extends DashController
     {
 
         $post = new \Source\Models\Post;
-
-        $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['title']);
+        $uploadImg = new \CoffeeCode\Uploader\Image(STORAGE, $this->path);
+        $user = \Source\Session\Session::get('user');
+        $slug = new \Ausi\SlugGenerator\SlugGenerator();
 
         /** FILE */
         $file = $_FILES['file'] ?? NULL;
-        $uploadImg = new \CoffeeCode\Uploader\Image('storage/images', 'posts');
 
         if (!$file['error'] && in_array($file["type"], $uploadImg::isAllowed())) {
 
@@ -49,15 +55,10 @@ class Posts extends DashController
             $data['cover_thumb'] = $uploadImg->upload($file, "thumb_" . md5(uniqid(time())), 600);
         }
 
-        foreach ($data as $key => $value) $post->{$key} = $value;
+        $data['id_user'] = $user['id'];
+        $data['slug'] = $slug->generate($data['title']);
 
-        if (in_array("", $data)) {
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => "Preencha todos os campos"
-            ]);
-            return;
-        }
+        foreach ($data as $key => $value) $post->{$key} = $value;
 
         if (!$post->save()) {
             echo $this->ajaxResponse("message", [
@@ -84,19 +85,19 @@ class Posts extends DashController
             "title" => "Posts",
             "titleHeader" => "Edição",
             "post" => $post,
+            "categories" => $this->categories
         ]);
     }
 
     public function update($data): void
     {
-        $data['slug'] = (new \Ausi\SlugGenerator\SlugGenerator())->generate($data['title']);
-
         $post = (new \Source\Models\Post())->findById($data['id']);
+        $uploadImg = new \CoffeeCode\Uploader\Image(STORAGE, $this->path);
+        $slug = new \Ausi\SlugGenerator\SlugGenerator();
+        $user = \Source\Session\Session::get('user');
 
-        /** FILE */
         $file = $_FILES['file'] ?? NULL;
-        $uploadImg = new \CoffeeCode\Uploader\Image('storage/images', 'posts');
-
+        /** FILE */
         if (!$file['error'] && in_array($file["type"], $uploadImg::isAllowed())) {
 
             if (file_exists($post->cover)) {
@@ -107,6 +108,9 @@ class Posts extends DashController
             $data['cover'] = $uploadImg->upload($file, md5(uniqid(time())));
             $data['cover_thumb'] = $uploadImg->upload($file, "thumb_" . md5(uniqid(time())), 600);
         }
+
+        $data['id_user'] = $user['id'];
+        $data['slug'] = $slug->generate($data['title']);
 
         unset($data['id']);
 
@@ -163,7 +167,7 @@ class Posts extends DashController
             unlink($post->cover);
             unlink($post->cover_thumb);
         }
-        
+
         $post->cover = NULL;
         $post->cover_thumb = NULL;
 

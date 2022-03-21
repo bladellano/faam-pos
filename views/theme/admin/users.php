@@ -42,7 +42,8 @@
                                      <th>Último nome</th>
                                      <th>E-mail</th>
                                      <th>Criado</th>
-                                     <th style="width: 60px"></th>
+                                     <th>Atualizado</th>
+                                     <th style="width: 70px"></th>
                                  </tr>
                              </thead>
 
@@ -55,6 +56,7 @@
                                          <td><?= $u->last_name ?></td>
                                          <td><?= $u->email ?></td>
                                          <td><?= convertDatePtbr($u->created_at)?></td>
+                                         <td><?= convertDatePtbr($u->updated_at)?></td>
                                          <td>
                                              <a href="users/edit/<?=$u->id?>" class="btn btn-default btn-sm" title="Editar"><i class="fas fa-pencil-alt"></i></a> 
                                              <a onclick="return confirm('Deseja realmente excluir este registro?')" href="users/delete/<?=$u->id?>" class="btn btn-default btn-sm" title="Excluir"><i class="fas fa-trash-alt"></i></a> 

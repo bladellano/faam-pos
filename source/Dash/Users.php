@@ -105,7 +105,6 @@ class Users extends DashController
 
     public function delete($data): void
     {
-
         $user = (new \Source\Models\User())->findById($data['id']);
 
         if (!$user->destroy()) {
@@ -121,5 +120,37 @@ class Users extends DashController
         $this->router->redirect("users.home");
 
         return;
+    }
+
+    public function replacementPassword($data): void
+    {
+
+        $user = (new \Source\Models\User())->find("email = :email", "email={$data['email']}")->fetch();
+
+        if (!PasswordHash::check($data['old-password'], $user->password)) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "alert",
+                "message" => 'Senha atual não confere.'
+            ]);
+            return;
+        } else {
+
+            $user->password = PasswordHash::hash($data['new-password']);
+
+            if (!$user->save()) {
+                echo $this->ajaxResponse("message", [
+                    "type" => "error",
+                    "message" => $user->fail()->getMessage()
+                ]);
+                return;
+            } else {
+                echo $this->ajaxResponse("message", [
+                    "type" => "success",
+                    "message" => 'Senha alterada com sucesso!'
+                ]);
+                return;
+            }
+        }
     }
 }

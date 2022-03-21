@@ -1,7 +1,15 @@
 /** Custom Css */
 
+.zoomImg {
+  transition: all 0.2s ease-in-out;
+  cursor: zoom-in;
+}
+.zoomImg:hover {
+  transform: scale(1.5);
+  height: auto;
+}
 /* Adiciona overflow no conteúdo do lead */
-#DataTables_Table_0 td div[style]{
+#DataTables_Table_0 td div[style] {
   overflow: scroll;
   height: 200px;
 }
@@ -20,10 +28,10 @@
   border-radius: 6px;
 }
 
-input[type="text"],
+/* input[type="text"],
 select {
   background-color: #fffcc8 !important;
-}
+} */
 
 .wrapVersions {
   background-color: #ccc;

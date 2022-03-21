@@ -21,9 +21,9 @@
 
 <section class="content">
     <div class="container-fluid">
-      
         <div class="row">
-            <!-- <div class="col-lg-3 col-6">
+
+            <div class="col-lg-3 col-6">
 
                 <div class="small-box bg-gray">
                     <div class="inner">
@@ -49,7 +49,7 @@
                     </div>
                     <a href="<?= SITE['root'] ?>/admin/cars" class="small-box-footer">Mais info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-            </div> -->
+            </div>
 
             <div class="col-lg-3 col-6">
 
@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <!-- <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-6">
 
                 <div class="small-box bg-warning">
                     <div class="inner">
@@ -91,7 +91,7 @@
                     </div>
                     <a href="<?= SITE['root'] ?>/admin/users" class="small-box-footer">Mais info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-            </div> -->
+            </div>
 
         </div>
         <h5 class="mb-2">Info Box</h5>

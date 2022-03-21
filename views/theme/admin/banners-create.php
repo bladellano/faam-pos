@@ -32,9 +32,9 @@
                      <!-- form start -->
 
                      <?php if (isset($banner->id)) : ?>
-                         <form action="<?= SITE['root'] ?>/admin/banners/update/<?= $banner->id ?>" method="POST" enctype="multipart/form-data" autocomplete="off">
+                         <form action="<?= SITE['root'] ?>/admin/banners/update/<?= $banner->id ?>" method="POST" enctype="multipart/form-data" >
                          <?php else : ?>
-                             <form action="<?= SITE['root'] ?>/admin/banners/register" method="POST" enctype="multipart/form-data" autocomplete="off">
+                             <form action="<?= SITE['root'] ?>/admin/banners/register" method="POST" enctype="multipart/form-data" >
                              <?php endif; ?>
 
                              <div class="card-body">

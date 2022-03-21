@@ -58,6 +58,12 @@ $app->get("/login", "Auth:home", "auth.home");
 $app->post("/login", "Auth:login", "auth.login");
 $app->get("/logout", "Auth:logout", "auth.logout");
 
+/** Forgot */
+$app->get("/forgot", "Auth:forgot", "auth.forgot");
+$app->post("/forgot", "Auth:getForgot", "auth.getforgot");
+$app->get("/forgot/reset/{code}", "Auth:validForgotDecrypt", "auth.validforgotdecrypt");
+$app->post("/forgot/reset", "Auth:forgotReset", "auth.forgotreset");
+
 /** Posts */
 $app->get("/posts", "Posts:home", "posts.home");
 $app->get("/posts/create", "Posts:create", "posts.create");
@@ -96,6 +102,7 @@ $app->post("/users/store", "Users:register", "users.register");
 $app->post("/users/update/{id}", "Users:update", "users.update");
 $app->get("/users/delete/{id}", "Users:delete", "users.delete");
 $app->get("/users/edit/{id}", "Users:edit", "users.edit");
+$app->post("/users/replacement-password", "Users:replacementPassword", "users.replacementpassword");
 
 /** Leads */
 $app->get("/leads", "Leads:home", "leads.home");

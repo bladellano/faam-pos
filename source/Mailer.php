@@ -29,10 +29,9 @@ class Mailer
 		$this->mail->SMTPAuth = true;
 		$this->mail->Username = Mailer::USERNAME;
 		$this->mail->Password = Mailer::PASSWORD;
-		$this->mail->setFrom(Mailer::USERNAME, utf8_decode($fromName));
+		$this->mail->setFrom(Mailer::USERNAME, utf8_decode(Mailer::NAME_FROM));
 		$this->mail->addAddress(Mailer::INBOX, Mailer::NAME_FROM);
-		$this->mail->addAddress("bladellano@gmail.com", "Dev");
-		$this->mail->addAddress("lead.Kia@gvega.com.br", "Lead Kia");
+		$this->mail->addAddress($fromAdress, $fromName);
 		$this->mail->Subject = utf8_decode($subject);
 		$this->mail->msgHTML($body);
 		$this->mail->AltBody = 'This is a plain-text message body';
