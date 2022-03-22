@@ -139,6 +139,20 @@ function previewFile(e) {
     }
 }
 
+function allPreviewFile(e) {
+
+    let target = e.attributes.name.value;
+    let file = $(e).get(0).files[0];
+
+    if (file) {
+        let reader = new FileReader();
+        reader.onload = function () {
+            $(`.previewFile[data-target="${target}"]`).attr('src', reader.result).fadeIn();
+        }
+        reader.readAsDataURL(file);
+    }
+}
+
 function runSummernote(element = '.summernote', height = 350) {
     return $(element).summernote({
         height: height,

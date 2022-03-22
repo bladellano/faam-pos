@@ -28,6 +28,14 @@
   border-radius: 6px;
 }
 
+.previewFile {
+  width: 210px;
+  object-fit: cover;
+  height: 138px;
+  margin: 10px;
+  border-radius: 6px;
+}
+
 /* input[type="text"],
 select {
   background-color: #fffcc8 !important;

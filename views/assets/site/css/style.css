@@ -1,1224 +1,1243 @@
-@charset "UTF-8";
+/**
+* Template Name: Green - v4.7.0
+* Template URL: https://bootstrapmade.com/green-free-one-page-bootstrap-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
 
-@font-face {
-  font-family: "Kia-Bold";
-  src: url("../fonts/KiaSignatureOTFBold.otf");
-}
-
-@font-face {
-  font-family: "Kia-Light";
-  src: url("../fonts/KiaSignatureOTFLight.otf");
-}
-
-@font-face {
-  font-family: "Kia-Medium";
-  src: url("../fonts/KiaSignatureOTFRegular.otf");
-}
-
-:root {
-  --kia-vermelho-vibrante: #ea0029;
-  --kia-amarelo-vespertino: #f3c300;
-  --kia-verde-floresta: #5d7d2b;
-  --kia-cinza-urbano: #9ea1a2;
-  --kia-preto-noturno: #05141f;
-  --kia-border-line: #929292;
-  --kia-verde-btn-success: #23a600;
-
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
 body {
-  font-family: "Kia-Medium";
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
 }
 
-/* Novo showroom */
-.wrapShowroom {
-  display: grid;
-  grid-template-columns: 800px auto;
-  grid-gap: 2px;
-  text-align: center;
-}
-
-.wrapShowroom .col {
-  padding: 2px 0;
-}
-
-.wrapShowroom .imgLogoShowroom {
-  object-fit: cover;
-  width: 100px;
-  height: 24px;
-  margin: 0 auto;
-}
-.wrapShowroom .subTitle {
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.wrapShowroom h2 {
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  color: #000;
-}
-
-.wrapCardsCar {
-  display: flex;
-  flex-wrap: wrap;
-}
-.wrapCardsCar .viewCar {
-  background-color: #fff;
-  min-width: 390px;
-  transition: all 0.2s ease-in-out;
-  margin: 4px;
-}
-.wrapCardsCar .viewCar img {
-  object-fit: cover;
-  width: 100%;
-  height: 184px;
-}
-.wrapCardsCar .viewCar h3 {
-  color: #000;
-  padding: 6px 8px;
-  font-weight: bold;
-  text-align: left;
-  margin: 0;
-  font-family: "Kia-Bold";
-  padding-bottom: 0px;
-}
-.wrapCardsCar .viewCar p {
-  font-size: 12px;
-  text-align: left;
-  padding: 6px 8px;
-  padding-top: 0;
-}
-
-.wrapCardsCar .viewCar:hover {
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.wrapCardsCar .viewCar:hover div .openBox {
-  transform: translateY(0);
-}
-
-.wrapCardsCar .viewCar div {
-  margin-top: 0px;
-  overflow: hidden;
-}
-.wrapCardsCar .viewCar div .openBox {
-  display: flex;
-  justify-content: center;
-  transition: all 0.2s ease-in-out;
-  transform: translateY(-100%);
-}
-
-.wrapCardsCar .viewCar div .openBox a:hover {
+a {
   text-decoration: none;
-  background-color: var(--kia-vermelho-vibrante);
+  color: #5cb874;
 }
-.wrapCardsCar .viewCar div .openBox a {
-  flex: 1;
-  background-color: #828f96;
-  font-size: 10px;
-  padding: 20px;
+
+a:hover {
+  color: #80c792;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #5cb874;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+.back-to-top i {
+  font-size: 24px;
   color: #fff;
-  text-align: center;
+  line-height: 0;
 }
-.wrapCardsCar .viewCar div .openBox a:nth-child(3):hover {
-  background-color: var(--kia-vermelho-vibrante);
+.back-to-top:hover {
+  background: #78c48c;
+  color: #fff;
 }
-.wrapCardsCar .viewCar div .openBox a:nth-child(3) {
-  background-color: #000;
-}
-
-.wrapCardsCar .viewCar div .openBox a i {
-  display: block;
-  font-size: 18px;
-}
-
-.wrapMoveableForm {
-  position: relative;
-  transition: all 0.5s ease-in-out;
-  top: 0;
-  z-index: 4;
+.back-to-top.active {
+  visibility: visible;
   opacity: 1;
 }
-/* End - novo showroom */
 
-.flexslider.cars.hideFlexControlNav .flex-control-nav {
-  display: none;
+/*--------------------------------------------------------------
+# Top Bar
+--------------------------------------------------------------*/
+#topbar {
+  background: #fbfbfb;
+  font-size: 15px;
+  height: 40px;
+  padding: 0;
 }
-/* Paginas internas */
-.wrapInternalImage {
+#topbar .contact-info a {
+  line-height: 0;
+  color: #444444;
+  transition: 0.3s;
+}
+#topbar .contact-info a:hover {
+  color: #5cb874;
+}
+#topbar .contact-info i {
+  color: #5cb874;
+  line-height: 0;
+  margin-right: 5px;
+}
+#topbar .contact-info .phone-icon {
+  margin-left: 15px;
+}
+#topbar .social-links a {
+  color: #6f6f6f;
+  padding: 4px 12px;
+  display: inline-block;
+  line-height: 1px;
+  transition: 0.3s;
+}
+#topbar .social-links a:hover {
+  color: #5cb874;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  background: #fff;
+  transition: all 0.5s;
+  z-index: 997;
+  height: 70px;
+}
+#header.header-scrolled {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+#header .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#header .logo a {
+  color: #5cb874;
+}
+#header .logo img {
+  max-height: 40px;
+}
+
+.scrolled-offset {
+  margin-top: 70px;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navbar li {
   position: relative;
 }
-.wrapInternalImage img {
-  object-fit: cover;
-  width: 100%;
-  height: 200px;
-  filter: brightness(44%);
+.navbar a, .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-size: 15px;
+  color: #222222;
+  white-space: nowrap;
+  transition: 0.3s;
 }
-.wrapInternalImage p {
-  position: absolute;
-  background-color: var(--kia-vermelho-vibrante);
-  right: 50%;
-  top: 6%;
-  transform: translate(50%, 50%);
-  color: #fff;
-  min-width: 200px;
-  text-align: center;
-  padding: 10px 2px;
-  z-index: 1;
-  font-size: 22px;
+.navbar a i, .navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
 }
-
-/* Custom Cookies */
-
-.cookies-container span {
-  position: absolute;
-  top: 4px;
-  right: 36px;
-  z-index: 2;
-  cursor: pointer;
+.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+  color: #5cb874;
 }
-.cookies-content {
-  max-width: 96% !important;
-  box-shadow: 0 1px 13px rgba(0, 0, 0, 0.6);
-  padding: 3rem 1rem;
+.navbar .getstarted, .navbar .getstarted:focus {
+  color: #5cb874;
+  padding: 8px 25px;
+  margin-left: 30px;
+  border-radius: 4px;
+  border: 2px solid #5cb874;
+  transition: 0.3s;
+  font-size: 14px;
 }
-.cookies-save {
-  background-color: var(--kia-vermelho-vibrante);
-  font-size: 1.2em;
-  padding: 0.8rem 3rem;
-}
-.cookies-pref {
-  display: none;
-}
-/**/
-
-.tableSearch tbody tr td a {
-  color: #666;
-}
-.tableSearch tbody tr td a:hover {
-  color: #000;
-  text-decoration: none;
-}
-
-mark {
-  background-color: var(--kia-preto-noturno);
+.navbar .getstarted:hover, .navbar .getstarted:focus:hover {
+  background: #5cb874;
   color: #fff;
 }
-#pixlee_container {
-  height: 380px;
-  overflow: auto;
-}
-.customInstagram {
-  color: #a30077;
-}
-.customInstagram i {
-  margin: 0 8px;
-}
-
-.customInstagram + hr {
-  border-color: #a30077 !important;
-}
-
-/* Localização */
-#localizacao {
-  padding: 0;
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
   margin: 0;
-  margin-bottom: 100px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
 }
-#localizacao hr {
-  width: 100%;
+.navbar .dropdown ul li {
+  min-width: 200px;
 }
-
-.formSchedulingSubmission input,
-.formSchedulingSubmission select,
-.formSchedulingSubmission textarea {
-  border: 1px solid #666;
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+  text-transform: none;
 }
-/* contactUs */
-
-.contactUs {
-  background-color: #37444d;
-  margin: 26px 0;
-  color: #fff;
-  padding: 36px 0;
-}
-.contactUs h2 {
-  text-align: center;
-  font-family: "Kia-Bold";
-  font-size: 44px;
-}
-.contactUs button:hover {
-  background-color: var(--kia-preto-noturno);
-  border: 1px solid var(--kia-preto-noturno);
-}
-.contactUs button {
-  background-color: var(--kia-preto-noturno);
-  border: 1px solid var(--kia-preto-noturno);
-}
-.contactUs p {
-  display: inline;
+.navbar .dropdown ul a i {
   font-size: 12px;
 }
-.aligButtonContactUs {
-  text-align: right;
+.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+  color: #5cb874;
+}
+.navbar .dropdown:hover > ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+.navbar .dropdown .dropdown:hover > ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+  .navbar .dropdown .dropdown:hover > ul {
+    left: -100%;
+  }
 }
 
-/* Agendamento */
-.modal h5 {
-  color: #000;
-  font-size: 22px;
-  font-weight: bold;
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #222222;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
 }
-.modal small {
-  font-size: 16px;
-  font-weight: bold;
-  color: #000;
+.mobile-nav-toggle.bi-x {
+  color: #fff;
 }
 
-/*Redes Sociais*/
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
 
-.socialNetworks:hover {
-  transform: translateX(8px);
+  .navbar ul {
+    display: none;
+  }
 }
-.socialNetworks {
-  transition: all 0.5s ease-in-out;
-  background-color: #fff;
+.navbar-mobile {
   position: fixed;
-  bottom: 20px;
-  padding: 10px;
-  border-radius: 0 6px 6px 0;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  z-index: 3;
+  overflow: hidden;
+  top: 0;
+  right: 0;
   left: 0;
-  margin-left: -8px;
-  padding-left: 20px;
-}
-.socialNetworks p {
-  margin: 0;
-  margin-bottom: 6px;
-}
-.socialNetworks a {
-  margin-right: 10px;
-  text-decoration: none;
-}
-.socialNetworks a img {
-  height: 32px;
-}
-
-/**/
-
-.titleColumnTwoDetailCar {
-  font-size: 24px;
-  font-family: "Kia-Bold";
-  color: #000;
-}
-
-.titleColumnDetailCar {
-  font-size: 38px;
-  font-family: "Kia-Bold";
-  color: #000;
-}
-
-.descriptionDetailCar {
-  color: #000;
-  line-height: 30px;
-  font-size: 16px;
-}
-.wrapImage {
-  overflow: hidden;
-}
-
-.images_agrupadas {
-  margin: 40px 0;
-}
-
-.images_agrupadas .principal {
-  position: relative;
-}
-.images_agrupadas .principal p {
-  position: absolute;
-  top: 0;
-  background-color: #000;
-  color: #fff;
-  font-size: 22px;
-  font-weight: bold;
-  text-align: right;
-  padding-left: 86px;
-  padding-right: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-.images_agrupadas .principal img {
-  width: 100%;
-  height: 745px;
-  object-fit: cover;
-}
-
-.images_agrupadas .menores ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-.images_agrupadas .menores ul li p {
-  position: absolute;
   bottom: 0;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 2px 2px 2px #000;
-  color: #fff;
+  background: rgba(9, 9, 9, 0.9);
+  transition: 0.3s;
+  z-index: 999;
 }
-.images_agrupadas .menores ul li {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  justify-content: center;
-}
-.images_agrupadas .menores ul li img {
-  transition: all 0.5s ease-in-out;
-  width: 100%;
-  height: 376px;
-  object-fit: cover;
-}
-.images_agrupadas .menores ul li img:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-/* Pop-up */
-.popup_wrap .closeBtn:hover,
-.popup_wrap .closeBtn:focus {
-  text-decoration: none;
-}
-.popup_wrap .closeBtn span {
-  font-size: 22px;
-  color: #fff;
-}
-.popup_wrap .closeBtn {
-  background-color: var(--kia-preto-noturno);
+.navbar-mobile .mobile-nav-toggle {
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 15px;
+  right: 15px;
 }
-.popup_wrap {
-  width: 742px;
-  height: auto;
-  border: 1px solid var(--kia-preto-noturno);
-  position: fixed;
-  z-index: 9999;
-  background: #fff;
-  top: 25%;
-  transform: translateX(50%);
-  right: 50%;
-  padding: 0;
-}
-
-.popup_wrap .pop_con dl dt {
-  font-size: 18px;
-}
-
-.popup_wrap .pop_con dl dt,
-.popup_wrap .pop_con dl dd {
-  padding: 8px 0;
-}
-.popup_wrap .pop_con dl {
-  padding: 2px 16px;
-}
-
-.popup_wrap .pop_con img {
-  width: 100%;
-  height: 442px;
-  object-fit: cover;
-}
-
-/* Botão topo */
-
-.topo {
-  background-color: var(--kia-preto-noturno);
-  width: 48px;
-  height: 45px;
-  text-align: center;
-  padding-top: 10px;
-  cursor: pointer;
-  z-index: 4;
-  font-size: 20px;
-  position: fixed;
-  bottom: -2px;
-  right: 2%;
-  color: #fff;
-  transform: translate(-50%, -50%);
-}
-
-/* Page */
-.page {
-  font-family: "Kia-Light";
-}
-.page h1 {
-  font-family: "Kia-Bold";
-  font-size: 26px;
-  font-weight: bold;
-  letter-spacing: 0px;
-  text-transform: uppercase;
-  color: #000;
-}
-.page .content_page {
-  font-size: 16px;
-}
-.page .content_page img {
-  vertical-align: middle;
-  padding-right: 12px;
-  padding-bottom: 6px;
-}
-
-/* Mega menu */
-.sub_menu {
-  padding: 25px 15px;
-  display: flex;
-  justify-content: normal;
-  line-height: 24px;
-  min-width: 1080px;
-  flex-wrap: wrap;
-}
-
-.sub_menu .col {
-  text-align: center;
-  margin: 20px;
-}
-
-.sub_menu .col img {
-  width: 142px;
-  height: 86px;
-  object-fit: contain;
-  transition: 0.2s;
-}
-.sub_menu .col img:hover {
-  transform: scale(1.2);
-}
-
-.sub_menu p {
-  color: #000;
-  margin-top: 15px;
-  font-size: 14px;
-}
-
-.sub_menu h4 {
-  color: #000;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* Custom Title Car*/
-
-.title_car {
-  display: inline;
-  padding: 8px 4px;
-  background-color: #000;
-  color: #fff;
-  font-size: 26px;
-}
-
-/* Custom Buttons Down Carousel Details Car */
-
-.buttons_show_images_car {
-  padding: 16px 0;
-}
-.buttons_show_images_car .btn img {
-  filter: invert(100);
-  height: 36px;
-  margin-right: 8px;
-}
-.buttons_show_images_car a {
-  font-size: 18px;
-}
-
-.buttons_show_images_car div {
-  display: flex;
-  justify-content: center;
-}
-
-.buttons_show_images_car:nth-child(2) div:nth-child(1) {
-  justify-content: left;
-}
-
-.buttons_show_images_car:nth-child(2) div:nth-child(2) {
-  justify-content: right;
-}
-
-.buttons_show_images_car div .btn {
-  background-color: var(--kia-preto-noturno);
-  color: #fff;
-  border: 0;
-  border-radius: 0;
-  padding: 14px 0;
-  max-width: 320px;
-}
-
-/* Custom Full Images Car */
-.img_fluid_car {
-  position: relative;
-}
-.img-responsive.two_columns:hover {
-  transform: scale(1.1);
-}
-.img-responsive.two_columns {
-  object-fit: cover;
-  transition: all 0.5s ease-in-out;
-  width: 100%;
-  height: 354px;
-}
-.img_fluid_car img {
-  width: 100%;
-}
-.img_fluid_car .legend {
+.navbar-mobile ul {
+  display: block;
   position: absolute;
-  top: 0;
-  background-color: #000;
-  color: #fff;
-  font-size: 22px;
-  font-weight: bold;
-  text-align: right;
-  padding-left: 86px;
-  padding-right: 16px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-/* Custom tab Car */
-
-.nav.custom_car {
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid transparent !important;
-}
-.nav.custom_car .nav-item {
-  width: 100%;
-  font-size: 18px;
-  font-weight: bold;
-  font-family: "Kia-Medium";
-  margin-left: -2px;
-}
-
-.nav.custom_car .nav-item .nav-link {
-  color: #000;
-  border-radius: 0;
-  background-color: #d2d2d2;
-  border: 0 !important;
-}
-.nav.custom_car .nav-item.active .nav-link.active {
-  background-color: #2b2b2b;
-  color: #fff;
-}
-
-.nav.custom_car .nav-item.active .nav-link:hover {
-  background-color: #2b2b2b;
-}
-.nav.custom_car .nav-item.active .nav-link:focus {
-  background-color: #2b2b2b;
-  color: #fff;
-}
-
-.content_tab {
-  padding: 12px;
-  font-family: "Kia-Medium";
-}
-.content_tab .title_car_details {
-  font-family: "Kia-Bold";
-  font-size: 20px;
-  font-weight: bold;
-  padding: 6px 0;
-}
-.content_tab .sub_title_car {
-  font-size: 16px;
-  font-weight: bold;
-  padding: 8px 0;
-}
-.content_tab .img-responsive {
-  object-fit: cover;
-  min-height: 600px;
-  width: 100%;
-}
-
-/* Custom breadcrumb Site */
-.breadcrumb {
-  padding: 15px 4px;
-  margin: 0;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
   background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
 }
-.breadcrumb .breadcrumb-item a {
-  color: #333;
+.navbar-mobile a, .navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #222222;
 }
-.breadcrumb > li + li:before {
-  font-family: "fontAwesome";
-  content: "\f105";
-  padding: 0 8px;
-  font-size: 18px;
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+  color: #5cb874;
 }
-
-/* Footer */
-footer {
-  background-color: var(--kia-preto-noturno);
-  font-family: "Kia-Light";
-  color: #fff;
-  padding-top: 20px;
+.navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
+  margin: 15px;
 }
-
-footer .container-fluid.copyright {
-  background-color: var(--kia-cinza-urbano);
-  padding: 20px 0;
-  color: #000;
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 }
-footer .container-fluid.copyright .container .row {
-  display: flex;
-  align-items: center;
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
 }
-
-footer .container-fluid.desenvolvido {
-  background-color: #e3e3e3;
-  padding: 20px 0;
-  color: #000;
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
 }
-
-footer h4 {
-  font-weight: bold;
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
 }
-
-footer .logoVegaKia {
-  filter: invert(100%);
-  width: 200px;
+.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
+  color: #5cb874;
 }
-footer .logo_kia {
-  filter: invert(100%);
-  width: 110px;
+.navbar-mobile .dropdown > .dropdown-active {
+  display: block;
 }
 
-footer .logo_vega {
-  filter: invert(100%);
-  width: 65px;
-}
-
-footer [alt="IBAMA"] {
-  width: 45px;
-}
-footer p.icon_socials img {
-  width: 40px;
-}
-footer p.icon_socials a {
-  text-decoration: none !important;
-}
-.footer_menu_itens ul li a {
-  color: inherit;
-  transition: 0.2s;
-  cursor: pointer;
-}
-.footer_menu_itens ul li a:hover {
-  text-decoration: none !important;
-}
-.footer_menu_itens ul:not(.modelos) li:hover {
-  color: var(--kia-vermelho-vibrante);
-}
-.footer_menu_itens ul.modelos li {
-  cursor: unset;
-}
-.footer_menu_itens ul {
-  list-style: none;
-  max-width: 100%;
-  margin: 18px auto;
-  text-align: left;
-  padding: 0 6px;
-  line-height: 30px;
-  font-size: 18px;
-}
-.footer_menu_itens h3 {
-  border-bottom: 1px solid #fff;
-  font-weight: bold;
-}
-
-/* Consorcio & Seguros */
-.card_consorcio_seguros.consorcio {
-  background-image: url("../images/1074969176_Easy-Resize.com_.jpg");
-}
-.card_consorcio_seguros.seguro {
-  background-image: url("../images/5-dicas-para-contratar-seguro.jpg");
-}
-.card_consorcio_seguros {
-  border: 2px solid white;
-  background-size: 100%;
-  background-position: center center;
-  min-width: 98%;
-  min-height: 300px;
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 70vh;
+  background-color: rgba(9, 9, 9, 0.8);
+  overflow: hidden;
   position: relative;
-  cursor: pointer;
-  transition: 0.4s;
 }
-.card_consorcio_seguros:hover {
-  background-size: 120%;
-}
-.card_consorcio_seguros:hover {
-  border: 2px solid black;
-}
-.card_consorcio_seguros .legenda {
+#hero .carousel, #hero .carousel-inner, #hero .carousel-item, #hero .carousel-item::before {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: absolute;
+  top: 0;
   right: 0;
+  left: 0;
   bottom: 0;
-  width: 70%;
-  height: 74px;
-  background-color: #000;
-  text-align: right;
-  color: #fff;
-  padding: 4px 0;
 }
-.card_consorcio_seguros .legenda h5 {
-  margin: 0;
-  padding: 0px 10px;
-  font-weight: bold;
-  border-right: 16px solid red;
+#hero .carousel-item::before {
+  content: "";
+  background-color: rgba(45, 103, 60, 0.8);
 }
-.card_consorcio_seguros .legenda p {
-  margin: 0;
-  padding: 0;
+#hero .carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 50px;
+  right: 50px;
 }
-
-/* Section Kia */
-.section_kia {
-  font-family: "Kia-Light";
-  margin: 30px 0;
-  padding: 40px 0;
-  color: #000;
+#hero .container {
   text-align: center;
 }
-.section_kia h2 {
-  font-size: 42px;
+#hero h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: 700;
+}
+#hero p {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  margin: 0 auto 30px auto;
+  color: #fff;
+}
+#hero .carousel-inner .carousel-item {
+  transition-property: opacity;
+  background-position: center top;
+}
+#hero .carousel-inner .carousel-item,
+#hero .carousel-inner .active.carousel-item-start,
+#hero .carousel-inner .active.carousel-item-end {
+  opacity: 0;
+}
+#hero .carousel-inner .active,
+#hero .carousel-inner .carousel-item-next.carousel-item-start,
+#hero .carousel-inner .carousel-item-prev.carousel-item-end {
+  opacity: 1;
+  transition: 0.5s;
+}
+#hero .carousel-control-next-icon, #hero .carousel-control-prev-icon {
+  background: none;
+  font-size: 30px;
+  line-height: 0;
+  width: auto;
+  height: auto;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.5);
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#hero .carousel-control-next-icon:hover, #hero .carousel-control-prev-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+#hero .carousel-indicators li {
+  cursor: pointer;
+  background: #fff;
+  overflow: hidden;
+  border: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+#hero .carousel-indicators li.active {
+  opacity: 1;
+  background: #5cb874;
+}
+#hero .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 4px;
+  transition: 0.5s;
+  line-height: 1;
+  color: #fff;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  background: #5cb874;
+}
+#hero .btn-get-started:hover {
+  background: #6ec083;
+}
+@media (max-width: 992px) {
+  #hero {
+    height: 100vh;
+  }
+  #hero .carousel-container {
+    top: 66px;
+  }
+}
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  #hero .carousel-control-prev, #hero .carousel-control-next {
+    width: 5%;
+  }
+}
+@media (max-height: 500px) {
+  #hero {
+    height: 120vh;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background-color: #f8fcf9;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.section-title h2 {
+  font-size: 32px;
   font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
 }
-.section_kia h2 + hr {
-  width: 300px;
-  border-width: 3px;
-  margin: 0 auto;
-  padding: 8px 0;
-  border-color: #000;
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #5cb874;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+.section-title p {
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #919191;
 }
 
-.section_kia h4 {
-  font-size: 36px;
+/*--------------------------------------------------------------
+# Featured Services
+--------------------------------------------------------------*/
+.featured-services {
+  padding: 20px 0;
+}
+.featured-services .icon-box {
+  padding: 20px;
+}
+.featured-services .icon-box-bg {
+  background-image: linear-gradient(0deg, #222222 0%, #2f2f2f 50%, #222222 100%);
+}
+.featured-services .icon {
+  margin-bottom: 15px;
+}
+.featured-services .icon i {
+  color: #5cb874;
+  font-size: 42px;
+}
+.featured-services .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.featured-services .title a {
+  color: #222222;
+  transition: 0.3s;
+}
+.featured-services .icon-box:hover .title a {
+  color: #5cb874;
+}
+.featured-services .description {
+  line-height: 24px;
+  font-size: 14px;
 }
 
-.section_kia h5 {
+/*--------------------------------------------------------------
+# About Us
+--------------------------------------------------------------*/
+.about .content h3 {
+  font-weight: 700;
   font-size: 28px;
 }
-
-.section_kia p {
-  margin-top: 20px;
-  font-size: 20px;
-}
-
-/* Serviços */
-#servicos {
-  background-color: #000;
-  color: #fff;
-}
-
-#servicos .wrapShowroom .col h2 {
-  color: #fff;
-}
-#servicos .wrapShowroom .col hr {
-  border-color: #fff;
-}
-
-/* Card services */
-.card_services h3 {
-  font-size: 20px;
-}
-.card_services {
-  text-align: center;
-  margin: 10px 0;
-  padding: 12px 0px;
-  border: 1px solid transparent;
-  border-image: linear-gradient(180deg, white, transparent);
-  border-image-slice: 1;
-  cursor: pointer;
-  height: 250px;
-}
-
-.card_services:hover {
-  border-image: linear-gradient(
-    0deg,
-    var(--kia-vermelho-vibrante),
-    transparent
-  );
-  border-image-slice: 1;
-}
-
-.card_services img {
-  transform: translateY(0%);
-  transition: 0.2s;
-  width: 112px;
-}
-
-.card_services:hover img {
-  transform: translateY(-8%);
-}
-
-/* Interest Options */
-.interest-options {
-  position: relative;
-}
-.interest-options p {
-  position: absolute;
-  top: 58%;
-  right: 47%;
-  transform: translateX(45%);
-  font-size: 9px !important;
-  font-weight: normal;
-}
-.interest-options > [type="radio"],
-.interest-options > [type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.interest-options > [type="radio"] + i,
-.interest-options > [type="checkbox"] + i {
-  cursor: pointer;
-  width: 66px;
-  height: 58px;
-  font-size: 20px;
-  color: #fff;
-  text-align: center;
-  line-height: 33px;
-  border: 1px solid #fff;
-}
-.interest-options > [type="radio"]:checked + i,
-.interest-options > [type="checkbox"]:checked + i {
-  background-color: var(--kia-vermelho-vibrante);
-  border: 1px solid #fff;
-}
-
-/* Card car*/
-
-.wrap_cards_car ul {
+.about .content ul {
   list-style: none;
-  margin: 0;
   padding: 0;
 }
-.wrap_cards_car ul li {
-  cursor: pointer;
-  overflow: hidden;
-  border: 1px solid #000;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  position: relative;
-  z-index: 1;
+.about .content ul li {
+  padding-bottom: 10px;
 }
-.wrap_cards_car ul li img {
-  transition: all 0.5s ease-in-out;
-}
-.wrap_cards_car ul li img:hover {
-  transform: scale(1.1);
-}
-.wrap_cards_car ul li p {
-  background-color: #fff;
-  text-align: center;
-  padding: 0;
-  margin: 0;
-  height: 26px;
-  margin-top: -10px;
-  line-height: 42px;
-  height: 40px;
-  border-top: 1px solid #000;
-  font-family: "Kia-Bold";
+.about .content ul i {
   font-size: 20px;
-  letter-spacing: -1px;
-  position: relative;
-  z-index: 2;
+  padding-right: 4px;
+  color: #5cb874;
+}
+.about .content p:last-child {
+  margin-bottom: 0;
 }
 
-.wrap_card_car {
-  font-family: "Kia-Medium";
-  border: 1px solid #000;
-  border-radius: 6px;
+/*--------------------------------------------------------------
+# Why Us
+--------------------------------------------------------------*/
+.why-us {
+  padding: 0;
+}
+.why-us .row {
   overflow: hidden;
-  margin-bottom: 14px;
-  cursor: pointer;
-  transition: 0.2s;
 }
-.wrap_card_car .card_car img {
-  object-fit: cover;
-  width: 100%;
-  height: 135px;
+.why-us .content-item {
+  padding: 40px;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin: -1px;
 }
-.wrap_card_car .card_car h3 {
-  text-align: center;
-  font-weight: bold;
-  color: #000;
-  margin-top: 12px;
-}
-.wrap_card_car:hover {
-  background-color: darkgray;
-  border: 1px solid #fff;
-  text-align: center;
-}
-
-/* Target car */
-.wrap_target_car {
-  font-family: "Kia-Medium";
-  width: 100%;
-  border: 1px solid #000;
-  border-radius: 6px;
-  text-align: center;
-}
-
-.wrap_target_car h2 {
-  display: inline-flex;
-  background-color: #000;
-  border-radius: 6px;
-  padding: 5px 16px;
-  color: #fff;
-}
-
-/* Itens car */
-.itens_car ul {
-  list-style: none;
-  max-width: 100%;
-  text-align: left;
-  padding: 0 6px;
-  line-height: 34px;
-  font-size: 12px;
-}
-.itens_car li {
-  line-height: 24px;
-}
-.itens_car li::before {
-  content: "\f054";
-  font-family: "FontAwesome";
-  color: #000;
-  margin-right: 4px;
-}
-
-.btn--veja--mais {
-  background-color: #000;
-  border: #000;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-/* Form */
-.wrap_form {
-  background-color: #000;
-  color: #fff;
-  padding: 10px;
-  border-radius: 6px;
-  font-family: "Kia-Light";
-}
-.wrap_form h3 {
-  text-align: center;
-  font-weight: bold;
-}
-.wrap_form h4 {
-  text-align: center;
-}
-
-.wrap_form p {
-  font-size: 12px;
-}
-
-.wrap_form input[type="text"],
-.wrap_form select,
-.wrap_form textarea {
-  background-color: #000;
-  width: 100%;
-  padding: 6px;
-  margin-bottom: 10px;
+.why-us .content-item span {
   display: block;
-  border: 1px solid #fff;
-  outline: 0;
+  font-size: 24px;
+  font-weight: 400;
+  color: #6ec083;
 }
-.wrap_form input[type="checkbox"] {
-  display: inline;
-  width: inherit;
+.why-us .content-item h4 {
+  font-size: 26px;
+  font-weight: 300;
+  padding: 0;
+  margin: 20px 0;
 }
-.wrap_form > .row {
-  display: flex;
-  align-items: flex-end;
+.why-us .content-item p {
+  color: #aaaaaa;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
 }
-
-/* Custom header info */
-
-.header_info .row.elementsRight div {
-  display: flex;
-  justify-content: center;
-}
-.header_info .row.elementsRight div:first-child {
-  justify-content: right;
-}
-
-.header_info .elementsCenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.header_info .elementsCenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (max-width: 768px) {
+  .why-us .content-item {
+    padding: 40px 0;
+  }
 }
 
-.header_info .container .row {
-  display: flex;
+/*--------------------------------------------------------------
+# Our Clients
+--------------------------------------------------------------*/
+.clients .swiper-slide img {
+  opacity: 0.5;
+  transition: 0.3s;
 }
-.header_info .container .row div img {
-  width: 236px;
+.clients .swiper-slide img:hover {
+  opacity: 1;
+}
+.clients .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+.clients .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #5cb874;
+}
+.clients .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #5cb874;
 }
 
-/**/
-
-.container_header {
-  display: flex;
-  flex-wrap: wrap;
-}
-.container_header div {
-  width: 100%;
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services .icon-box {
   text-align: center;
-  flex: 1 1 200px;
-  display: flex;
-  align-self: baseline;
-  justify-content: center;
+  padding: 70px 20px 80px 20px;
+  transition: all ease-in-out 0.3s;
+  background: #fff;
+  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
 }
-.header_info {
-  background-color: rgba(40, 32, 32, 0.2);
-  border-bottom: 2px solid var(--kia-border-line);
+.services .icon-box .icon {
+  margin: 0 auto;
+  width: 100px;
   height: 100px;
   display: flex;
   align-items: center;
-  font-family: "Kia-Light";
+  justify-content: center;
+  transition: ease-in-out 0.3s;
+  position: relative;
 }
-.header_info i {
-  font-size: 24px;
+.services .icon-box .icon i {
+  font-size: 36px;
+  transition: 0.5s;
+  position: relative;
 }
-
-.header_info,
-.header_info a,
-.header_info p {
-  font-size: 16px;
+.services .icon-box .icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-
-.header_info .logo_kia {
-  width: 128px;
-  object-fit: cover;
-  height: 44px;
-  filter: grayscale(100%) brightness(0);
+.services .icon-box .icon svg path {
+  transition: 0.5s;
+  fill: #f5f5f5;
 }
-.header_info .logo_vega {
-  width: 82px;
-  margin-right: 2px;
+.services .icon-box h4 {
+  font-weight: 600;
+  margin: 10px 0 15px 0;
+  font-size: 22px;
 }
-
-.header_info i.fa-map-marker {
-  color: #000;
+.services .icon-box h4 a {
+  color: #222222;
+  transition: ease-in-out 0.3s;
 }
-
-input[name="search"] {
-  padding: 20px 28px;
-  background-image: url("../images/search.png");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: contain;
-  background-size: 1.4em;
-  background-position-x: 4%;
-}
-
-/* Custom navbar */
-.navbar {
-  font-family: "Kia-Medium";
+.services .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
   margin-bottom: 0;
 }
-.navbar a:not(.d-md-none) {
-  color: #000 !important;
+.services .icon-box:hover {
+  border-color: #fff;
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
 }
-
-.navbar li:hover a:not(.d-md-none)::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 6%;
-  margin: -1px 0;
-  width: 86%;
-  border: 2px solid #000;
+.services .iconbox-blue i {
+  color: #47aeff;
 }
-
-/* Custom button success */
-
-.btn--success {
-  background-color: var(--kia-verde-btn-success) !important;
-  border: 1px solid var(--kia-verde-btn-success) !important;
-  color: #fff !important;
-}
-
-/* Custom button dark */
-
-.btn--dark {
-  background-color: #000 !important;
-  border: 1px solid #000 !important;
-  color: #fff !important;
-}
-.btn--dark:hover {
+.services .iconbox-blue:hover .icon i {
   color: #fff;
 }
-
-/* Default load */
-
-.ajax_load {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 9;
+.services .iconbox-blue:hover .icon path {
+  fill: #47aeff;
+}
+.services .iconbox-orange i {
+  color: #ffa76e;
+}
+.services .iconbox-orange:hover .icon i {
+  color: #fff;
+}
+.services .iconbox-orange:hover .icon path {
+  fill: #ffa76e;
+}
+.services .iconbox-pink i {
+  color: #e80368;
+}
+.services .iconbox-pink:hover .icon i {
+  color: #fff;
+}
+.services .iconbox-pink:hover .icon path {
+  fill: #e80368;
+}
+.services .iconbox-yellow i {
+  color: #ffbb2c;
+}
+.services .iconbox-yellow:hover .icon i {
+  color: #fff;
+}
+.services .iconbox-yellow:hover .icon path {
+  fill: #ffbb2c;
+}
+.services .iconbox-red i {
+  color: #ff5828;
+}
+.services .iconbox-red:hover .icon i {
+  color: #fff;
+}
+.services .iconbox-red:hover .icon path {
+  fill: #ff5828;
+}
+.services .iconbox-teal i {
+  color: #11dbcf;
+}
+.services .iconbox-teal:hover .icon i {
+  color: #fff;
+}
+.services .iconbox-teal:hover .icon path {
+  fill: #11dbcf;
 }
 
-.ajax_load_box {
-  margin: auto;
+/*--------------------------------------------------------------
+# Cta
+--------------------------------------------------------------*/
+.cta {
+  background: #5cb874;
+  padding: 80px 0;
+}
+.cta h3 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+}
+.cta p {
+  color: #fff;
+}
+.cta .cta-btn {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 2px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 4px;
+}
+.cta .cta-btn:hover {
+  background: #fff;
+  color: #5cb874;
+}
+@media (max-width: 1024px) {
+  .cta {
+    background-attachment: scroll;
+  }
+}
+@media (min-width: 769px) {
+  .cta .cta-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
+}
+.portfolio #portfolio-flters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
   text-align: center;
+}
+.portfolio #portfolio-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 15px 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #444444;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 3px;
+}
+.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   color: #fff;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  background: #5cb874;
+}
+.portfolio #portfolio-flters li:last-child {
+  margin-right: 0;
+}
+.portfolio .portfolio-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(34, 34, 34, 0.6);
+}
+.portfolio .portfolio-wrap::before {
+  content: "";
+  background: rgba(34, 34, 34, 0.6);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+.portfolio .portfolio-wrap img {
+  transition: all ease-in-out 0.3s;
+}
+.portfolio .portfolio-wrap .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px;
+}
+.portfolio .portfolio-wrap .portfolio-info h4 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+.portfolio .portfolio-wrap .portfolio-info p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+}
+.portfolio .portfolio-wrap .portfolio-links {
+  text-align: center;
+  z-index: 4;
+}
+.portfolio .portfolio-wrap .portfolio-links a {
+  color: #fff;
+  margin: 0 5px 0 0;
+  font-size: 28px;
+  display: inline-block;
+  transition: 0.3s;
+}
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+  color: #6ec083;
+}
+.portfolio .portfolio-wrap:hover::before {
+  opacity: 1;
+}
+.portfolio .portfolio-wrap:hover img {
+  transform: scale(1.2);
+}
+.portfolio .portfolio-wrap:hover .portfolio-info {
+  opacity: 1;
 }
 
-.ajax_load_box_circle {
-  border: 16px solid #e3e3e3;
-  border-top: 16px solid #3c8dbc;
+/*--------------------------------------------------------------
+# Portfolio Details
+--------------------------------------------------------------*/
+.portfolio-details {
+  padding-top: 40px;
+}
+.portfolio-details .portfolio-details-slider img {
+  width: 100%;
+}
+.portfolio-details .portfolio-details-slider .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #5cb874;
+}
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #5cb874;
+}
+.portfolio-details .portfolio-info {
+  padding: 30px;
+  box-shadow: 0px 0 30px rgba(34, 34, 34, 0.08);
+}
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+.portfolio-details .portfolio-info ul li + li {
+  margin-top: 10px;
+}
+.portfolio-details .portfolio-description {
+  padding-top: 30px;
+}
+.portfolio-details .portfolio-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.portfolio-details .portfolio-description p {
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+.team .member {
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 12px 0px rgba(34, 34, 34, 0.07);
+  padding: 30px 20px;
+  background: #fff;
+}
+.team .member img {
+  max-width: 60%;
   border-radius: 50%;
-  margin: auto;
-  width: 80px;
-  height: 80px;
-  -webkit-animation: spin 1.2s linear infinite;
-  -o-animation: spin 1.2s linear infinite;
-  animation: spin 1.2s linear infinite;
+  margin: 0 0 30px 0;
+}
+.team .member h4 {
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+.team .member span {
+  font-style: italic;
+  display: block;
+  font-size: 13px;
+}
+.team .member p {
+  padding-top: 10px;
+  font-size: 14px;
+  font-style: italic;
+  color: #aaaaaa;
+}
+.team .member .social {
+  margin-top: 15px;
+}
+.team .member .social a {
+  color: #919191;
+  transition: 0.3s;
+}
+.team .member .social a:hover {
+  color: #5cb874;
+}
+.team .member .social i {
+  font-size: 18px;
+  margin: 0 2px;
 }
 
-.ajax_load_box_title {
-  margin-top: 15px;
-  font-weight: bold;
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact .info {
+  border-top: 3px solid #5cb874;
+  border-bottom: 3px solid #5cb874;
+  padding: 30px;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+.contact .info i {
+  font-size: 20px;
+  color: #5cb874;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #eaf6ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #222222;
+}
+.contact .info p {
+  padding: 0 0 10px 60px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #555555;
+}
+.contact .info .social-links {
+  padding-left: 60px;
+}
+.contact .info .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+  margin-right: 10px;
+}
+.contact .info .social-links a:hover {
+  background: #5cb874;
+  color: #fff;
+}
+.contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
+  background: #5cb874;
+  color: #fff;
+}
+.contact .php-email-form {
+  width: 100%;
+  border-top: 3px solid #5cb874;
+  border-bottom: 3px solid #5cb874;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+.contact .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+.contact .php-email-form .error-message br + br {
+  margin-top: 25px;
+}
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+.contact .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+.contact .php-email-form input, .contact .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 4px;
+}
+.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+  border-color: #5cb874;
+}
+.contact .php-email-form input {
+  height: 44px;
+}
+.contact .php-email-form textarea {
+  padding: 10px 12px;
+}
+.contact .php-email-form button[type=submit] {
+  background: #5cb874;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+.contact .php-email-form button[type=submit]:hover {
+  background: #6ec083;
+}
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 15px 0;
+  background: #fbfbfb;
+  min-height: 40px;
+}
+@media (max-width: 992px) {
+  .breadcrumbs {
+    margin-top: 66px;
+  }
+}
+.breadcrumbs h2 {
+  font-size: 28px;
+  font-weight: 300;
+}
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #3c3c3c;
+  content: "/";
+}
+@media (max-width: 768px) {
+  .breadcrumbs .d-flex {
+    display: block !important;
+  }
+  .breadcrumbs ol {
+    display: block;
+  }
+  .breadcrumbs ol li {
+    display: inline-block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: #090909;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 0;
+}
+#footer h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+#footer p {
+  font-size: 15;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+#footer .social-links {
+  margin: 0 0 40px 0;
+}
+#footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #5cb874;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+#footer .social-links a:hover {
+  background: #449d5b;
+  color: #fff;
+  text-decoration: none;
+}
+#footer .copyright {
+  margin: 0 0 5px 0;
+}
+#footer .credits {
+  font-size: 13px;
 }

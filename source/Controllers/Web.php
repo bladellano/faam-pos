@@ -140,18 +140,16 @@ class Web extends Controller
     public function home(): void
     {
         $banners = (new Banner)->find()->order("updated_at DESC")->fetch(true) ?? [];
-        $cars = (new Car)->find()->order("id DESC")->fetch(true) ?? [];
 
         $head = (new Seo())->render(
             SITE['name'],
             SITE['desc'],
             SITE['root'],
-            asset('images/image-default-vega-kia.jpeg', 'site', 0),
+            asset("images/favicon.png"),
         );
 
         echo $this->view->render("theme/site/home", [
             "banners" => $banners,
-            "cars" => $cars,
             "head" => $head
         ]);
     }

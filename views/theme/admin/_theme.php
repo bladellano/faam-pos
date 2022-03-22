@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gerenciador | <?= $title ?></title>
 
-  <link rel="icon" type="image/x-icon" href="<?= asset("images/favicon.png", 'site'); ?>">
+  <link rel="icon" type="image/x-icon" href="<?= asset("images/favicon.png"); ?>">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -60,7 +60,7 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__shake" src="<?= asset("images/favicon.png", 'site'); ?>" alt="AdminLTELogo" height="60" width="60">
+      <img class="animation__shake" src="<?= asset("images/favicon.png"); ?>" alt="AdminLTELogo" height="60" width="60">
     </div>
 
     <!-- Navbar -->
@@ -219,7 +219,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="<?= SITE['root'] ?>/admin" class="brand-link">
-        <img src="<?= asset("images/favicon.png", 'site'); ?>" alt="Dash - <?= SITE['name'] ?>" class="brand-image" style="opacity: .8">
+        <img src="<?= asset("images/favicon.png"); ?>" alt="Dash - <?= SITE['name'] ?>" class="brand-image" style="opacity: .8">
         <span class="brand-text font-weight-light">
           Dash - <?= SITE['name'] ?>
         </span>
@@ -307,6 +307,15 @@
                 </li>
               </ul>
             </li> -->
+
+            <li class="nav-item">
+              <a href="<?= SITE['root'] ?>/admin/cursos" class="nav-link">
+                <i class="nav-icon fa fa-graduation-cap"></i>
+                <p>
+                  Cursos
+                </p>
+              </a>
+            </li>
 
             <li class="nav-item">
               <a href="<?= SITE['root'] ?>/admin/posts" class="nav-link">
