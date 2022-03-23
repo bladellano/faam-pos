@@ -233,8 +233,8 @@
 
                                                          <div id="inputFormRow">
                                                              <div class="input-group mb-3">
-                                                                 <input type="text" name="nomeAnexos[]" class="form-control" placeholder="Nome do documento" required>
-                                                                 <input type="file" name="anexos[]" class="form-control" required>
+                                                                 <input type="text" name="nomeAnexos[]" class="form-control" placeholder="Nome do documento" >
+                                                                 <input type="file" name="anexos[]" class="form-control" >
 
                                                                  <div class="input-group-append">
                                                                      <button id="removeRow" type="button" class="btn btn-danger">Remover</button>
