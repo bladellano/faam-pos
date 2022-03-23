@@ -80,7 +80,8 @@ $app->post("/cursos/register", "Cursos:register", "cursos.register");
 $app->post("/cursos/update/{id}", "Cursos:update", "cursos.update");
 $app->get("/cursos/delete/{id}", "Cursos:delete", "cursos.delete");
 $app->get("/cursos/edit/{id}", "Cursos:edit", "cursos.edit");
-    
+    $app->get("/cursos/remover-anexo/{id}/{curso}", "Cursos:removerAnexo", "cursos.removeranexo");
+
 /** Banners */
 $app->get("/banners", "Banners:home", "banners.home");
 $app->get("/banners/create", "Banners:create", "banners.create");

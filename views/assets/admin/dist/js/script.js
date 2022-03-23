@@ -4,6 +4,33 @@
  */
 $(function () {
 
+
+    /**
+     * Adicionar e remover anexos Cursos
+     */
+
+    // add row
+    $("#addRow").click(function () {
+
+        var html = '';
+
+        html += '<div id="inputFormRow">';
+        html += '<div class="input-group mb-3">';
+        html += '<input type="text" name="nomeAnexos[]" class="form-control" placeholder="Nome do documento" required>';
+        html += '<input type="file" name="anexos[]" class="form-control" required>';
+        html += '<div class="input-group-append">';
+        html += '<button id="removeRow" type="button" class="btn btn-danger">Remover</button>';
+        html += '</div>';
+        html += '</div>';
+
+        $('#newRow').append(html);
+    });
+
+    // remove row
+    $(document).on('click', '#removeRow', function () {
+        $(this).closest('#inputFormRow').remove();
+    });
+
     /**
      * Controla div de versões
      */
@@ -164,7 +191,7 @@ function onlyNumbers(num) {
     er.lastIndex = 0;
     var campo = num;
     if (er.test(campo.value)) {
-      campo.value = "";
+        campo.value = "";
     }
 }
 

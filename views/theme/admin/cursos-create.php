@@ -207,7 +207,47 @@
 
                                              </div>
                                              <div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel" aria-labelledby="custom-tabs-one-messages-tab">
-                                                 Morbi turpis dolor, vulputate vitae felis non, tincidunt congue mauris. Phasellus volutpat augue id mi placerat mollis. Vivamus faucibus eu massa eget condimentum. Fusce nec hendrerit sem, ac tristique nulla. Integer vestibulum orci odio. Cras nec augue ipsum. Suspendisse ut velit condimentum, mattis urna a, malesuada nunc. Curabitur eleifend facilisis velit finibus tristique. Nam vulputate, eros non luctus efficitur, ipsum odio volutpat massa, sit amet sollicitudin est libero sed ipsum. Nulla lacinia, ex vitae gravida fermentum, lectus ipsum gravida arcu, id fermentum metus arcu vel metus. Curabitur eget sem eu risus tincidunt eleifend ac ornare magna.
+
+                                                 <!-- Cursos Anexos -->
+                                                 <div class="row">
+                                                     <div class="col-lg-12">
+
+                                                         <?php if (isset($anexos) && count($anexos)) : ?>
+
+                                                             <?php foreach ($anexos as $an) : ?>
+
+                                                                 <div class="input-group mb-3">
+                                                                     <input type="text" value="<?= $an->nome ?>" disabled name="nomeAnexos[]" class="form-control">
+
+                                                                     <a target="_blank" class="btn btn-info form-control" href="<?= SITE['root'] . DS . $an->arquivo ?>">
+                                                                         <i class="fa fa-file"></i> <?= $an->nome_arquivo ?></a>
+
+                                                                     <div class="input-group-append">
+                                                                         <a onclick="return confirm('Deseja realmente excluir este registro?')" href="<?= SITE['root'] . DS . 'admin/cursos/remover-anexo/' . $an->id . DS . $curso->id ?>" class="btn btn-danger">Remover</a>
+                                                                     </div>
+                                                                 </div>
+
+                                                             <?php endforeach; ?>
+
+                                                         <?php endif; ?>
+
+                                                         <div id="inputFormRow">
+                                                             <div class="input-group mb-3">
+                                                                 <input type="text" name="nomeAnexos[]" class="form-control" placeholder="Nome do documento" required>
+                                                                 <input type="file" name="anexos[]" class="form-control" required>
+
+                                                                 <div class="input-group-append">
+                                                                     <button id="removeRow" type="button" class="btn btn-danger">Remover</button>
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+
+                                                         <div id="newRow"></div>
+                                                         <button id="addRow" type="button" class="btn btn-success">Adicionar</button>
+
+                                                     </div>
+                                                 </div>
+
                                              </div>
 
                                          </div>
@@ -216,8 +256,6 @@
                                  </div>
                              </div>
                              <!-- /.card-body -->
-
-
 
                              <div class="card-footer">
                                  <a href="javascript:history.back()" class="btn btn-primary">Voltar</a>
