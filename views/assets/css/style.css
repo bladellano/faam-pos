@@ -97,3 +97,7 @@ a {
 .about .content h3 {
   color: #000;
 }
+
+#header .logo img {
+	max-height: 64px;
+}

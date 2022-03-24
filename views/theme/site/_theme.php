@@ -60,7 +60,9 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">FAAM PÓS</a></h1>
+      <h1 class="logo me-auto"><a href="index.html">
+        <img src="<?=asset('images/logo-faam-pos.png')?>" alt="">
+      </a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -145,7 +147,7 @@
 
         <?php for ($i = 0; $i < count($banners); $i++) : ?>
 
-          <div class="carousel-item <?= ($i == 0) ? 'active' : '' ?>" style="background-image: url(<?= SITE['root'] . DS . $banners[$i]->image ?>)">
+          <div class="carousel-item <?= ($i == 0) ? 'active' : '' ?>" style="background-image: url(<?= SITE['root'] . "/" . $banners[$i]->image ?>)">
             <div class="carousel-container">
 
             </div>
