@@ -16,12 +16,15 @@
   border: 2px solid #ffc600;
   color: #006f23;
   font-weight: 700;
+  font-family: "Poppins";
+  font-size: 16px;
 }
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   background: #ffc600;
   color: #006f23;
 }
+
 .navbar a,
 .navbar a:focus {
   color: #fff;
@@ -33,4 +36,64 @@
 
 #header {
   background: #006f23;
+}
+
+#pesquisar-curso h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+#featured-services h5 {
+  display: inline;
+}
+#featured-services ul {
+  list-style: none;
+  padding: 0;
+}
+#featured-services span {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.why-us .content-item span {
+  font-size: 22px;
+  color: #006f23;
+  font-weight: 700;
+}
+
+.why-us .content-item h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.why-us .content-item p {
+  color: #666;
+}
+
+.why-us .content-item:hover {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+.section-title p {
+  color: #000;
+}
+.section-title h2 {
+  color: #000;
+}
+
+a {
+  color: #006f23;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.about .content h3 {
+  color: #000;
 }

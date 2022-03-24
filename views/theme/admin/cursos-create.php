@@ -36,7 +36,6 @@
                              <form action="<?= SITE['root'] ?>/admin/cursos/register" method="POST" enctype="multipart/form-data">
                              <?php endif; ?>
 
-
                              <div class="card-body">
 
                                  <div class="login_form_callback"> <?= flash(); ?></div>
@@ -66,7 +65,7 @@
                                                          <?php if (isset($curso->id) && !empty($curso->logo)) : ?>
                                                              <div style="align-items: center;display:flex">
                                                                  <img style="width:100%" src="<?= SITE['root'] . DS . $curso->logo ?>" data-target="logo" class="previewFile"></img>
-                                                                 <a class="btn btn-danger btn-sm" href="<?= SITE['root'] ?>/admin/posts/remove-logo/<?= $curso->id ?>">
+                                                                 <a class="btn btn-danger btn-sm" href="<?= SITE['root'] ?>/admin/cursos/remover-logo/<?= $curso->id ?>">
                                                                      <i class="far fa-trash-alt" title="Remover logo"></i>
                                                                  </a>
                                                              </div>
@@ -84,7 +83,7 @@
                                                          <?php if (isset($curso->id) && !empty($curso->cover)) : ?>
                                                              <div style="align-items: center;display:flex">
                                                                  <img style="width:100%" src="<?= SITE['root'] . DS . $curso->cover_thumb ?>" data-target="file" class="previewFile"></img>
-                                                                 <a class="btn btn-danger btn-sm" href="<?= SITE['root'] ?>/admin/posts/remove-cover/<?= $curso->id ?>">
+                                                                 <a class="btn btn-danger btn-sm" href="<?= SITE['root'] ?>/admin/cursos/remover-cover/<?= $curso->id ?>">
                                                                      <i class="far fa-trash-alt" title="Remover capa"></i>
                                                                  </a>
                                                              </div>
@@ -233,8 +232,8 @@
 
                                                          <div id="inputFormRow">
                                                              <div class="input-group mb-3">
-                                                                 <input type="text" name="nomeAnexos[]" class="form-control" placeholder="Nome do documento" >
-                                                                 <input type="file" name="anexos[]" class="form-control" >
+                                                                 <input type="text" name="nomeAnexos[]" class="form-control" placeholder="Nome do documento">
+                                                                 <input type="file" name="anexos[]" class="form-control">
 
                                                                  <div class="input-group-append">
                                                                      <button id="removeRow" type="button" class="btn btn-danger">Remover</button>

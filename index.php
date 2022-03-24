@@ -81,6 +81,8 @@ $app->post("/cursos/update/{id}", "Cursos:update", "cursos.update");
 $app->get("/cursos/delete/{id}", "Cursos:delete", "cursos.delete");
 $app->get("/cursos/edit/{id}", "Cursos:edit", "cursos.edit");
     $app->get("/cursos/remover-anexo/{id}/{curso}", "Cursos:removerAnexo", "cursos.removeranexo");
+    $app->get("/cursos/remover-logo/{curso}", "Cursos:removerLogo", "cursos.removerlogo");
+    $app->get("/cursos/remover-cover/{curso}", "Cursos:removerCover", "cursos.removercover");
 
 /** Banners */
 $app->get("/banners", "Banners:home", "banners.home");

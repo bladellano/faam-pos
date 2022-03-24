@@ -113,9 +113,46 @@ class Cursos extends DashController
 
         if (file_exists($anexo->arquivo))
             unlink($anexo->arquivo);
-        $anexo->destroy();
+
+        if ($anexo->destroy())
+            flash("success", "Anexo excluído com sucesso!");
 
         header("Location: " .  SITE['root'] . "/admin/cursos/edit/{$data['curso']}");
+        exit;
+    }
+
+    public function removerLogo($data)
+    {
+        $curso = (new \Source\Models\Curso())->findById($data['curso']);
+
+        if (file_exists($curso->logo))
+            unlink($curso->logo);
+
+        $curso->logo = NULL;
+
+        if ($curso->save())
+            flash("success", "Logo excluída com sucesso!");
+
+        header("Location: " . SITE['root'] . "/admin/cursos/edit/{$curso->id}");
+        exit;
+    }
+
+    public function removerCover($data)
+    {
+        $curso = (new \Source\Models\Curso())->findById($data['curso']);
+
+        if (file_exists($curso->cover)) :
+            unlink($curso->cover);
+            unlink($curso->cover_thumb);
+        endif;
+
+        $curso->cover = NULL;
+        $curso->cover_thumb = NULL;
+
+        if ($curso->save())
+            flash("success", "Capa excluída com sucesso!");
+
+        header("Location: " . SITE['root'] . "/admin/cursos/edit/{$curso->id}");
         exit;
     }
 
