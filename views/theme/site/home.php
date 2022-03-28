@@ -137,7 +137,7 @@
 
             <div class="section-title">
                 <h2>Cursos de Pós-Graduação</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <p>Assim, alinhado às diretrizes curriculares nacionais, reconhecido pelo MEC e com o diferencial de ter uma proposta fundamentada em investimentos contínuos na capacitação, nos cursos de pós-graduação na Faculdade FAAM é o mais inovador e completo em todas as áreas no território nacional.</p>
             </div>
 
             <div class="row">
@@ -145,7 +145,7 @@
                     <ul id="portfolio-flters">
                         <li data-filter="*" class="filter-active">Todos</li>
                         <?php foreach ($areas as $a) : ?>
-                            <li data-filter=".filter-<?= slug($a->id) ?>"><?= $a->nome ?></li>
+                            <li data-filter=".filter-<?= slug($a->nome) ?>"><?= $a->nome ?></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -155,7 +155,7 @@
 
                 <?php foreach ($cursos as $c) : ?>
 
-                    <div data-url="<?= SITE['root'] . DS . 'cursos' . DS . $c->slug ?>" class="col-lg-4 col-md-6 content-item portfolio-item filter-<?= $c->id_area ?>">
+                    <div data-url="<?= SITE['root'] . DS . 'cursos' . DS . $c->slug ?>" class="col-lg-4 col-md-6 content-item portfolio-item filter-<?= slug($c->area)?>">
                         <span><?= mb_strtoupper($c->nome) ?></span>
                         <h4><i class="bi bi-calendar4-week"></i> <?= $c->duracao ?> meses | <i class="bx bx-medal"></i> Reconhecido pelo MEC</h4>
                         <p><?= $c->sobre_o_curso ?></p>

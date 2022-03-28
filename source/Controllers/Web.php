@@ -144,7 +144,10 @@ class Web extends Controller
     {
         $banners = (new Banner)->find()->order("updated_at DESC")->fetch(true) ?? [];
         $areas = (new Area)->find()->order("nome ASC")->fetch(true) ?? [];
-        $cursos = (new Curso)->find()->order("nome ASC")->fetch(true) ?? [];
+
+        $connect = Connect::getInstance();
+        $SQL = "SELECT pa.nome as area, pc.* FROM pos_cursos pc LEFT JOIN pos_areas pa ON pa.id = pc.id_area";
+        $cursos = ($connect->query($SQL))->fetchAll();
 
         $head = (new Seo())->render(
             SITE['name'],
