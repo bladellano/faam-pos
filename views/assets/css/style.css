@@ -89,9 +89,7 @@
   cursor: pointer;
 }
 
-.section-title p {
-  color: #000;
-}
+.section-title p,
 .section-title h2 {
   color: #000;
 }
