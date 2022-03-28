@@ -134,8 +134,53 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>Green</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+      <div class="row">
+        <div class="col-md-3">
+          <h4>Institucional</h4>
+          <ul>
+            <li> <a href="#"> Blog</a></li>
+            <li> <a href="#"> Contrato</a></li>
+            <li> <a href="#"> Aviso de Privacidade</a></li>
+            <li> <a href="#"> Regulamentos</a></li>
+            <li> <a href="#"> Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4>Áreas de Estudo</h4>
+          <ul>
+            <li> <a href="#"> Blog</a></li>
+            <li> <a href="#"> Contrato</a></li>
+            <li> <a href="#"> Aviso de Privacidade</a></li>
+            <li> <a href="#"> Regulamentos</a></li>
+            <li> <a href="#"> Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4>Acesso Rápido</h4>
+          <ul>
+            <li> <a href="#"> Blog</a></li>
+            <li> <a href="#"> Contrato</a></li>
+            <li> <a href="#"> Aviso de Privacidade</a></li>
+            <li> <a href="#"> Regulamentos</a></li>
+            <li> <a href="#"> Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4>Endereço</h4>
+          <ul>
+            <li> <a href="#"> BR-010, 590 - Levilândia, Ananindeua - PA, 67000-000</a></li>
+          </ul>
+          <h4>Telefone</h4>
+          <ul>
+            <li> <a href="#"> (91) 9 9143-6058</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <img style="width: 146px;" src="<?=asset('images/logo-pb.png')?>" alt="SEM LOGO">
+      <p>A Faculdade de Medicina e Odontologia São Leopoldo Mandic tem como missão ensinar e formar profissionais de valor para atuarem na área da saúde.</p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -144,10 +189,10 @@
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright <strong><span>Green</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span><?=SITE['name']?></span></strong>. Todos os direitos reservados
       </div>
       <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Desenvolvido por <a href="https://www.dellanosites.com.br/" target="_blank">DellanoSites</a>
       </div>
     </div>
   </footer><!-- End Footer -->

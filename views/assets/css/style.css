@@ -1,3 +1,6 @@
+/** Desenvolvido para Faculdade Faam Pós-Graduação em 28-03-2022
+By Caio Dellano
+ */
 :root {
   --cor-primary: #006f23;
   --cor-primary: #b2ddac;
@@ -160,6 +163,7 @@ a {
   position: relative;
   transition: all 0.5s ease-in-out;
   z-index: 4;
+  background-color: #fff;
 }
 .wrapForm label,
 .wrapForm h5,
@@ -236,4 +240,38 @@ a {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   border: 1px solid #ddd;
+}
+
+#footer ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+#footer ul li {
+  line-height: 30px;
+}
+#footer ul li a {
+  color: #fff;
+  font-weight: unset;
+}
+#footer ul li a:hover {
+  color: #006f23;
+}
+#footer h4 {
+  color: #fff;
+  font-weight: 700;
+  font-family: "Poppins";
+  font-size: 18px;
+}
+
+#footer {
+  background: #160c4a;
+}
+
+#footer .social-links a:hover {
+  background: #8dcb66;
+}
+#footer .social-links a {
+  background: #006f23;
 }

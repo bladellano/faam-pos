@@ -28,22 +28,7 @@ $app->get("/busca", "Web:search", "web.search");
 $app->post("/redirect-result", "Web:redirectResult", "web.redirectresult");
 
 /** Páginas da Web */
-$app->get("/semi-novos", "Web:semiNew", "web.seminew");
-$app->get("/test-drive", "Web:testDrive", "web.testdrive");
-$app->get("/pecas-e-acessorios", "Web:partsAndAccessories", "web.partsandaccessories");
-$app->get("/fale-conosco", "Web:contactUs", "web.contactus");
-$app->get("/novos/{slug}", "Web:getCar", "web.getcar");
-
-/** Cursos */
 $app->get("/cursos/{slug}", "Web:getCurso", "web.getcurso");
-
-$app->get("/get-car-home/{id}", "Web:getCarHome", "web.getcarhome");
-
-/** Forms */
-$app->post("/form-submission", "Web:sendFormContact", "web.sendformcontact");
-$app->post("/form-scheduling-submission", "Web:sendFormScheduling", "web.sendformscheduling");
-$app->post("/formcontactussubmission", "Web:sendFormContactUs", "web.sendformcontactus");
-
 $app->get("/banner/{slug}", "Web:showBanner", "web.showbanner");
 
 /**
@@ -112,18 +97,6 @@ $app->get("/banners/delete/{id}", "Banners:delete", "banners.delete");
 $app->get("/banners/edit/{id}", "Banners:edit", "banners.edit");
 /** Banners - Métodos internos */
 $app->get("/banners/change-order-banner/{id}", "Banners:changeOrderBanner", "banners.changeorderbanner");
-
-
-/** Cars */
-$app->get("/cars", "Cars:home", "cars.home");
-$app->get("/cars/create", "Cars:create", "cars.create");
-$app->post("/cars/register", "Cars:register", "cars.register");
-$app->post("/cars/update/{id}", "Cars:update", "cars.update");
-$app->get("/cars/delete/{id}", "Cars:delete", "cars.delete");
-$app->get("/cars/edit/{id}", "Cars:edit", "cars.edit");
-/** Cars - Métodos internos */
-$app->post("/cars/set-type-image", "Cars:setTypeImage", "cars.settypeimage");
-$app->get("/cars/delete-image/{id}", "Cars:deleteImage", "cars.deleteimage");
 
 /** Users */
 $app->get("/users", "Users:home", "users.home");
