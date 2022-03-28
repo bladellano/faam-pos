@@ -266,56 +266,45 @@
               </a>
             </li>
 
-            <!-- <li class="nav-item">
+             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-car-alt"></i>
+                <i class="nav-icon fa fa-graduation-cap"></i>
                 <p>
-                  Carros
+                  Cursos
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= SITE['root'] ?>/admin/cars/create" class="nav-link">
+                  <a href="<?= SITE['root'] ?>/admin/cursos/create" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Novo</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= SITE['root'] ?>/admin/cars" class="nav-link">
+                  <a href="<?= SITE['root'] ?>/admin/cursos" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Registros</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/charts/inline.html" class="nav-link">
+                  <a href="<?= SITE['root'] ?>/admin/areas" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Marcas</p>
+                    <p>Áreas</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="pages/charts/uplot.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Categorias</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="pages/charts/uplot.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Modelos</p>
-                  </a>
-                </li>
+         
               </ul>
-            </li> -->
+            </li> 
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="<?= SITE['root'] ?>/admin/cursos" class="nav-link">
                 <i class="nav-icon fa fa-graduation-cap"></i>
                 <p>
                   Cursos
                 </p>
               </a>
-            </li>
+            </li> -->
 
             <li class="nav-item">
               <a href="<?= SITE['root'] ?>/admin/posts" class="nav-link">
@@ -331,6 +320,15 @@
                 <i class="nav-icon far fa-images"></i>
                 <p>
                   Banners
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="<?= SITE['root'] ?>/admin/parceiros" class="nav-link">
+                <i class="nav-icon fa fa-solid fa-handshake"></i>
+                <p>
+                  Parceiros
                 </p>
               </a>
             </li>
@@ -440,7 +438,6 @@
   <script src="<?= asset("dist/js/adminlte.js", 'admin'); ?>s"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="<?= asset("dist/js/demo.js", 'admin'); ?>"></script>
-
   <!-- Alertify -->
   <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 

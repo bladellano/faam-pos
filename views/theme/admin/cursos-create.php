@@ -105,13 +105,31 @@
                                                      <div class="col-md-6">
 
                                                          <div class="row">
-                                                             <div iv class="form-group col-md-12">
+                                                             <div iv class="form-group col-md-6">
                                                                  <label for="nome">Nome do Curso</label>
                                                                  <input value="<?= isset($curso->nome) ? $curso->nome : "" ?>" type="text" class="form-control" id="nome" name="nome">
                                                              </div>
+
+                                                             <div iv class="form-group col-md-6">
+                                                                 <label for="nome">Área</label>
+                                                                 <select name="id_area" id="id_area" class="form-control">
+                                                                     <option value="0">Nenhuma</option>
+                                                                     <?php foreach ($areas as $a) : ?>
+                                                                         <option <?= (isset($curso->id_area) && $curso->id_area == $a->id) ? 'selected' : '' ?> value="<?= $a->id ?>"><?= $a->nome ?></option>
+                                                                     <?php endforeach ?>
+                                                                 </select>
+                                                             </div>
+
+                                                             <div class="col-md-12">
+                                                                 <div class="form-group">
+                                                                     <label for="sobre_o_curso">Sobre o Curso</label>
+                                                                     <input maxlength="150" value="<?= isset($curso->sobre_o_curso) ? $curso->sobre_o_curso : "" ?>" type="text" class="form-control" id="sobre_o_curso" name="sobre_o_curso">
+                                                                 </div>
+                                                             </div>
+
                                                          </div>
 
-                                                         <div iv class="form-group">
+                                                         <div class="form-group">
 
                                                              <label for="objetivo_geral">Objetivo Geral</label>
                                                              <textarea name="objetivo_geral" id="objetivo_geral" class="summernote"><?= isset($curso->objetivo_geral) ? $curso->objetivo_geral : "" ?></textarea>
@@ -191,8 +209,7 @@
                                                              <label for="diferenciais">Diferenciais</label>
                                                              <textarea name="diferenciais" id="diferenciais" class="summernote"><?= isset($curso->diferenciais) ? $curso->diferenciais : "" ?></textarea>
 
-                                                             <label for="sobre_o_curso">Sobre o Curso</label>
-                                                             <textarea name="sobre_o_curso" id="sobre_o_curso" class="summernote"><?= isset($curso->sobre_o_curso) ? $curso->sobre_o_curso : "" ?></textarea>
+
 
                                                              <label for="matriz">Matriz</label>
                                                              <textarea name="matriz" id="matriz" class="summernote"><?= isset($curso->matriz) ? $curso->matriz : "" ?></textarea>

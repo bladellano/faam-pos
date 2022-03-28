@@ -4,17 +4,18 @@ namespace Source\Models;
 
 use CoffeeCode\DataLayer\DataLayer;
 
-class Post extends DataLayer
+class Area extends DataLayer
 {
     public function __construct()
     {
-        parent::__construct("pos_posts", ["title", "description", "content", "type"]);
+        parent::__construct("pos_areas", ["nome", "descricao"]);
     }
 
     public function save(): bool
     {
-        if (empty($this->title) || !filter_var($this->title, FILTER_DEFAULT)) {
-            $this->fail = new \Exception("Informe o título");
+
+        if (empty($this->nome) || !filter_var($this->nome, FILTER_DEFAULT)) {
+            $this->fail = new \Exception("Informe o nome");
             return false;
         }
 

@@ -39,10 +39,12 @@
                                  <tr>
                                      <th style="width: 10px">#</th>
                                      <th>Curso</th>
+                                     <th>Logo</th>
                                      <th>Slug</th>
                                      <th>Carga Horária</th>
                                      <th>Duração</th>
                                      <th>Turno</th>
+                                     <th>Área</th>
                                      <th>Criado</th>
                                      <th>Atualizado</th>
                                      <th style="width: 70px"></th>
@@ -55,10 +57,12 @@
                                      <tr>
                                          <td><?= $c->id ?></td>
                                          <td><a href="cursos/edit/<?=$c->id?>"><?= $c->nome ?></a></td>
+                                         <td> <img height="100" width="200" class="zoomImg" src="<?= SITE['root'].DS.$c->logo ?>" alt="SEM IMAGEM"></td>
                                          <td><?= $c->slug ?></td>
                                          <td><?= $c->carga_horaria ?></td>
                                          <td><?= $c->duracao ?></td>
                                          <td><?= $c->turno ?></td>
+                                         <td><?= $c->id_area ?></td>
                                          <td><?= convertDatePtbr($c->created_at)?></td>
                                          <td><?= convertDatePtbr($c->updated_at)?></td>
                                          <td>

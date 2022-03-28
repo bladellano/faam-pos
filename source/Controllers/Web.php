@@ -2,14 +2,17 @@
 
 namespace Source\Controllers;
 
-use CoffeeCode\DataLayer\Connect;
 use Source\Seo;
 use Source\Mailer;
 use Source\Models\Car;
+use Source\Models\Area;
+use Source\Models\Lead;
+use Source\Models\Anexo;
+use Source\Models\Curso;
 use Source\Models\Banner;
 use Source\Models\Car\CarImage;
 use Source\Models\Car\CarVersao;
-use Source\Models\Lead;
+use CoffeeCode\DataLayer\Connect;
 
 /**
  * Class Web
@@ -140,6 +143,8 @@ class Web extends Controller
     public function home(): void
     {
         $banners = (new Banner)->find()->order("updated_at DESC")->fetch(true) ?? [];
+        $areas = (new Area)->find()->order("nome ASC")->fetch(true) ?? [];
+        $cursos = (new Curso)->find()->order("nome ASC")->fetch(true) ?? [];
 
         $head = (new Seo())->render(
             SITE['name'],
@@ -150,6 +155,8 @@ class Web extends Controller
 
         echo $this->view->render("theme/site/home", [
             "banners" => $banners,
+            "areas" => $areas,
+            "cursos" => $cursos,
             "head" => $head
         ]);
     }
@@ -183,6 +190,28 @@ class Web extends Controller
             "head" => $head
         ]);
     }
+
+
+    public function getCurso($data): void
+    {
+        $curso = (new Curso())->find("slug = :slug", "slug={$data['slug']}")->fetch();
+        $anexos = (new Anexo())->find("id_curso = :id_curso", "id_curso={$curso->id}")->fetch(true) ?? [];
+
+        /** Seo */
+        /* $head = (new Seo())->render(
+            SITE['name'] . " | " . $car->nome_titulo,
+            SITE['desc'] . $car->nome_subtitulo,
+            DS . $car->slug,
+            asset('images/image-default-vega-kia.jpeg', 'site', 0),
+        ); */
+
+        echo $this->view->render("theme/site/curso", [
+            "head" => [],
+            "curso" => $curso,
+            "anexos" => $anexos
+        ]);
+    }
+
 
     public function contactUs(): void
     {
@@ -301,7 +330,7 @@ class Web extends Controller
 
     public function sendFormContactUs($data)
     {
-        
+
         $data['aceita_receber_email'] = isset($data['aceita_receber_email']) ? 'SIM' : 'NÃO';
         $data['aceita_receber_sms'] = isset($data['aceita_receber_sms']) ? 'SIM' : 'NÃO';
 

@@ -40,7 +40,6 @@ class Posts extends DashController
 
     public function register($data): void
     {
-
         $post = new \Source\Models\Post;
         $uploadImg = new \CoffeeCode\Uploader\Image(STORAGE, $this->path);
         $user = \Source\Session\Session::get('user');

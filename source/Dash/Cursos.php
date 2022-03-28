@@ -3,13 +3,16 @@
 namespace Source\Dash;
 
 use Source\Dash\Controller as DashController;
+use stdClass;
 
 class Cursos extends DashController
 {
     private $path = 'cursos';
+    private $areas;
 
     public function __construct($router)
     {
+        $this->areas = (new \Source\Models\Area)->find()->order('id DESC')->fetch(true) ?? [];
         parent::__construct($router);
     }
 
@@ -20,7 +23,7 @@ class Cursos extends DashController
         echo $this->view->render("theme/admin/cursos", [
             "title" => "Cursos",
             "titleHeader" => "Registros",
-            "cursos" =>  $cursos
+            "cursos" =>  $cursos        
         ]);
     }
 
@@ -29,6 +32,7 @@ class Cursos extends DashController
         echo $this->view->render("theme/admin/cursos-create", [
             "title" => "Cursos",
             "titleHeader" => "Cadastrar",
+            "areas" => $this->areas,
         ]);
     }
 
@@ -167,6 +171,7 @@ class Cursos extends DashController
             "titleHeader" => "Edição",
             "curso" => $curso,
             "anexos" => $anexos,
+            "areas" => $this->areas,
         ]);
     }
 

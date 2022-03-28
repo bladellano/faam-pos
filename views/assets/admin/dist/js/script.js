@@ -4,10 +4,21 @@
  */
 $(function () {
 
-
+    //Date and time picker
+    $('#reservationdatetime').datetimepicker({
+        format: 'DD/MM/YYYY H:m',
+        icons: { time: 'far fa-clock' }
+    });
     /**
      * Adicionar e remover anexos Cursos
      */
+
+    $('#type').change(function () {
+        if ($(this).val() != 'schedule')
+            $('[name="event_date"]').attr('disabled', true);
+        else
+            $('[name="event_date"]').attr('disabled', false);
+    });
 
     // add row
     $("#addRow").click(function () {

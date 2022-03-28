@@ -58,7 +58,7 @@
 
                                  <div class="form-group">
                                      <label for="title">Título</label>
-                                     <input value="<?= isset($post->title) ? $post->title : "" ?>" type="text" class="form-control" id="title" name="title">
+                                     <input maxlength="100" value="<?= isset($post->title) ? $post->title : "" ?>" type="text" class="form-control" id="title" name="title">
                                  </div>
 
                                  <div class="form-group">
@@ -66,14 +66,10 @@
                                      <input value="<?= isset($post->description) ? $post->description : "" ?>" type="text" class="form-control" id="description" name="description">
                                  </div>
 
-                                 <div class="form-group">
-                                     <label for="content">Conteúdo</label>
-                                     <textarea name="content" id="content" cols="30" rows="5" class="summernote"><?= isset($post->content) ? $post->content : "" ?></textarea>
-                                 </div>
-
                                  <div class="row">
 
                                      <div class="form-group col-md-6">
+
                                          <label for="type">Tipo</label>
                                          <select name="type" id="type" class="form-control">
                                              <option value="">--</option>
@@ -84,6 +80,29 @@
                                      </div>
 
                                      <div class="form-group col-md-6">
+                                         <label>Data do Evento</label>
+                                         <div class="input-group date" id="reservationdatetime" data-target-input="nearest">
+                                             <input value="<?= isset($post->event_date) ? $post->event_date : "" ?>" 
+                                              <?=(isset($post->id) && !empty($post->event_date)) ? '' : 'disabled' ?>
+                                              required
+                                              type="text" class="form-control datetimepicker-input" data-target="#reservationdatetime" name="event_date">
+                                             <div class="input-group-append" data-target="#reservationdatetime" data-toggle="datetimepicker">
+                                                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                             </div>
+                                         </div>
+                                     </div>
+
+                                 </div>
+
+
+                                 <div class="form-group">
+                                     <label for="content">Conteúdo</label>
+                                     <textarea name="content" id="content" cols="30" rows="5" class="summernote"><?= isset($post->content) ? $post->content : "" ?></textarea>
+                                 </div>
+
+                                 <div class="row">
+
+                                     <div class="form-group col-md-12">
                                          <label for="id_category">Categoria</label>
 
                                          <select name="id_category" id="id_category" class="form-control">
@@ -117,6 +136,6 @@
  <!-- /.content -->
 
  <?php $v->start("scripts"); ?>
-    <script src="<?= asset("js/form.js"); ?>"></script>
-    <script src="<?= asset("js/jquery.toaster.js"); ?>"></script>
+ <script src="<?= asset("js/form.js"); ?>"></script>
+ <script src="<?= asset("js/jquery.toaster.js"); ?>"></script>
  <?php $v->end(); ?>

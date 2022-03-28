@@ -107,6 +107,12 @@ function flash(string $type = null, string $message = null): ?string
     return null;
 }
 
+function slug($str)
+{
+    $slug = new \Ausi\SlugGenerator\SlugGenerator();
+    return $slug->generate($str);
+}
+
 function convertDatePtbr($strdate)
 {
     $DateTime = new DateTime($strdate);

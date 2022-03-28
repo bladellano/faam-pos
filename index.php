@@ -1,7 +1,7 @@
 <?php
 
-ini_set('display_errors',1);
-ini_set('display_startup_erros',1);
+ini_set('display_errors', 1);
+ini_set('display_startup_erros', 1);
 error_reporting(E_ALL);
 
 ob_start();
@@ -33,6 +33,9 @@ $app->get("/test-drive", "Web:testDrive", "web.testdrive");
 $app->get("/pecas-e-acessorios", "Web:partsAndAccessories", "web.partsandaccessories");
 $app->get("/fale-conosco", "Web:contactUs", "web.contactus");
 $app->get("/novos/{slug}", "Web:getCar", "web.getcar");
+
+/** Cursos */
+$app->get("/cursos/{slug}", "Web:getCurso", "web.getcurso");
 
 $app->get("/get-car-home/{id}", "Web:getCarHome", "web.getcarhome");
 
@@ -71,7 +74,23 @@ $app->post("/posts/register", "Posts:register", "posts.register");
 $app->post("/posts/update/{id}", "Posts:update", "posts.update");
 $app->get("/posts/delete/{id}", "Posts:delete", "posts.delete");
 $app->get("/posts/edit/{id}", "Posts:edit", "posts.edit");
-    $app->get("/posts/remove-cover/{id}", "Posts:removeCover", "posts.removecover");
+$app->get("/posts/remove-cover/{id}", "Posts:removeCover", "posts.removecover");
+
+/** Parceiros */
+$app->get("/parceiros", "Parceiros:home", "parceiros.home");
+$app->get("/parceiros/create", "Parceiros:create", "parceiros.create");
+$app->post("/parceiros/register", "Parceiros:register", "parceiros.register");
+$app->post("/parceiros/update/{id}", "Parceiros:update", "parceiros.update");
+$app->get("/parceiros/delete/{id}", "Parceiros:delete", "parceiros.delete");
+$app->get("/parceiros/edit/{id}", "Parceiros:edit", "parceiros.edit");
+
+/** Áreas */
+$app->get("/areas", "Areas:home", "areas.home");
+$app->get("/areas/create", "Areas:create", "areas.create");
+$app->post("/areas/register", "Areas:register", "areas.register");
+$app->post("/areas/update/{id}", "Areas:update", "areas.update");
+$app->get("/areas/delete/{id}", "Areas:delete", "areas.delete");
+$app->get("/areas/edit/{id}", "Areas:edit", "areas.edit");
 
 /** Cursos */
 $app->get("/cursos", "Cursos:home", "cursos.home");
@@ -80,9 +99,9 @@ $app->post("/cursos/register", "Cursos:register", "cursos.register");
 $app->post("/cursos/update/{id}", "Cursos:update", "cursos.update");
 $app->get("/cursos/delete/{id}", "Cursos:delete", "cursos.delete");
 $app->get("/cursos/edit/{id}", "Cursos:edit", "cursos.edit");
-    $app->get("/cursos/remover-anexo/{id}/{curso}", "Cursos:removerAnexo", "cursos.removeranexo");
-    $app->get("/cursos/remover-logo/{curso}", "Cursos:removerLogo", "cursos.removerlogo");
-    $app->get("/cursos/remover-cover/{curso}", "Cursos:removerCover", "cursos.removercover");
+$app->get("/cursos/remover-anexo/{id}/{curso}", "Cursos:removerAnexo", "cursos.removeranexo");
+$app->get("/cursos/remover-logo/{curso}", "Cursos:removerLogo", "cursos.removerlogo");
+$app->get("/cursos/remover-cover/{curso}", "Cursos:removerCover", "cursos.removercover");
 
 /** Banners */
 $app->get("/banners", "Banners:home", "banners.home");
@@ -91,8 +110,8 @@ $app->post("/banners/register", "Banners:register", "banners.register");
 $app->post("/banners/update/{id}", "Banners:update", "banners.update");
 $app->get("/banners/delete/{id}", "Banners:delete", "banners.delete");
 $app->get("/banners/edit/{id}", "Banners:edit", "banners.edit");
-    /** Banners - Métodos internos */
-    $app->get("/banners/change-order-banner/{id}", "Banners:changeOrderBanner", "banners.changeorderbanner");    
+/** Banners - Métodos internos */
+$app->get("/banners/change-order-banner/{id}", "Banners:changeOrderBanner", "banners.changeorderbanner");
 
 
 /** Cars */
@@ -102,9 +121,9 @@ $app->post("/cars/register", "Cars:register", "cars.register");
 $app->post("/cars/update/{id}", "Cars:update", "cars.update");
 $app->get("/cars/delete/{id}", "Cars:delete", "cars.delete");
 $app->get("/cars/edit/{id}", "Cars:edit", "cars.edit");
-    /** Cars - Métodos internos */
-    $app->post("/cars/set-type-image", "Cars:setTypeImage", "cars.settypeimage");
-    $app->get("/cars/delete-image/{id}", "Cars:deleteImage", "cars.deleteimage");
+/** Cars - Métodos internos */
+$app->post("/cars/set-type-image", "Cars:setTypeImage", "cars.settypeimage");
+$app->get("/cars/delete-image/{id}", "Cars:deleteImage", "cars.deleteimage");
 
 /** Users */
 $app->get("/users", "Users:home", "users.home");
