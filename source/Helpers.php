@@ -1,17 +1,6 @@
 <?php
 
-use Source\Models\Car;
 use Source\Models\Post;
-
-function getCarsMenu(): array
-{
-    return (new Car())->find("novo = :novo", 'novo=1')->fetch(true) ?? [];
-}
-
-function getSiteMap(): array
-{
-    return (new Post())->find("category_id = :category_id", 'category_id=1')->fetch(true) ?? [];
-}
 
 function buildBreadcrumb(): string
 {
@@ -107,7 +96,7 @@ function flash(string $type = null, string $message = null): ?string
     return null;
 }
 
-function slug($str)
+function slug($str):string
 {
     $slug = new \Ausi\SlugGenerator\SlugGenerator();
     return $slug->generate((string) $str);

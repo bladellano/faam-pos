@@ -145,7 +145,7 @@
                     <ul id="portfolio-flters">
                         <li data-filter="*" class="filter-active">Todos</li>
                         <?php foreach ($areas as $a) : ?>
-                            <li data-filter=".filter-<?= slug($a->nome) ?>"><?= $a->nome ?></li>
+                            <li data-filter=".filter-<?= $a->slug ?>"><?= $a->nome ?></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -155,7 +155,7 @@
 
                 <?php foreach ($cursos as $c) : ?>
 
-                    <div data-url="<?= SITE['root'] . DS . 'cursos' . DS . $c->slug ?>" class="col-lg-4 col-md-6 content-item portfolio-item filter-<?= slug($c->area)?>">
+                    <div data-url="<?= SITE['root'] . DS . 'cursos' . DS . $c->slug ?>" class="col-lg-4 col-md-6 content-item portfolio-item filter-<?= $c->area?>">
                         <span><?= mb_strtoupper($c->nome) ?></span>
                         <h4><i class="bi bi-calendar4-week"></i> <?= $c->duracao ?> meses | <i class="bx bx-medal"></i> Reconhecido pelo MEC</h4>
                         <p><?= $c->sobre_o_curso ?></p>

@@ -146,7 +146,7 @@ class Web extends Controller
         $areas = (new Area)->find()->order("nome ASC")->fetch(true) ?? [];
 
         $connect = Connect::getInstance();
-        $SQL = "SELECT pa.nome as area, pc.* FROM pos_cursos pc LEFT JOIN pos_areas pa ON pa.id = pc.id_area";
+        $SQL = "SELECT pa.slug as area, pc.* FROM pos_cursos pc LEFT JOIN pos_areas pa ON pa.id = pc.id_area";
         $cursos = ($connect->query($SQL))->fetchAll();
 
         $head = (new Seo())->render(
