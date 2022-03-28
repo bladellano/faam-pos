@@ -180,7 +180,7 @@
 
 
       <img style="width: 146px;" src="<?=asset('images/logo-pb.png')?>" alt="SEM LOGO">
-      <p>A Faculdade de Medicina e Odontologia São Leopoldo Mandic tem como missão ensinar e formar profissionais de valor para atuarem na área da saúde.</p>
+      <p>A Faculdade FAAM tem como missão ensinar e formar profissionais de valor para atuarem em todas as áreas.</p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
