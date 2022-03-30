@@ -3,10 +3,10 @@ By Caio Dellano
  */
 :root {
   --cor-primary: #006f23;
-  --cor-primary: #b2ddac;
-  --cor-primary: #556a52;
-  --cor-primary: #8dcb66;
-  --cor-primary: #ffc600;
+  --cor-secondary: #b2ddac;
+  --cor-third: #556a52;
+  --cor-fourth: #8dcb66;
+  --cor-fifth: #ffc600;
 }
 
 #hero .carousel-item::before {
@@ -15,39 +15,39 @@ By Caio Dellano
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background-color: #ffc600;
-  border: 2px solid #ffc600;
-  color: #006f23;
+  background-color: var(--cor-fifth);
+  border: 2px solid var(--cor-fifth);
+  color: var(--cor-primary);
   font-weight: 700;
   font-family: "Poppins";
   font-size: 16px;
 }
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
-  background: #ffc600;
-  color: #006f23;
+  background: var(--cor-fifth);
+  color: var(--cor-primary);
 }
 
 .navbar a,
 .navbar a:focus {
-  color: #fff;
+  color: white;
   text-transform: uppercase;
 }
 .navbar .dropdown ul a {
-  color: #006f23;
+  color: var(--cor-primary);
 }
 
 #header {
-  background: #006f23;
+  background: var(--cor-primary);
 }
 
 #pesquisar-curso {
-  background-color: #006f23;
+  background-color: var(--cor-primary);
 }
 #pesquisar-curso h3 {
   font-size: 36px;
   font-weight: 700;
-  color: #fff;
+  color: white;
   position: relative;
   font-family: "Poppins", sans-serif;
   padding: 0;
@@ -65,7 +65,7 @@ By Caio Dellano
   display: inline-block;
   font-size: 24px;
   font-weight: 400;
-  color: #fff;
+  color: white;
 }
 .why-us .content-item {
   padding: 30px 18px;
@@ -75,7 +75,7 @@ By Caio Dellano
 
 .why-us .content-item span {
   font-size: 22px;
-  color: #006f23;
+  color: var(--cor-primary);
   font-weight: 700;
 }
 
@@ -98,7 +98,7 @@ By Caio Dellano
 }
 
 a {
-  color: #006f23;
+  color: var(--cor-primary);
   font-weight: 700;
   transition: all 0.2s;
 }
@@ -127,13 +127,13 @@ a {
 }
 
 .breadcrumb-faam {
-  background: #8dcb66;
+  background: var(--cor-fourth);
   padding-top: 14px;
   padding-bottom: 1px;
 }
 .breadcrumb-item + .breadcrumb-item::before {
   content: "\203A";
-  color: #006f23;
+  color: var(--cor-primary);
 }
 
 /* Curso */
@@ -142,7 +142,10 @@ a {
 }
 
 .curso h3.nomeCurso {
-  color: #006f23;
+  color: var(--cor-primary);
+}
+.curso h2 {
+  color: var(--cor-primary);
 }
 .curso h2,
 .curso h3,
@@ -163,7 +166,7 @@ a {
   position: relative;
   transition: all 0.5s ease-in-out;
   z-index: 4;
-  background-color: #fff;
+  background-color: white;
 }
 .wrapForm label,
 .wrapForm h5,
@@ -172,20 +175,20 @@ a {
 }
 
 .cta {
-  background: #006f23;
+  background: var(--cor-primary);
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #006f23;
+  background: var(--cor-primary);
 }
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  background: #006f23;
+  background: var(--cor-primary);
 }
 
 #featured-services span {
-  background: #006f23 !important;
+  background: var(--cor-primary) !important;
 }
 
 /* Paginas internas */
@@ -207,11 +210,11 @@ a {
 }
 .wrapInternalImage p {
   position: absolute;
-  background-color: #006f23;
+  background-color: var(--cor-primary);
   right: 50%;
   top: 6%;
   transform: translate(50%, 50%);
-  color: #fff;
+  color: white;
   min-width: 200px;
   text-align: center;
   padding: 10px 2px;
@@ -232,7 +235,7 @@ a {
 }
 
 #hero .carousel-indicators li.active {
-  background: #006f23;
+  background: var(--cor-primary);
 }
 .portfolio #portfolio-flters li {
   color: #000;
@@ -252,14 +255,14 @@ a {
   line-height: 30px;
 }
 #footer ul li a {
-  color: #fff;
+  color: white;
   font-weight: unset;
 }
 #footer ul li a:hover {
-  color: #006f23;
+  color: var(--cor-primary);
 }
 #footer h4 {
-  color: #fff;
+  color: white;
   font-weight: 700;
   font-family: "Poppins";
   font-size: 18px;
@@ -270,8 +273,37 @@ a {
 }
 
 #footer .social-links a:hover {
-  background: #8dcb66;
+  background: var(--cor-fourth);
 }
 #footer .social-links a {
-  background: #006f23;
+  background: var(--cor-primary);
+}
+
+/* Custom Paginação */
+
+.paginator {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.paginator_item {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 4px 12px;
+  background: #a287e7;
+  color: #fff;
+  text-decoration: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.paginator_item:hover {
+  background: #8a6ed5;
+}
+
+.paginator_active,
+.paginator_active:hover {
+  background: #cccccc;
 }

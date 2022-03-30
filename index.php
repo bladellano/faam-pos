@@ -28,6 +28,7 @@ $app->get("/busca", "Web:search", "web.search");
 $app->post("/redirect-result", "Web:redirectResult", "web.redirectresult");
 
 /** Páginas da Web */
+$app->get("/cursos", "Web:cursos", "web.cursos");
 $app->get("/cursos/{slug}", "Web:getCurso", "web.getcurso");
 $app->get("/banner/{slug}", "Web:showBanner", "web.showbanner");
 

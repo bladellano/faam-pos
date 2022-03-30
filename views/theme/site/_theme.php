@@ -25,6 +25,8 @@
   <link href="<?= SITE['root'] . "/views/assets/site" ?>/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="<?= SITE['root'] . "/views/assets/site" ?>/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
   <!-- Template Main CSS File -->
   <link href="<?= SITE['root'] . "/views/assets/site" ?>/css/style.css" rel="stylesheet">
 
@@ -211,7 +213,10 @@
 
   <script src="<?= SITE['root'] . "/views/assets/" ?>js/jquery.js"></script>
   <script src="<?= SITE['root'] . "/views/assets/" ?>js/jquery.mask.min.js"></script>
-  <script src="<?= SITE['root'] . "/views/assets/site" ?>/js/script.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+  <script src="<?= SITE['root'] . "/views/assets/" ?>js/script.js"></script>
 
 </body>
 

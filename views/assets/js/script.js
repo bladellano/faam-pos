@@ -1,78 +1,77 @@
-
 $(function () {
 
-    /**
-     * Aplica máscara para formato monetário
-     */
 
-    // $('.money').mask('#.##0,00', { reverse: true });
+    $('#form-pesquisa-curso').submit(function (e) {
+        e.preventDefault();
 
-    // $('.toggle-one').bootstrapToggle({
-    //     on: 'Sim',
-    //     off: 'Não'
-    // });
-    
-});
+        let url = $(this).find('button').data('url')
+        let data = $(this).serializeArray();
+        
+        if (!data[0].value.length) return;
+        let queryString = $.param(data);
 
-/**
- * FUNCTIONS
- */
-
-function toggleStatus(e) {
-
-    let status = $(e).is(':checked') ? 1 : 0;
-    let id = $(e).data('id');
-
-    $.ajax({
-        type: "POST",
-        url: "produtos/toggle_status",
-        data: { id, status },
-        dataType: "json",
-
-        beforeSend: function (load) {
-            ajax_load("open");
-        },
-        success: function (su) {
-
-            if (su.message) {
-                let view = '<div class="message ' + su.message.type + '">' + su.message.message + '</div>';
-                $(".login_form_callback").html(view);
-                $(".message").effect("bounce");
-                return;
-            }
-
-            if (su.redirect) {
-                window.location.href = su.redirect.url;
-            }
-        },
-        complete: function () {
-            ajax_load("close");
-        }
+        window.location.href = `${url}/cursos?${queryString}`;
     });
 
-}
+    /** Autocomplete */
+    $('#search').focus(function (e) {
+        let availableTags;
+        let url = $(this)[0].form.action;
 
-function ajax_load(action) {
-    ajax_load_div = $(".ajax_load");
+        $.ajaxSetup({ async: false });
 
-    if (action === "open") {
-        ajax_load_div.fadeIn(200).css("display", "flex");
-    }
+        $.get(url, function (data) {
+            availableTags = JSON.parse(data);
+        });
 
-    if (action === "close") {
-        ajax_load_div.fadeOut(200);
-    }
-}
+        $(this).autocomplete({
+            source: availableTags
+        });
 
-function previewFile(e) {
+    });
 
-    let file = $(e).get(0).files[0];
+    /** Form em movimento */
 
-    if (file) {
-        let reader = new FileReader();
-        reader.onload = function () {
-            $('#previewImg').attr('src', reader.result).fadeIn();
+    let elWrapForm = $('.wrapForm');
+
+    $(window).scroll(function (e) {
+
+        if (window.pageYOffset < 300) {
+
+            elWrapForm.css({
+                'position': 'relative',
+                'opacity': 1,
+                'top': 0
+            });
+
+        } else if (window.pageYOffset > 300) {
+
+            elWrapForm.css({
+                'position': 'fixed',
+                'top': $('.navbar').height() + 30 + 'px',
+                'opacity': 1,
+                'transform': 'translateY(0)',
+                'width': $('.col-md-4').width()
+            });
+
+        } else {
+
+            elWrapForm.css({
+                'position': 'fixed',
+                'opacity': 0,
+                'transform': 'translateY(-50%)'
+            });
         }
-        reader.readAsDataURL(file);
-    }
-}
+
+    });
+
+    /** Máscaras */
+
+    $('[name="telefone"]').mask('(00) 00000-0000');
+
+    /** Clique no Curso */
+    $('.content-item[data-url]').click(function () {
+        let url = $(this).attr('data-url');
+        window.location.href = url;
+    })
+});

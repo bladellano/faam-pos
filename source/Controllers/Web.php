@@ -13,6 +13,7 @@ use Source\Models\Banner;
 use Source\Models\Car\CarImage;
 use Source\Models\Car\CarVersao;
 use CoffeeCode\DataLayer\Connect;
+use CoffeeCode\Paginator\Paginator;
 
 /**
  * Class Web
@@ -32,110 +33,12 @@ class Web extends Controller
 
     public function search(): void
     {
-        extract($_REQUEST);
-
-        if (!isset($search))
-            header("Location: " . $this->router->route("web.home"));
-
         $connect = Connect::getInstance();
-
-        $sql = "SELECT 
-        b.id,
-        b.slug, 
-        b.title, 
-        b.description, 
-        b.content 
-        FROM banners b WHERE TRUE AND 
-        b.title LIKE '%{$search}%' OR b.description LIKE '%{$search}%' OR b.content LIKE '%{$search}%'
-        -- 
-        UNION 
-        SELECT 
-        p.id,
-        p.slug,
-        p.title, 
-        p.description, 
-        p.content 
-        FROM posts p WHERE TRUE AND 
-        p.title LIKE '%{$search}%' OR p.description LIKE '%{$search}%' OR p.content LIKE '%{$search}%'
-        -- 
-        UNION 
-        SELECT 
-        c.id,
-        c.slug,
-        c.nome_titulo, 
-        c.nome_subtitulo, 
-        c.descricao 
-        FROM vc_carros c WHERE TRUE AND 
-        c.nome_titulo LIKE '%{$search}%' OR c.nome_subtitulo LIKE '%{$search}%' OR c.descricao LIKE '%{$search}%'
-        ";
-
-        $result = $connect->query($sql);
-        $result = $result->fetchAll();
-        $qtd = count($result);
-
-        echo $this->view->render("theme/site/search", [
-            "title" => "Resultado da busca ({$qtd})",
-            "result" => $result,
-        ]);
-
-        exit;
+        $SQL = "SELECT * FROM pos_cursos";
+        $cursos = ($connect->query($SQL))->fetchAll();
+        $cursos = array_column($cursos, "nome");
+        print json_encode($cursos);
     }
-
-    public function redirectResult()
-    {
-        $connect = Connect::getInstance();
-
-        extract($_REQUEST);
-
-        $sql = "SELECT
-        'banners' as thisTable,
-        b.id,
-        b.slug, 
-        b.title, 
-        b.description, 
-        b.content 
-        FROM banners b WHERE TRUE AND 
-        b.id = $id AND b.slug = '{$slug}'
-        -- 
-        UNION 
-        SELECT 
-        'posts' as thisTable,
-        p.id,
-        p.slug,
-        p.title, 
-        p.description, 
-        p.content 
-        FROM posts p WHERE TRUE AND 
-        p.id = $id AND p.slug = '{$slug}'
-        UNION 
-        SELECT 
-        'vc_carros' as thisTable,
-        c.id,
-        c.slug,
-        c.nome_titulo, 
-        c.nome_subtitulo, 
-        c.descricao 
-        FROM vc_carros c WHERE TRUE AND 
-        c.id = $id AND c.slug = '{$slug}'
-        ";
-
-        $result = $connect->query($sql);
-        $result = $result->fetch();
-
-        switch ($result->thisTable) {
-            case 'banners':
-                echo json_encode(['url' => SITE['root'] . DS . "banner/{$result->slug}"]);
-                break;
-            case 'posts':
-                echo json_encode(['url' => SITE['root'] . DS . "{$result->slug}"]);
-                break;
-            case 'vc_carros':
-                echo json_encode(['url' => SITE['root'] . DS . "novos/{$result->slug}"]);
-                break;
-        }
-        exit;
-    }
-
 
     /**
      * Monta tela principal
@@ -194,6 +97,35 @@ class Web extends Controller
         ]);
     }
 
+    public function cursos(): void
+    {
+        $curso = new Curso();
+        $limit = 8;
+
+        $page = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
+        $search = filter_input(INPUT_GET, "search", FILTER_DEFAULT);
+
+        $terms = NULL;
+        $params = NULL;
+
+        if (!empty($search)) :
+            $terms  = "nome LIKE :nome";
+            $params = "nome=%{$search}%";
+        endif;
+
+        $paginator = new Paginator(SITE['root'] . "/cursos?search={$search}&page=");
+
+        $paginator->pager($curso->find($terms, $params)->count(), $limit, $page, 2);
+
+        $cursos = $curso->find($terms, $params)->limit($paginator->limit())->offset($paginator->offset())->fetch(true);
+
+        echo $this->view->render("theme/site/cursos", [
+            "head" => [],
+            "title" => 'Todos os Cursos',
+            "cursos" => $cursos,
+            "pages" => $paginator->render()
+        ]);
+    }
 
     public function getCurso($data): void
     {
@@ -330,7 +262,6 @@ class Web extends Controller
         ]);
     }
 
-
     public function sendFormContactUs($data)
     {
 
@@ -404,11 +335,6 @@ class Web extends Controller
         }
     }
 
-    /**
-     * Form de contato principal do site
-     * @param [type] $data
-     * @return void
-     */
     public function sendFormContact($data)
     {
         $data['ciente'] = (isset($data['ciente'])) ? "SIM" : "NÃO";
@@ -462,58 +388,6 @@ class Web extends Controller
         if ($lead->save())
             return true;
         return false;
-    }
-
-    public function getCarHome($data)
-    {
-        $car = (new Car())->findById($data['id']);
-
-        echo json_encode([
-            "id" => $car->id,
-            "nome_titulo" => $car->nome_titulo,
-            "slug" => $car->slug,
-            "imagem_thumb" => $car->imagem_thumb,
-            "descricao" => $car->descricao
-        ]);
-
-        exit;
-    }
-
-    public function getCar($data): void
-    {
-        $car = (new Car())->find("slug = :slug", "slug={$data['slug']}")->fetch();
-
-        $carImages = (new CarImage())->find("id_carro = :id_carro", "id_carro={$car->id}")->fetch(true) ?? [];
-        shuffle($carImages);
-
-        $versions = (new CarVersao())->find("id_carro = :id_carro", "id_carro={$car->id}")->fetch(true) ?? [];
-
-        $buildImagesFront = array_map(function ($item) {
-            return [
-                "tipo" => $item->tipo,
-                "titulo" => $item->titulo,
-                "descricao" => $item->descricao,
-                "imagem" => $item->imagem
-            ];
-        }, $carImages);
-
-        $buildImagesFront = groupByColumn($buildImagesFront, "tipo", 0);
-
-        /** Seo */
-        $head = (new Seo())->render(
-            SITE['name'] . " | " . $car->nome_titulo,
-            SITE['desc'] . $car->nome_subtitulo,
-            DS . $car->slug,
-            asset('images/image-default-vega-kia.jpeg', 'site', 0),
-        );
-
-        echo $this->view->render("theme/site/car", [
-            "head" => $head,
-            "car" => $car,
-            "carImages" => $carImages,
-            "buildImagesFront" => $buildImagesFront,
-            "versions" => $versions
-        ]);
     }
 
     /**

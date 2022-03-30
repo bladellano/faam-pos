@@ -40,16 +40,18 @@
                 <h3>ENCONTRE SEU CURSO</h3>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-10 col-9">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="" id="" placeholder="Digite o nome do Curso">
+        <form id="form-pesquisa-curso" action="<?= SITE['root'] . '/busca' ?>" method="GET">
+            <div class="row">
+                <div class="col-md-10 col-9">
+                    <div class="form-group">
+                        <input type="search" class="form-control" name="search" id="search" placeholder="Digite o nome do Curso">
+                    </div>
+                </div>
+                <div class="col-md-2 col-2 d-grid">
+                    <button data-url="<?= SITE['root']?>" type="submit" class="btn btn-warning">Buscar</button>
                 </div>
             </div>
-            <div class="col-md-2 col-2 d-grid">
-                <a href="#" class="btn btn-warning">Buscar</a>
-            </div>
-        </div>
+        </form>
     </div>
 </section>
 
@@ -155,7 +157,7 @@
 
                 <?php foreach ($cursos as $c) : ?>
 
-                    <div data-url="<?= SITE['root'] . DS . 'cursos' . DS . $c->slug ?>" class="col-lg-4 col-md-6 content-item portfolio-item filter-<?= $c->area?>">
+                    <div data-url="<?= SITE['root'] . DS . 'cursos' . DS . $c->slug ?>" class="col-lg-4 col-md-6 content-item portfolio-item filter-<?= $c->area ?>">
                         <span><?= mb_strtoupper($c->nome) ?></span>
                         <h4><i class="bi bi-calendar4-week"></i> <?= $c->duracao ?> meses | <i class="bx bx-medal"></i> Reconhecido pelo MEC</h4>
                         <p><?= $c->sobre_o_curso ?></p>
@@ -226,20 +228,20 @@
 
     <!-- ======= Cta Section ======= -->
     <section id="cta" class="cta">
-      <div class="container">
+        <div class="container">
 
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-start">
-            <h3>Call To Action</h3>
-            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
-          </div>
+            <div class="row">
+                <div class="col-lg-9 text-center text-lg-start">
+                    <h3>Call To Action</h3>
+                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="col-lg-3 cta-btn-container text-center">
+                    <a class="cta-btn align-middle" href="#">Call To Action</a>
+                </div>
+            </div>
+
         </div>
-
-      </div>
-    </section> 
+    </section>
     <!-- End Cta Section -->
 
     <!-- ======= Contact Section ======= -->
