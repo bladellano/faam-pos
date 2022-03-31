@@ -4,13 +4,13 @@ $(function () {
     $('#form-pesquisa-curso').submit(function (e) {
         e.preventDefault();
 
-        let url = $(this).find('button').data('url')
         let data = $(this).serializeArray();
-        
-        if (!data[0].value.length) return;
+
+        if (!data[0].value.length)
+            return;
         let queryString = $.param(data);
 
-        window.location.href = `${url}/cursos?${queryString}`;
+        window.location.href = `/cursos?${queryString}`;
     });
 
     /** Autocomplete */

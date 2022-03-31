@@ -4,7 +4,6 @@ namespace Source\Dash;
 
 use Source\Dash\Controller as DashController;
 use Source\Models\Category;
-use stdClass;
 
 class Posts extends DashController
 {
@@ -21,6 +20,23 @@ class Posts extends DashController
     {
 
         $posts = (new \Source\Models\Post)->find()->order('id DESC')->fetch(true) ?? [];
+
+        $posts = array_map(function ($item) {
+
+            switch ($item->type):
+                case 'page':
+                    $item->type = '<span class="badge bg-info">Página</span>';
+                    break;
+                case 'schedule':
+                    $item->type = '<span class="badge bg-warning">Agenda</span>';
+                    break;
+                case 'post':
+                    $item->type = '<span class="badge bg-success">Notícia</span>';
+                    break;
+            endswitch;
+
+            return $item;
+        }, $posts);
 
         echo $this->view->render("theme/admin/posts", [
             "title" => "Posts",

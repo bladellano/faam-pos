@@ -188,7 +188,9 @@ a {
 }
 
 #featured-services span {
-  background: var(--cor-primary) !important;
+  /* background: var(--cor-primary) !important; */
+  font-weight: 700;
+  font-family: "Poppins";
 }
 
 /* Paginas internas */

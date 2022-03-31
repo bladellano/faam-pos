@@ -10,10 +10,9 @@ use Source\Models\Lead;
 use Source\Models\Anexo;
 use Source\Models\Curso;
 use Source\Models\Banner;
-use Source\Models\Car\CarImage;
-use Source\Models\Car\CarVersao;
 use CoffeeCode\DataLayer\Connect;
 use CoffeeCode\Paginator\Paginator;
+use Source\Models\Post;
 
 /**
  * Class Web
@@ -48,6 +47,9 @@ class Web extends Controller
         $banners = (new Banner)->find()->order("updated_at DESC")->fetch(true) ?? [];
         $areas = (new Area)->find()->order("nome ASC")->fetch(true) ?? [];
 
+        $noticias = (new Post())->find("type = :type", "type=post")->limit(3)->fetch(true);
+        $agendas = (new Post())->find("type = :type", "type=schedule")->limit(3)->fetch(true);
+
         $connect = Connect::getInstance();
         $SQL = "SELECT pa.slug as area, pc.* FROM pos_cursos pc LEFT JOIN pos_areas pa ON pa.id = pc.id_area";
         $cursos = ($connect->query($SQL))->fetchAll();
@@ -63,6 +65,8 @@ class Web extends Controller
             "banners" => $banners,
             "areas" => $areas,
             "cursos" => $cursos,
+            "noticias" => $noticias,
+            "agendas" => $agendas,
             "head" => $head
         ]);
     }
@@ -261,7 +265,15 @@ class Web extends Controller
             "banner" => $banner,
         ]);
     }
+    public function showNoticia($data): void
+    {
+        $noticia = (new Post())->find("slug = :slug", 'slug=' . $data['slug'])->fetch() ?? [];
 
+        echo $this->view->render("theme/site/noticia", [
+            "title" => "Notícias",
+            "noticia" => $noticia,
+        ]);
+    }
     public function sendFormContactUs($data)
     {
 

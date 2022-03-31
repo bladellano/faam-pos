@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="col-md-2 col-2 d-grid">
-                    <button data-url="<?= SITE['root']?>" type="submit" class="btn btn-warning">Buscar</button>
+                    <button type="submit" class="btn btn-warning">Buscar</button>
                 </div>
             </div>
         </form>
@@ -68,28 +68,20 @@
                         <div class="icon"><i class="bx bx-news"></i></div>
                         <h4 class="title"><a href="">NOTÍCIAS</a></h4>
                         <ul>
-                            <li> <span class="badge bg-success">24/03</span>
-                                <h5> Voluptatum deleniti atque corrupti quos dolores</h5>
-                                <p class="description">Voluptatum deleniti atque corrupti quos dolores excepturi sint occaecati cupiditate non provident...
-                                    <a href="http://" class="">Saiba mais.</a>
-                                </p>
-                            </li>
-                            <li> <span class="badge bg-success">24/03</span>
-                                <h5> Voluptatum deleniti atque corrupti quos dolores</h5>
-                                <p class="description">Voluptatum deleniti atque corrupti quos dolores excepturi sint occaecati cupiditate non provident...
-                                    <a href="http://" class="">Saiba mais.</a>
-                                </p>
-                            </li>
-                            <li> <span class="badge bg-success">24/03</span>
-                                <h5> Voluptatum deleniti atque corrupti quos dolores</h5>
-                                <p class="description">Voluptatum deleniti atque corrupti quos dolores excepturi sint occaecati cupiditate non provident...
-                                    <a href="http://" class="">Saiba mais.</a>
-                                </p>
-                            </li>
+                            <?php foreach ($noticias as $n) : ?>
+
+                                <li>
+                                    <span class="badge bg-success"> <?= substr(convertDatePtbr($n->created_at), 0, 5)  ?></span>
+                                    <h5> <?= $n->title ?></h5>
+                                    <p class="description"><?= $n->description ?>
+                                        <a href="<?= SITE['root'] ?>/noticias/<?= $n->slug ?>" class="">Saiba mais.</a>
+                                    </p>
+                                </li>
+                            <?php endforeach; ?>
 
                             </li>
                         </ul>
-                        <a href="#">&rarr; Todas as notícias</a>
+                        <a href="<?= SITE['root'] ?>/noticias">&rarr; Todas as notícias</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -97,28 +89,25 @@
                         <div class="icon"><i class="bx bx-calendar"></i></div>
                         <h4 class="title"><a href="">AGENDA</a></h4>
                         <ul>
-                            <li> <span class="badge bg-success">24/03</span>
-                                <h5> Voluptatum deleniti atque corrupti quos dolores</h5>
-                                <p class="description">Voluptatum deleniti atque corrupti quos dolores excepturi sint occaecati cupiditate non provident...
-                                    <a href="http://" class="">Saiba mais.</a>
-                                </p>
-                            </li>
-                            <li> <span class="badge bg-success">24/03</span>
-                                <h5> Voluptatum deleniti atque corrupti quos dolores</h5>
-                                <p class="description">Voluptatum deleniti atque corrupti quos dolores excepturi sint occaecati cupiditate non provident...
-                                    <a href="http://" class="">Saiba mais.</a>
-                                </p>
-                            </li>
-                            <li> <span class="badge bg-success">24/03</span>
-                                <h5> Voluptatum deleniti atque corrupti quos dolores</h5>
-                                <p class="description">Voluptatum deleniti atque corrupti quos dolores excepturi sint occaecati cupiditate non provident...
-                                    <a href="http://" class="">Saiba mais.</a>
-                                </p>
-                            </li>
+                            <?php foreach ($agendas as $a) : ?>
+                                <li>
+                                    <button type="button" class="btn btn-secondary position-relative">
+                                    <?= $a->event_date  ?>
+                                        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
+                                            <span class="visually-hidden">New alerts</span>
+                                        </span>
+                                    </button>
+
+                                    <h5> <?= $a->title ?></h5>
+                                    <p class="description"><?= $a->description ?>
+                                        <a href="<?= SITE['root'] ?>/agendas/<?= $a->slug ?>" class="">Saiba mais.</a>
+                                    </p>
+                                </li>
+                            <?php endforeach; ?>
 
                             </li>
                         </ul>
-                        <a href="#">&rarr; Todas as agendas</a>
+                        <a href="<?= SITE['root'] ?>/agendas">&rarr; Todas as agendas</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">

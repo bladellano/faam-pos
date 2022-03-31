@@ -66,8 +66,8 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Sobre</a></li>
+          <li><a class="nav-link scrollto active" href="<?= SITE['root'] ?>#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>#about">Sobre</a></li>
 
           <li class="dropdown"><a href="#"><span>Pos-Graduação</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -79,7 +79,7 @@
 
               <li class="dropdown"><a href="#"><span>Para Empresas</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Soluções Corporativas</a></li>
+                  <li><a href="<?= SITE['root'] . DS ?>solucoes-coorporativas">Soluções Corporativas</a></li>
                 </ul>
               </li>
 
@@ -90,40 +90,39 @@
             <ul>
               <li class="dropdown"><a href="#"><span>Institucional</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Quem somos</a></li>
-                  <li><a href="#">Nossa Infraestrutura</a></li>
-                  <li><a href="#">Tour 360º</a></li>
+                  <li><a href="<?= SITE['root'] . DS ?>quem-somos">Quem somos</a></li>
+                  <li><a href="<?= SITE['root'] . DS ?>nossa-infraestrutura">Nossa Infraestrutura</a></li>
+                  <li><a href="<?= SITE['root'] . DS ?>tour-360">Tour 360º</a></li>
                 </ul>
               </li>
 
               <li class="dropdown"><a href="#"><span>Diferenciais</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Suporte ao Aluno</a></li>
-                  <li><a href="#">Qualidade Acadêmica</a></li>
-                  <li><a href="#">Benefícios Internacionais</a></li>
+                  <li><a href="<?= SITE['root'] . DS ?>suporte-ao-aluno">Suporte ao Aluno</a></li>
+                  <li><a href="<?= SITE['root'] . DS ?>qualidade-academica">Qualidade Acadêmica</a></li>
+                  <li><a href="<?= SITE['root'] . DS ?>beneficios-internacionais">Benefícios Internacionais</a></li>
                 </ul>
               </li>
 
               <li class="dropdown"><a href="#"><span>Mais Serviços</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Soluções Corporativas</a></li>
-                  <li><a href="#">Perguntas Frequentes</a></li>
-                  <li><a href="#">Sala de Imprensa</a></li>
-                  <li><a href="#">Trabalhe Conosco</a></li>
+                  <li><a href="<?= SITE['root'] . DS ?>perguntas-frequentes">Perguntas Frequentes</a></li>
+                  <li><a href="<?= SITE['root'] . DS ?>sala-de-imprensa">Sala de Imprensa</a></li>
+                  <li><a href="<?= SITE['root'] . DS ?>trabalhe-conosco">Trabalhe Conosco</a></li>
                 </ul>
               </li>
             </ul>
           </li>
 
-          <li class="dropdown"><a href="#"><span>Como ingressar</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="<?= SITE['root'] . DS ?>como-ingressar"><span>Como ingressar</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Pós-Graduação</a></li>
-              <li><a href="#">Reabertura de Matrícula</a></li>
+              <li><a href="<?= SITE['root'] . DS ?>cursos">Pós-Graduação</a></li>
+              <li><a href="<?= SITE['root'] . DS ?>reabertura-de-matricula">Reabertura de Matrícula</a></li>
             </ul>
           </li>
 
-          <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
-          <li><a class="getstarted scrollto" href="#about">INSCREVA-SE</a></li>
+          <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>#contact">Contato</a></li>
+          <li><a class="getstarted scrollto" href="<?= SITE['root'] ?>#contact">INSCREVA-SE</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -181,7 +180,7 @@
 
 
 
-      <img style="width: 146px;" src="<?=asset('images/logo-pb.png')?>" alt="SEM LOGO">
+      <img style="width: 146px;" src="<?= asset('images/logo-pb.png') ?>" alt="SEM LOGO">
       <p>A Faculdade FAAM tem como missão ensinar e formar profissionais de valor para atuarem em todas as áreas.</p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -191,7 +190,7 @@
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright <strong><span><?=SITE['name']?></span></strong>. Todos os direitos reservados
+        &copy; Copyright <strong><span><?= SITE['name'] ?></span></strong>. Todos os direitos reservados
       </div>
       <div class="credits">
         Desenvolvido por <a href="https://www.dellanosites.com.br/" target="_blank">DellanoSites</a>
