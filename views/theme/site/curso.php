@@ -150,7 +150,10 @@
                         <hr>
                     </div>
                 </div>
-                <form>
+                <div class="login_form_callback"> <?= flash(); ?></div>
+                <form action="<?=SITE['root']?>/form-submission" method="POST">
+
+                <input type="hidden" name="typeForm" value="Matrícula">
                     <div class="mb-3">
                         <label class="form-label">Nome</label>
                         <input type="text" class="form-control" name="nome">
@@ -164,8 +167,8 @@
                         <input type="phone" class="form-control" name="telefone">
                     </div>
                     <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Li e aceito os <a href="#">termos de política de privacidade e responsabilidade</a> da Pós-Graduação FAAM.</label>
+                        <input type="checkbox" class="form-check-input" id="ciente" name="ciente">
+                        <label class="form-check-label" for="ciente">Li e aceito os <a href="#">termos de política de privacidade e responsabilidade</a> da Pós-Graduação FAAM.</label>
                     </div>
                     <div class="d-grid">
                         <button type="submit" class="btn btn-success">Matricula-se já</button>
@@ -178,3 +181,9 @@
 
 </div>
 <!-- /.container -->
+
+<?php $v->start("scripts"); ?>
+<script src="<?= asset("/js/jquery-ui.js"); ?>"></script>
+<script src="<?= asset("/js/script.js"); ?>"></script>
+<script src="<?= asset("/js/form.js"); ?>"></script>
+<?php $v->end(); ?>

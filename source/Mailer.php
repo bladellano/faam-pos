@@ -30,6 +30,7 @@ class Mailer
 		$this->mail->Username = Mailer::USERNAME;
 		$this->mail->Password = Mailer::PASSWORD;
 		$this->mail->setFrom(Mailer::USERNAME, utf8_decode(Mailer::NAME_FROM));
+		
 		$this->mail->addAddress(Mailer::INBOX, Mailer::NAME_FROM);
 		$this->mail->addAddress($fromAdress, $fromName);
 		$this->mail->Subject = utf8_decode($subject);

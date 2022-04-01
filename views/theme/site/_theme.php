@@ -30,11 +30,22 @@
   <!-- Template Main CSS File -->
   <link href="<?= SITE['root'] . "/views/assets/site" ?>/css/style.css" rel="stylesheet">
 
+  <link href="<?= SITE['root'] . "/views/assets" ?>/css/message.css" rel="stylesheet">
+  <link href="<?= SITE['root'] . "/views/assets" ?>/css/load.css" rel="stylesheet">
+
   <link href="<?= SITE['root'] . "/views/assets" ?>/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
+
+  <!--AJAX LOAD-->
+  <div class="ajax_load">
+        <div class="ajax_load_box">
+            <div class="ajax_load_box_circle"></div>
+            <div class="ajax_load_box_title">Aguarde, carregando!</div>
+        </div>
+    </div>
 
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
@@ -216,6 +227,8 @@
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
   <script src="<?= SITE['root'] . "/views/assets/" ?>js/script.js"></script>
+
+  <?= $v->section("scripts"); ?>
 
 </body>
 

@@ -8,6 +8,6 @@ class Lead extends DataLayer
 {
     public function __construct()
     {
-        parent::__construct("leads", ["name", "email", "content"]);
+        parent::__construct("pos_leads", ["name", "email", "content"]);
     }
 }

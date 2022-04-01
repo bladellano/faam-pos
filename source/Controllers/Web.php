@@ -4,7 +4,6 @@ namespace Source\Controllers;
 
 use Source\Seo;
 use Source\Mailer;
-use Source\Models\Car;
 use Source\Models\Area;
 use Source\Models\Lead;
 use Source\Models\Anexo;
@@ -117,7 +116,7 @@ class Web extends Controller
             $params = "nome=%{$search}%";
         endif;
 
-        $paginator = new Paginator(SITE['root'] . "/cursos?search={$search}&page=","Página", ["Primeira página", "«"], ["Última página", "»"]);
+        $paginator = new Paginator(SITE['root'] . "/cursos?search={$search}&page=", "Página", ["Primeira página", "«"], ["Última página", "»"]);
 
         $paginator->pager($curso->find($terms, $params)->count(), $limit, $page, 2);
 
@@ -139,7 +138,7 @@ class Web extends Controller
         $page = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
 
         $parse = (parse_url($_SERVER['REQUEST_URI']));
-        $parse['path'] = str_replace('/', '', $parse['path'] );
+        $parse['path'] = str_replace('/', '', $parse['path']);
 
         switch ($parse['path']):
             case 'noticias':
@@ -192,111 +191,6 @@ class Web extends Controller
         ]);
     }
 
-
-    public function contactUs(): void
-    {
-        $params = http_build_query([
-            'slug' => 'fale-conosco',
-            'type' =>  'page'
-        ]);
-
-        $page = (new \Source\Models\Post)->find("slug = :slug AND type = :type", $params)->fetch() ?? [];
-
-        /** Seo */
-        $head = (new Seo())->render(
-            SITE['name'] . " | " . $page->title,
-            SITE['desc'] . $page->description,
-            DS . $page->slug,
-            asset('images/image-default-vega-kia.jpeg', 'site', 0),
-        );
-
-        echo $this->view->render("theme/site/page", [
-            "head" =>  $head,
-            "page" => $page,
-            "showForm" => 'form-contact-us.php',
-            "typeForm" => 'fluid'
-        ]);
-        exit;
-    }
-
-    public function partsAndAccessories()
-    {
-        $params = http_build_query([
-            'slug' => 'pecas-e-acessorios',
-            'type' =>  'page'
-        ]);
-
-        $page = (new \Source\Models\Post)->find("slug = :slug AND type = :type", $params)->fetch() ?? [];
-
-        $head = (new Seo())->render(
-            SITE['name'] . " | " . $page->title,
-            SITE['desc'] . $page->description,
-            DS . $page->slug,
-            asset('images/image-default-vega-kia.jpeg', 'site', 0),
-        );
-
-        echo $this->view->render("theme/site/page", [
-            "head" => $head,
-            "page" => $page,
-            "showForm" => 'form-scheduling.php',
-            "typeForm" => 'container'
-        ]);
-        exit;
-    }
-
-    public function testDrive(): void
-    {
-
-        $params = http_build_query([
-            'slug' => 'test-drive',
-            'type' =>  'page'
-        ]);
-
-        $page = (new \Source\Models\Post)->find("slug = :slug AND type = :type", $params)->fetch() ?? [];
-
-        $head = (new Seo())->render(
-            SITE['name'] . " | " . $page->title,
-            SITE['desc'] . $page->description,
-            DS . $page->slug,
-            asset('images/image-default-vega-kia.jpeg', 'site', 0),
-        );
-
-        echo $this->view->render("theme/site/page", [
-            "head" => $head,
-            "page" => $page,
-            "showForm" => 'form-scheduling.php',
-            "typeForm" => 'container'
-        ]);
-        exit;
-    }
-
-    /** Métodos Car */
-    public function semiNew(): void
-    {
-        $title = "Semi-novos";
-
-        $head = (new Seo())->render(
-            SITE['name'] . " | " . $title,
-            SITE['desc'] . "Semi-novos de veículos",
-            DS . "semi-novos",
-            asset('images/image-default-vega-kia.jpeg', 'site', 0),
-        );
-
-        echo $this->view->render("theme/site/semi-novos", [
-            "head" => $head
-        ]);
-    }
-
-    public function news(): void
-    {
-        $newsCars = (new Car())->find("novo = :novo", 'novo=1')->fetch(true) ?? [];
-
-        echo $this->view->render("theme/site/novos", [
-            "title" => "Novos",
-            "newsCars" => $newsCars,
-        ]);
-    }
-
     public function showBanner($data): void
     {
         $banner = (new Banner())->find("slug = :slug", 'slug=' . $data['slug'])->fetch() ?? [];
@@ -317,84 +211,10 @@ class Web extends Controller
             "post" => $post,
         ]);
     }
-    public function sendFormContactUs($data)
-    {
-
-        $data['aceita_receber_email'] = isset($data['aceita_receber_email']) ? 'SIM' : 'NÃO';
-        $data['aceita_receber_sms'] = isset($data['aceita_receber_sms']) ? 'SIM' : 'NÃO';
-
-        if (in_array("", $data)) {
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => "Preencha todos os campos"
-            ]);
-            return;
-        }
-
-        $message = $this->view->render("theme/site/email-sent-default", ["data" => $data]);
-
-        /** Captura lead */
-        $this->leadCapture($data, $message);
-
-        $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato - {$data['typeForm']}", utf8_decode($message));
-
-        if (!$mailer->send()) {
-
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => "Problema ao enviar e-mail!"
-            ]);
-            return;
-        } else {
-
-            echo $this->ajaxResponse("message", [
-                "type" => "success",
-                "message" => "Enviado com sucesso!"
-            ]);
-            return;
-        }
-    }
-
-    public function sendFormScheduling($data)
-    {
-
-        if (in_array("", $data)) {
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => "Preencha todos os campos"
-            ]);
-            return;
-        }
-
-        $message = $this->view->render("theme/site/email-sent-default", ["data" => $data]);
-
-        /** Captura lead */
-        $this->leadCapture($data, $message);
-
-        $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato - {$data['typeForm']}", utf8_decode($message));
-
-        if (!$mailer->send()) {
-
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => "Problema ao enviar e-mail!"
-            ]);
-            return;
-        } else {
-
-            echo $this->ajaxResponse("message", [
-                "type" => "success",
-                "message" => "Enviado com sucesso!"
-            ]);
-            return;
-        }
-    }
 
     public function sendFormContact($data)
     {
         $data['ciente'] = (isset($data['ciente'])) ? "SIM" : "NÃO";
-        $data['usar_veiculo_usado'] = (isset($data['usar_veiculo_usado'])) ? "SIM" : "NÃO";
-        $data['financiamento'] = (isset($data['financiamento'])) ? "SIM" : "NÃO";
 
         if (in_array("", $data) || $data['ciente'] == "NÃO") {
             echo $this->ajaxResponse("message", [
@@ -407,9 +227,7 @@ class Web extends Controller
         $message = $this->view->render("theme/site/email-sent-default", ["data" => $data]);
 
         /** Captura lead */
-        $this->leadCapture($data, $message);
-
-        #print($message); die;
+        $this->leadCapture($data, $message, $data['typeForm']);
 
         $mailer = new Mailer($data['email'], $data['nome'], "Formulário de Contato - {$data['typeForm']}", utf8_decode($message));
 

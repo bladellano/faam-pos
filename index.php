@@ -37,6 +37,9 @@ $app->get("/agendas", "Web:posts", "web.posts");
 $app->get("/noticias/{slug}", "Web:showPosts", "web.showposts");
 $app->get("/agendas/{slug}", "Web:showPosts", "web.showposts");
 
+/** Forms */
+$app->post("/form-submission", "Web:sendFormContact", "web.sendformcontact");
+
 /**
  * ADMIN
  */
