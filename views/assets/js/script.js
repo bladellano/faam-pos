@@ -1,6 +1,5 @@
 $(function () {
 
-
     $('#form-pesquisa-curso').submit(function (e) {
         e.preventDefault();
 
@@ -67,7 +66,8 @@ $(function () {
 
     /** Máscaras */
 
-    $('[name="telefone"]').mask('(00) 00000-0000');
+    if($('[name="telefone"]').length)
+        $('[name="telefone"]').mask('(00) 00000-0000');
 
     /** Clique no Curso */
     $('.content-item[data-url]').click(function () {
@@ -75,3 +75,15 @@ $(function () {
         window.location.href = url;
     })
 });
+
+function ajax_load(action) {
+    ajax_load_div = $(".ajax_load");
+
+    if (action === "open") {
+        ajax_load_div.fadeIn(200).css("display", "flex");
+    }
+
+    if (action === "close") {
+        ajax_load_div.fadeOut(200);
+    }
+}
