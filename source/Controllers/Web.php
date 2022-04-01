@@ -117,7 +117,7 @@ class Web extends Controller
             $params = "nome=%{$search}%";
         endif;
 
-        $paginator = new Paginator(SITE['root'] . "/cursos?search={$search}&page=");
+        $paginator = new Paginator(SITE['root'] . "/cursos?search={$search}&page=","Página", ["Primeira página", "«"], ["Última página", "»"]);
 
         $paginator->pager($curso->find($terms, $params)->count(), $limit, $page, 2);
 
@@ -127,6 +127,47 @@ class Web extends Controller
             "head" => [],
             "title" => 'Todos os Cursos',
             "cursos" => $cursos,
+            "pages" => $paginator->render()
+        ]);
+    }
+
+    public function posts(): void
+    {
+        $post = new Post();
+        $limit = 8;
+
+        $page = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
+
+        $parse = (parse_url($_SERVER['REQUEST_URI']));
+        $parse['path'] = str_replace('/', '', $parse['path'] );
+
+        switch ($parse['path']):
+            case 'noticias':
+                $type = 'post';
+                break;
+            case 'agendas':
+                $type = 'schedule';
+                break;
+        endswitch;
+
+        $terms = NULL;
+        $params = NULL;
+
+        if (!empty($type)) :
+            $terms  = "type = :type";
+            $params = "type={$type}";
+        endif;
+
+        $paginator = new Paginator(SITE['root'] . "/" . $parse['path'] . "?page=", "Página", ["Primeira página", "«"], ["Última página", "»"]);
+
+        $paginator->pager($post->find($terms, $params)->count(), $limit, $page, 2);
+
+        $posts = $post->find($terms, $params)->limit($paginator->limit())->offset($paginator->offset())->fetch(true);
+
+        echo $this->view->render("theme/site/posts", [
+            "head" => [],
+            "title" => ucfirst($parse['path']),
+            "posts" => $posts,
             "pages" => $paginator->render()
         ]);
     }
@@ -265,13 +306,15 @@ class Web extends Controller
             "banner" => $banner,
         ]);
     }
-    public function showNoticia($data): void
+    public function showPosts($data): void
     {
-        $noticia = (new Post())->find("slug = :slug", 'slug=' . $data['slug'])->fetch() ?? [];
+        $post = (new Post())->find("slug = :slug", 'slug=' . $data['slug'])->fetch() ?? [];
 
-        echo $this->view->render("theme/site/noticia", [
-            "title" => "Notícias",
-            "noticia" => $noticia,
+        $title = $post->type == 'post' ? 'Notícias' : 'Agendas';
+
+        echo $this->view->render("theme/site/post", [
+            "title" =>  $title,
+            "post" => $post,
         ]);
     }
     public function sendFormContactUs($data)

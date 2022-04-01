@@ -185,10 +185,34 @@ a {
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
   background: var(--cor-primary);
+  background-size: cover;
+  filter: unset;
+  opacity: 1;
+  color: #000;
+}
+
+.portfolio #portfolio-flters li.filter-active span {
+  background: white;
+  border-radius: 6px;
+  padding: 0 8px;
+}
+
+.portfolio #portfolio-flters li {
+  width: 280px;
+  height: 100px;
+  margin: 4px 4px;
+  padding: 3% 0;
+  background-size: cover;
+  filter: brightness(50%);
+  opacity: 0.8;
+  color: white;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  border: 1px solid #ddd;
 }
 
 #featured-services span {
-  /* background: var(--cor-primary) !important; */
   font-weight: 700;
   font-family: "Poppins";
 }
@@ -239,13 +263,6 @@ a {
 #hero .carousel-indicators li.active {
   background: var(--cor-primary);
 }
-.portfolio #portfolio-flters li {
-  color: #000;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
-  font-size: 18px;
-  border: 1px solid #ddd;
-}
 
 #footer ul {
   list-style: none;
@@ -292,8 +309,8 @@ a {
 .paginator_item {
   display: inline-block;
   margin: 0 10px;
-  padding: 4px 12px;
-  background: #a287e7;
+  padding: 0px 12px;
+  background: var(--cor-primary);
   color: #fff;
   text-decoration: none;
   -webkit-border-radius: 4px;
@@ -308,4 +325,5 @@ a {
 .paginator_active,
 .paginator_active:hover {
   background: #cccccc;
+  color: #000;
 }

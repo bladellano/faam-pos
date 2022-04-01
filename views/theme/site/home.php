@@ -72,9 +72,8 @@
 
                                 <li>
                                     <span class="badge bg-success"> <?= substr(convertDatePtbr($n->created_at), 0, 5)  ?></span>
-                                    <h5> <?= $n->title ?></h5>
+                                    <h5><a href="<?= SITE['root'] ?>/noticias/<?= $n->slug ?>"> <?= $n->title ?> </a></h5>
                                     <p class="description"><?= $n->description ?>
-                                        <a href="<?= SITE['root'] ?>/noticias/<?= $n->slug ?>" class="">Saiba mais.</a>
                                     </p>
                                 </li>
                             <?php endforeach; ?>
@@ -92,15 +91,14 @@
                             <?php foreach ($agendas as $a) : ?>
                                 <li>
                                     <button type="button" class="btn btn-secondary position-relative">
-                                    <?= $a->event_date  ?>
+                                        <?= $a->event_date  ?>
                                         <span class="position-absolute top-0 start-100 translate-middle p-2 bg-success border border-light rounded-circle">
                                             <span class="visually-hidden">New alerts</span>
                                         </span>
                                     </button>
 
-                                    <h5> <?= $a->title ?></h5>
+                                    <h5><a href="<?= SITE['root'] ?>/agendas/<?= $a->slug ?>" class=""> <?= $a->title ?> </a> </h5>
                                     <p class="description"><?= $a->description ?>
-                                        <a href="<?= SITE['root'] ?>/agendas/<?= $a->slug ?>" class="">Saiba mais.</a>
                                     </p>
                                 </li>
                             <?php endforeach; ?>
@@ -136,7 +134,9 @@
                     <ul id="portfolio-flters">
                         <li data-filter="*" class="filter-active">Todos</li>
                         <?php foreach ($areas as $a) : ?>
-                            <li data-filter=".filter-<?= $a->slug ?>"><?= $a->nome ?></li>
+                            <li style="background-image: url(<?= $a->imagem_thumb ?>);" data-filter=".filter-<?= $a->slug ?>">
+                            <span><?= $a->nome ?></span>
+                        </li>
                         <?php endforeach; ?>
                     </ul>
                 </div>

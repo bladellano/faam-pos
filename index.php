@@ -30,7 +30,12 @@ $app->get("/busca", "Web:search", "web.search");
 $app->get("/cursos", "Web:cursos", "web.cursos");
 $app->get("/cursos/{slug}", "Web:getCurso", "web.getcurso");
 $app->get("/banner/{slug}", "Web:showBanner", "web.showbanner");
-$app->get("/noticias/{slug}", "Web:showNoticia", "web.shownoticia");
+
+$app->get("/noticias", "Web:posts", "web.posts");
+$app->get("/agendas", "Web:posts", "web.posts");
+
+$app->get("/noticias/{slug}", "Web:showPosts", "web.showposts");
+$app->get("/agendas/{slug}", "Web:showPosts", "web.showposts");
 
 /**
  * ADMIN
