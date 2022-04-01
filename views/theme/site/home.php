@@ -135,8 +135,8 @@
                         <li data-filter="*" class="filter-active">Todos</li>
                         <?php foreach ($areas as $a) : ?>
                             <li style="background-image: url(<?= $a->imagem_thumb ?>);" data-filter=".filter-<?= $a->slug ?>">
-                            <span><?= $a->nome ?></span>
-                        </li>
+                                <span><?= $a->nome ?></span>
+                            </li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -195,11 +195,16 @@
 
             <div class="section-title">
                 <h2>Parceiros</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
             </div>
 
             <div class="clients-slider swiper">
                 <div class="swiper-wrapper align-items-center">
+
+                    <?php foreach ($parceiros as $p) : ?>
+                        <div class="swiper-slide"> <a href="<?= SITE['root'] . DS . "parceiros/$p->slug" ?>"> <img src="<?= SITE['root'] . DS . $p->image_thumb ?>" class="img-fluid" alt=""> </a></div>
+                    <?php endforeach; ?>
+                    <!-- 
                     <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-1.png" class="img-fluid" alt=""></div>
                     <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-2.png" class="img-fluid" alt=""></div>
                     <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-3.png" class="img-fluid" alt=""></div>
@@ -207,7 +212,7 @@
                     <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-5.png" class="img-fluid" alt=""></div>
                     <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-6.png" class="img-fluid" alt=""></div>
                     <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-7.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-8.png" class="img-fluid" alt=""></div>
+                    <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-8.png" class="img-fluid" alt=""></div> -->
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -271,17 +276,23 @@
                             <p>De 13h às 21h</p>
                         </div>
 
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6741217091403!2d-48.388637684670925!3d-1.3722149989991903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48b04f6ccd7c9%3A0x171a5d942157d41a!2sFAAM%20-%20Faculdade%20da%20Amaz%C3%B4nia!5e0!3m2!1spt-BR!2sbr!4v1648854562717!5m2!1spt-BR!2sbr" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
                     </div>
 
                 </div>
 
                 <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+
+                    <form action="<?= SITE['root'] ?>/form-submission" method="POST" class="php-email-form">
+                        <div class="login_form_callback"> <?= flash(); ?></div>
+
+                        <input type="hidden" name="typeForm" value="Contato">
+                        <input type="hidden" name="ciente">
+
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="name">Seu nome</label>
-                                <input type="text" name="name" class="form-control" id="name" required>
+                                <input type="text" name="nome" class="form-control" id="nome" required>
                             </div>
                             <div class="form-group col-md-6 mt-3 mt-md-0">
                                 <label for="name">Seu e-mail</label>
@@ -290,17 +301,17 @@
                         </div>
                         <div class="form-group mt-3">
                             <label for="name">Assunto</label>
-                            <input type="text" class="form-control" name="subject" id="subject" required>
+                            <input type="text" class="form-control" name="assunto" id="assunto" required>
                         </div>
                         <div class="form-group mt-3">
                             <label for="name">Mensagem</label>
-                            <textarea class="form-control" name="message" rows="10" required></textarea>
+                            <textarea class="form-control" name="mensagem" rows="10" required></textarea>
                         </div>
-                        <div class="my-3">
+                        <!-- <div class="my-3">
                             <div class="loading">Carregando...</div>
                             <div class="error-message"></div>
                             <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
-                        </div>
+                        </div> -->
                         <div class="text-center"><button type="submit">Enviar mensagem</button></div>
                     </form>
                 </div>
@@ -311,3 +322,9 @@
     </section><!-- End Contact Section -->
 
 </main><!-- End #main -->
+
+<?php $v->start("scripts"); ?>
+<script src="<?= asset("/js/jquery-ui.js"); ?>"></script>
+<script src="<?= asset("/js/script.js"); ?>"></script>
+<script src="<?= asset("/js/form.js"); ?>"></script>
+<?php $v->end(); ?>

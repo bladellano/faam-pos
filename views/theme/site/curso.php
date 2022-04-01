@@ -154,6 +154,13 @@
                 <form action="<?=SITE['root']?>/form-submission" method="POST">
 
                 <input type="hidden" name="typeForm" value="Matrícula">
+
+                
+                <div class="mb-3">
+                        <label class="form-label">Curso</label>
+                        <input type="text" style="pointer-events:none" class="form-control" name="curso" value="<?= mb_strtoupper($curso->nome) ?>">
+                    </div>
+
                     <div class="mb-3">
                         <label class="form-label">Nome</label>
                         <input type="text" class="form-control" name="nome">

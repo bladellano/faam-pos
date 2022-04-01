@@ -1,5 +1,5 @@
-<div style="width: 500px; max-width: 100%; padding: 5px; font-family: 'Trebuchet MS', sans-serif; font-size: 1.2em; background-color:#160c4a; color:#fff; border:1px solid #CCC">
-    <img src="http://faam-pos.local.com/views/assets/images/logo-faam-pos.png?time=1648142828" alt="FAAM PÓS" width="250px">
+<div style="width: 500px; max-width: 100%; padding: 5px; font-family: 'Trebuchet MS', sans-serif; font-size: 1.2em; background-color:#ddd; color:#000; border:1px solid #CCC">
+    <img src="https://pos.faam.com.br/views/assets/images/logo-faam-pos.png" width="200px" alt="FAAM PÓS" width="250px">
     <h2> <?= $data['typeForm'] ?> </h2>
     <hr>
     <h4>Olá! Eu sou o(a) <?= $data['nome'] ?>. <br />Estou tentando contato através do portal da <b>

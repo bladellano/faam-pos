@@ -32,9 +32,9 @@
                     <!-- form start -->
 
                     <?php if (isset($parceiro->id)) : ?>
-                        <form action="<?= SITE['root'] ?>/admin/parceiros/update/<?= $parceiro->id ?>" method="POST" enctype="multipart/form-data" >
+                        <form action="<?= SITE['root'] ?>/admin/parceiros/update/<?= $parceiro->id ?>" method="POST" enctype="multipart/form-data">
                         <?php else : ?>
-                            <form action="<?= SITE['root'] ?>/admin/parceiros/register" method="POST" enctype="multipart/form-data" >
+                            <form action="<?= SITE['root'] ?>/admin/parceiros/register" method="POST" enctype="multipart/form-data">
                             <?php endif; ?>
 
                             <div class="card-body">
@@ -48,7 +48,8 @@
 
                                 <div class="form-group">
                                     <label for="description">Descrição</label>
-                                    <input value="<?= isset($parceiro->description) ? $parceiro->description : "" ?>" type="text" class="form-control" id="description" name="description">
+                                    <textarea name="description" id="description" class="summernote"><?= isset($parceiro->description) ? $parceiro->description : "" ?></textarea>
+
                                 </div>
 
                                 <div class="form-group">

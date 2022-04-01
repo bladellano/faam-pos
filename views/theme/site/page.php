@@ -12,7 +12,6 @@
 
 <?php if (!empty($page->cover)) : ?>
     <div class="wrapInternalImage">
-        <!-- <p><?= $page->title ?></p> -->
         <img class="img-responsive" src="<?= SITE['root'] . DS . $page->cover ?>" alt="SEM IMAGEM">
     </div>
 <?php endif; ?>
