@@ -327,3 +327,8 @@ a {
   background: #cccccc;
   color: #000;
 }
+
+.cta .cta-btn {
+  padding: 22px 80px;
+  text-transform: uppercase;
+}

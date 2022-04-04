@@ -27,6 +27,8 @@ $app->get("/{slug}", "Web:page", "web.page");
 $app->get("/busca", "Web:search", "web.search");
 
 /** Páginas da Web */
+$app->get("/cursos-de-extensao", "Web:cursos", "web.cursos");
+
 $app->get("/cursos", "Web:cursos", "web.cursos");
 $app->get("/cursos/{slug}", "Web:getCurso", "web.getcurso");
 $app->get("/banner/{slug}", "Web:showBanner", "web.showbanner");
@@ -50,6 +52,13 @@ $app->group('admin')->namespace('Source\Dash');
 $app->get("/", "Admin:home", "admin.home");
 
 $app->get("/{errcode}", "Admin:error", "admin.error");
+
+/** Anexos */
+$app->post("/attachments", "Admin:attachments", "admin.attachments");
+$app->get("/attachments", "Admin:getAttachments", "admin.getattachments");
+$app->get("/attachments/{id}", "Admin:deleteAttachments", "admin.deleteattachments");
+
+
 
 /** Login */
 $app->get("/login", "Auth:home", "auth.home");

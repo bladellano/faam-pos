@@ -23,7 +23,7 @@ class Cursos extends DashController
         echo $this->view->render("theme/admin/cursos", [
             "title" => "Cursos",
             "titleHeader" => "Registros",
-            "cursos" =>  $cursos        
+            "cursos" =>  $cursos
         ]);
     }
 
@@ -43,6 +43,14 @@ class Cursos extends DashController
         $uploadImg = new \CoffeeCode\Uploader\Image(STORAGE, $this->path);
         $user = \Source\Session\Session::get('user');
         $slug = new \Ausi\SlugGenerator\SlugGenerator();
+
+        if (empty($data['objetivo_geral']) || empty($data['nome']) || empty($data['sobre_o_curso'])) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos!"
+            ]);
+            return;
+        }
 
         /** FILE */
         $file = $_FILES['file'] ?? NULL;

@@ -30,6 +30,9 @@ $(function () {
                     $(".login_form_callback").html(view);
                     $(".message").effect("bounce");
 
+                    if(typeof table !="undefined")
+                        table.ajax.reload();
+
                     if(su.message.type == 'error')
                         alertify.error(su.message.message);
 

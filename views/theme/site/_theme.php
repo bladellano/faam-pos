@@ -5,7 +5,14 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>FAAM PÓS-GRADUAÇÃO | <?= $title ?></title>
+  <?php if (isset($title)) : ?>
+    <title><?= SITE['name'] ?> | <?= $title ?></title>
+  <?php endif; ?>
+
+  <!-- Dinamic head -->
+  <?php if (isset($head)) : ?>
+    <?= $head ?>
+  <?php endif; ?>
 
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -40,11 +47,11 @@
 
   <!--AJAX LOAD-->
   <div class="ajax_load">
-        <div class="ajax_load_box">
-            <div class="ajax_load_box_circle"></div>
-            <div class="ajax_load_box_title">Aguarde, carregando!</div>
-        </div>
+    <div class="ajax_load_box">
+      <div class="ajax_load_box_circle"></div>
+      <div class="ajax_load_box_title">Aguarde, carregando!</div>
     </div>
+  </div>
 
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
@@ -187,8 +194,6 @@
           </ul>
         </div>
       </div>
-
-
 
       <img style="width: 146px;" src="<?= asset('images/logo-pb.png') ?>" alt="SEM LOGO">
       <p>A Faculdade FAAM tem como missão ensinar e formar profissionais de valor para atuarem em todas as áreas.</p>

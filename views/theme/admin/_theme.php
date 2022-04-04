@@ -266,7 +266,7 @@
               </a>
             </li>
 
-             <li class="nav-item">
+            <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-graduation-cap"></i>
                 <p>
@@ -293,18 +293,9 @@
                     <p>Áreas</p>
                   </a>
                 </li>
-         
-              </ul>
-            </li> 
 
-            <!-- <li class="nav-item">
-              <a href="<?= SITE['root'] ?>/admin/cursos" class="nav-link">
-                <i class="nav-icon fa fa-graduation-cap"></i>
-                <p>
-                  Cursos
-                </p>
-              </a>
-            </li> -->
+              </ul>
+            </li>
 
             <li class="nav-item">
               <a href="<?= SITE['root'] ?>/admin/posts" class="nav-link">
@@ -342,6 +333,7 @@
               </a>
             </li>
 
+
             <li class="nav-item">
               <a href="<?= SITE['root'] ?>/admin/users" class="nav-link">
                 <i class="nav-icon far fa-user"></i>
@@ -359,6 +351,16 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item">
+            <hr>
+
+              <a href="#" class="nav-link" data-toggle="modal" data-target="#anexosModal">
+                <i class="nav-icon fa fa-file-export"></i>
+                <p>
+                  Anexos
+                </p>
+              </a>
+            </li>
 
           </ul>
         </nav>
@@ -367,25 +369,94 @@
       <!-- /.sidebar -->
     </aside>
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      <?= $v->section("content"); ?>
-    </div>
-    <!-- /.content-wrapper -->
+    <!-- Modal -->
+    <div class="modal fade" id="anexosModal" tabindex="-1" aria-labelledby="anexosModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
 
-    <footer class="main-footer">
-      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-      All rights reserved.
-      <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.2.0-rc
+        <form action="<?= SITE['root'] . "/admin/attachments" ?>" method="POST" enctype="multipart/form-data">
+
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <h5 class="modal-title" id="anexosModalLabel">Anexos</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="login_form_callback"> <?= flash(); ?></div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div iv class="form-group">
+                    <label for="">Nome</label>
+                    <input type="text" name="nome" class="form-control">
+                  </div>
+                  <div iv class="form-group">
+                    <label for="">Tipo</label>
+                    <input type="radio" name="tipo" id="tipo" value="Image"> Imagem
+                    <input type="radio" name="tipo" id="tipo" value="File" checked> Outros
+                  </div>
+                  <div iv class="form-group">
+                    <label for="">Arquivo</label>
+                    <input type="file" name="arquivo" class="form-control">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="modal-footer" style="justify-content: flex-start;">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+        </form>
+
+        <div class="container">
+          <div class="row mb-3">
+            <div class="col-md-12">
+              <hr>
+
+              <table id="anexos-ativos" style="width:100%" data-url="<?= SITE['root'] ?>">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Nome Arquivo</th>
+                    <th>Imagem</th>
+                    <th>Arquivo</th>
+                    <th>Criado</th>
+                    <th></th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
+    </div>
+  </div>
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <?= $v->section("content"); ?>
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.2.0-rc
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
 
@@ -443,6 +514,8 @@
 
   <!-- Script customizado -->
   <script src="<?= asset("dist/js/script.js", 'admin'); ?>"></script>
+
+  <script src="<?= asset("js/form.js"); ?>"></script>
 
   <?= $v->section("scripts"); ?>
 

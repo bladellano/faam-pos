@@ -160,6 +160,26 @@
     </section>
     <!-- End Portfolio Section -->
 
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <a class="cta-btn align-middle" href="<?= SITE['root'] . "/cursos-de-extensao?ensino=EXTENSÃO" ?>">Cursos de Extensão</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a class="cta-btn align-middle" href="<?= SITE['root'] . "/extensao-inscricoes" ?>">Inscrições</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a class="cta-btn align-middle" href="<?= SITE['root'] . "/extensao-eventos" ?>">Eventos</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Cta Section -->
+
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about">
         <div class="container">
@@ -204,39 +224,12 @@
                     <?php foreach ($parceiros as $p) : ?>
                         <div class="swiper-slide"> <a href="<?= SITE['root'] . DS . "parceiros/$p->slug" ?>"> <img src="<?= SITE['root'] . DS . $p->image_thumb ?>" class="img-fluid" alt=""> </a></div>
                     <?php endforeach; ?>
-                    <!-- 
-                    <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-1.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-2.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-3.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-4.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-5.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-6.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-7.png" class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="<?= SITE['root'] . "/views/assets/site" ?>/img/clients/client-8.png" class="img-fluid" alt=""></div> -->
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
 
         </div>
     </section><!-- End Our Clients Section -->
-
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-9 text-center text-lg-start">
-                    <h3>Call To Action</h3>
-                    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-                <div class="col-lg-3 cta-btn-container text-center">
-                    <a class="cta-btn align-middle" href="#">Call To Action</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- End Cta Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -307,11 +300,7 @@
                             <label for="name">Mensagem</label>
                             <textarea class="form-control" name="mensagem" rows="10" required></textarea>
                         </div>
-                        <!-- <div class="my-3">
-                            <div class="loading">Carregando...</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
-                        </div> -->
+
                         <div class="text-center"><button type="submit">Enviar mensagem</button></div>
                     </form>
                 </div>

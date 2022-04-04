@@ -105,12 +105,12 @@
                                                      <div class="col-md-6">
 
                                                          <div class="row">
-                                                             <div iv class="form-group col-md-6">
+                                                             <div class="form-group col-md-6">
                                                                  <label for="nome">Nome do Curso</label>
                                                                  <input value="<?= isset($curso->nome) ? $curso->nome : "" ?>" type="text" class="form-control" id="nome" name="nome">
                                                              </div>
 
-                                                             <div iv class="form-group col-md-6">
+                                                             <div class="form-group col-md-6">
                                                                  <label for="nome">Área</label>
                                                                  <select name="id_area" id="id_area" class="form-control">
                                                                      <option value="0">Nenhuma</option>
@@ -144,17 +144,17 @@
                                                      <div class="col-md-6">
 
                                                          <div class="row">
-                                                             <div iv class="form-group col-md-4">
+                                                             <div class="form-group col-md-4">
                                                                  <label for="duracao">Duração (meses)</label>
-                                                                 <input placeholder="Ex.: 12" value="<?= isset($curso->duracao) ? $curso->duracao : "" ?>" type="text" class="form-control" id="duracao" name="duracao">
+                                                                 <input placeholder="Ex.: 12" value="<?= isset($curso->duracao) ? $curso->duracao : "" ?>" type="text" class="form-control" id="duracao" name="duracao" onkeyup="onlyNumbers(this)">
                                                              </div>
 
-                                                             <div iv class="form-group col-md-4">
+                                                             <div class="form-group col-md-4">
                                                                  <label for="carga_horaria">Carga Horária (hora)</label>
-                                                                 <input placeholder="Ex.: 380" value="<?= isset($curso->carga_horaria) ? $curso->carga_horaria : "" ?>" type="text" class="form-control" id="carga_horaria" name="carga_horaria">
+                                                                 <input placeholder="Ex.: 380" value="<?= isset($curso->carga_horaria) ? $curso->carga_horaria : "" ?>" type="text" class="form-control" id="carga_horaria" name="carga_horaria" onkeyup="onlyNumbers(this)">
                                                              </div>
 
-                                                             <div iv class="form-group col-md-4">
+                                                             <div class="form-group col-md-4">
                                                                  <label for="turno">Turno</label>
                                                                  <input placeholder="Ex.: Manhã/Tarde/Noite" value="<?= isset($curso->turno) ? $curso->turno : "" ?>" type="text" class="form-control" id="turno" name="turno">
                                                              </div>
@@ -162,6 +162,15 @@
                                                          </div>
 
                                                          <div class="form-group">
+
+                                                             <div class="form-group">
+                                                                 <label for="nome">Ensino</label>
+                                                                 <select name="ensino" id="ensino" class="form-control">
+                                                                     <option value="">--Selecione--</option>
+                                                                     <option value="PÓS-GRADUAÇÃO">PÓS-GRADUAÇÃO</option>
+                                                                     <option value="EXTENSÃO">EXTENSÃO</option>
+                                                                 </select>
+                                                             </div>
 
                                                              <label for="habilidades_competencias">Habilidades e Competências</label>
                                                              <textarea name="habilidades_competencias" id="habilidades_competencias" class="summernote"><?= isset($curso->habilidades_competencias) ? $curso->habilidades_competencias : "" ?></textarea>
@@ -181,7 +190,7 @@
                                                  <div class="row">
                                                      <div class="col-md-6">
 
-                                                         <div iv class="form-group">
+                                                         <div class="form-group">
 
                                                              <label for="area_atuacao">Área de Atuação</label>
                                                              <textarea name="area_atuacao" id="area_atuacao" class="summernote"><?= isset($curso->area_atuacao) ? $curso->area_atuacao : "" ?></textarea>
@@ -201,7 +210,7 @@
 
                                                      <div class="col-md-6">
 
-                                                         <div iv class="form-group">
+                                                         <div class="form-group">
 
                                                              <label for="coordenacao">Coordenação</label>
                                                              <textarea name="coordenacao" id="coordenacao" class="summernote"><?= isset($curso->coordenacao) ? $curso->coordenacao : "" ?></textarea>
@@ -292,6 +301,5 @@
  <!-- /.content -->
 
  <?php $v->start("scripts"); ?>
- <script src="<?= asset("js/form.js"); ?>"></script>
  <script src="<?= asset("js/jquery.toaster.js"); ?>"></script>
  <?php $v->end(); ?>

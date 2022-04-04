@@ -4,6 +4,26 @@
  */
 $(function () {
 
+    /** Deletando anexos */
+    $('body').on('click', '.btnRemoverAnexo', function (e) {
+
+        $.ajax({
+            type: "GET",
+            url: `/admin/attachments/${$(this)[0].dataset.id}`,
+            dataType: "JSON",
+            beforeSend: function () {
+                ajax_load('open');
+            },
+            success: function (su) {
+                if (su.success) {
+                    ajax_load('close');
+                }
+                table.ajax.reload();
+            }
+        });
+
+    });
+
     //Date and time picker
     $('#reservationdatetime').datetimepicker({
         format: 'DD/MM/YYYY H:m',
@@ -42,79 +62,6 @@ $(function () {
         $(this).closest('#inputFormRow').remove();
     });
 
-    /**
-     * Controla div de versões
-     */
-
-    $('body').delegate(".btnAddWrapVersion", "click", function (e) {
-        e.preventDefault();
-
-        let content = `
-        <div class="row wrapVersions pb-2">
-
-        <div class="form-group col-md-4">
-            <label for="nome">Versão</label>
-            <input type="text" class="form-control" id="nome" name="dataVersao[nome][]" placeholder="Ex.: E.473">
-        </div>
-        <div class="form-group col-md-4">
-            <label for="ano">Ano</label>
-            <input type="text" class="form-control" id="ano" name="dataVersao[ano][]" maxlength="4" placeholder="0000" onkeyup="onlyNumbers(this)">
-        </div>
-        <div class="form-group col-md-4">
-            <label for="modelo">Modelo</label>
-            <input type="text" class="form-control" id="modelo" name="dataVersao[modelo][]" maxlength="4" placeholder="0000" onkeyup="onlyNumbers(this)">
-        </div>
-        <div class="form-group col-md-12">
-            <label for="descricao">Principais características</label>
-            <textarea name="dataVersao[descricao][]" cols="30" rows="5" class="summernoteVersion"></textarea>
-        </div>
-        <div class="col-md-12">
-            <a href="#" class="btn btn-default btn-sm btnAddWrapVersion"><i class="fas fa-plus"></i></a>
-            <a href="#" class="btn btn-default btn-sm btnRemoveWrapVersion"><i class="fas fa-minus"></i></a>
-        </div
-    </div>`;
-
-        $('.wrapVersions:last').after(content);
-
-        runSummernote('.wrapVersions:last textarea');
-    });
-
-    $('body').delegate(".btnRemoveWrapVersion", "click", function (e) {
-        e.preventDefault();
-        if ($('.wrapVersions').length > 1)
-            $('.wrapVersions:last').remove()
-    });
-
-
-    /**
-     * Seta os tipos de imagens para detalhes do carro.
-     */
-    $('.setTypeImage').change(function () {
-
-        let title = $(this).parent().parent().parent().siblings().find('[name="title"]').val();
-        let description = $(this).parent().parent().parent().siblings().find('[name="description"]').val();
-        let id = $(this).data('id');
-        let type = $(this).val();
-
-        $.ajax({
-            type: "POST",
-            url: "/admin/cars/set-type-image",
-            data: { id, type, title, description },
-            dataType: "JSON",
-            beforeSend: function () {
-                ajax_load('open');
-            },
-            success: function (su) {
-                if (su.success)
-                    ajax_load('close');
-            }
-        })
-    });
-
-    //Máscaras
-    $('#valor').mask('#.##0,00', { reverse: true });
-    $('#quilometragem').mask('#.##0.000', { reverse: true });
-
     //Input File    
     bsCustomFileInput.init();
 
@@ -129,7 +76,7 @@ $(function () {
         "lengthChange": false,
         "searching": true,
         // "order": [[0, "desc"]],
-        "ordering": false,
+        "ordering": true,
         "info": true,
         "autoWidth": false,
         "responsive": true,
@@ -150,6 +97,64 @@ $(function () {
         }
     });
 });
+
+//Datatables
+table = $('#anexos-ativos').DataTable({
+    "processing": true,
+    "ajax": $('#anexos-ativos').data('url') + "/admin/attachments",
+    "columns": [
+        { "data": "id" },
+        { "data": "nome" },
+        { "data": "nome_arquivo" },
+        {
+            "data": "arquivo",
+            "fnCreatedCell": function (nTd, data, dt) {
+                $(nTd).html(`<img style="height:50px; object-fit: cover; width: 100%;" alt='SEM IMAGEM' src="${$('#anexos-ativos').data('url')}/${dt.arquivo}">`);
+            }
+        },
+        {
+            "data": "arquivo",
+            "fnCreatedCell": function (nTd, data, dt) {
+             
+
+                $(nTd).html(` <input type="text" value="${$('#anexos-ativos').data('url')}/${dt.arquivo}'">`);
+            }
+        },
+        { "data": "created_at" },
+
+        {
+            "data": null,
+            "fnCreatedCell": function (nTd, data, allData) {
+                $(nTd).html(`<a onclick="return confirm('Deseja realmente excluir este registro?')" class='btnRemoverAnexo btn btn-danger btn-sm' href='#' data-id='${+data.id}'>  
+                <i class="far fa-trash-alt" title="Remover"></i>
+                </a>`);
+            }
+        },
+    ],
+    "oLanguage": {
+        "sZeroRecords": "Nada encontrado, desculpe",
+        "sLengthMenu": "Mostrar _MENU_ itens por p&aacute;gina",
+        "sInfo": "Mostrando de _START_ &aacute; _END_ de _MAX_",
+        "sInfoEmpty": "Nenhum registro encontrado",
+        "sInfoFiltered": "(filtrado de _MAX_ registros)",
+        "sSearch": "Pesquisar:",
+        "oPaginate": {
+            "sNext": "Pr&oacute;xima",
+            "sPrevious": "Anterior",
+            "sLast": "&Uacute;ltima",
+            "sFirst": "Primeira"
+        }
+    },
+    "paging": true,
+    "lengthChange": false,
+    "searching": true,
+    "order": [
+        [0, "desc"]
+    ],
+    "ordering": true,
+    "info": true,
+});
+
 
 // FUNCTIONS
 function ajax_load(action) {

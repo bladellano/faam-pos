@@ -1,4 +1,31 @@
 /** Custom Css */
+#anexos-ativos {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#anexos-ativos td,
+#anexos-ativos th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#anexos-ativos tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#anexos-ativos tr:hover {
+  background-color: #ddd;
+}
+
+#anexos-ativos th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #007bff;
+  color: white;
+}
 
 .zoomImg {
   transition: all 0.2s ease-in-out;

@@ -32,10 +32,9 @@ class Parceiros extends DashController
         ]);
     }
 
-
     public function register($data): void
     {
-  
+
         $parceiro = new \Source\Models\Parceiro;
         $user = \Source\Session\Session::get('user');
         $slug = new \Ausi\SlugGenerator\SlugGenerator();
@@ -53,7 +52,7 @@ class Parceiros extends DashController
         $data['slug'] = $slug->generate($data['name']);
 
         foreach ($data as $key => $value) $parceiro->{$key} = $value;
-  
+
         if (!$parceiro->save()) {
             echo $this->ajaxResponse("message", [
                 "type" => "error",
@@ -148,5 +147,4 @@ class Parceiros extends DashController
 
         return;
     }
-
 }

@@ -39,9 +39,6 @@ class Web extends Controller
         print json_encode($cursos);
     }
 
-    /**
-     * Monta tela principal
-     */
     public function home(): void
     {
         $banners = (new Banner)->find()->order("updated_at DESC")->fetch(true) ?? [];
@@ -93,7 +90,7 @@ class Web extends Controller
             SITE['name'] . " | " . $page->title,
             SITE['desc'] . $page->description,
             DS . $page->slug,
-            asset('images/image-default-vega-kia.jpeg', 'site', 0),
+            asset('images/favicon.png'),
         );
 
         echo $this->view->render("theme/site/page", [
@@ -102,16 +99,24 @@ class Web extends Controller
         ]);
     }
 
+    
     public function cursos(): void
     {
+
         $curso = new Curso();
         $limit = 8;
 
         $page = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
         $search = filter_input(INPUT_GET, "search", FILTER_DEFAULT);
+        $ensino = filter_input(INPUT_GET, "ensino", FILTER_DEFAULT);
 
         $terms = NULL;
         $params = NULL;
+
+        if (!empty($ensino)) :
+            $terms  = "ensino LIKE :ensino";
+            $params = "ensino=%{$ensino}%";
+        endif;
 
         if (!empty($search)) :
             $terms  = "nome LIKE :nome";
@@ -125,7 +130,7 @@ class Web extends Controller
         $cursos = $curso->find($terms, $params)->limit($paginator->limit())->offset($paginator->offset())->fetch(true);
 
         echo $this->view->render("theme/site/cursos", [
-            "head" => [],
+            "head" => "",
             "title" => 'Todos os Cursos',
             "cursos" => $cursos,
             "pages" => $paginator->render()
@@ -165,11 +170,20 @@ class Web extends Controller
 
         $posts = $post->find($terms, $params)->limit($paginator->limit())->offset($paginator->offset())->fetch(true);
 
+        /** Seo */
+        $head = (new Seo())->render(
+            SITE['name'] . " | " . ucfirst($parse['path']),
+            SITE['desc'] . ". Todos os posts",
+            DS . $parse['path'],
+            asset('images/favicon.png'),
+        );
+
         echo $this->view->render("theme/site/posts", [
             "head" => [],
             "title" => ucfirst($parse['path']),
             "posts" => $posts,
-            "pages" => $paginator->render()
+            "pages" => $paginator->render(),
+            "head" => $head
         ]);
     }
 
@@ -179,17 +193,18 @@ class Web extends Controller
         $anexos = (new Anexo())->find("id_curso = :id_curso", "id_curso={$curso->id}")->fetch(true) ?? [];
 
         /** Seo */
-        /* $head = (new Seo())->render(
-            SITE['name'] . " | " . $car->nome_titulo,
-            SITE['desc'] . $car->nome_subtitulo,
-            DS . $car->slug,
-            asset('images/image-default-vega-kia.jpeg', 'site', 0),
-        ); */
+        $head = (new Seo())->render(
+            SITE['name'] . " | " . $curso->nome,
+            SITE['desc'] . $curso->sobre_o_curso,
+            DS . $curso->slug,
+            asset('images/favicon.png'),
+        );
 
         echo $this->view->render("theme/site/curso", [
             "head" => [],
             "curso" => $curso,
-            "anexos" => $anexos
+            "anexos" => $anexos,
+            "head" => $head
         ]);
     }
 
@@ -202,15 +217,25 @@ class Web extends Controller
             "banner" => $banner,
         ]);
     }
+
     public function showPosts($data): void
     {
         $post = (new Post())->find("slug = :slug", 'slug=' . $data['slug'])->fetch() ?? [];
 
         $title = $post->type == 'post' ? 'Notícias' : 'Agendas';
 
+        /** Seo */
+        $head = (new Seo())->render(
+            SITE['name'] . " | " . $post->title,
+            SITE['desc'] . $post->description,
+            DS . $post->slug,
+            asset('images/favicon.png'),
+        );
+
         echo $this->view->render("theme/site/post", [
             "title" =>  $title,
             "post" => $post,
+            "head" => $head
         ]);
     }
 
@@ -226,7 +251,6 @@ class Web extends Controller
 
     public function sendFormContact($data)
     {
-        // echo '<pre>$data<br />'; print_r($data); echo '</pre>';die;
         $data['ciente'] = (isset($data['ciente'])) ? "SIM" : "NÃO";
 
         if (in_array("", $data) || $data['ciente'] == "NÃO") {
