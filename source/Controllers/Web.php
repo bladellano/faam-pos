@@ -47,6 +47,8 @@ class Web extends Controller
         $agendas = (new Post())->find("type = :type", "type=schedule")->limit(3)->fetch(true);
         $parceiros = (new Parceiro())->find()->fetch(true);
 
+        $sobre = (new Post())->find("slug = :slug", "slug=sobre")->fetch();
+
         $connect = Connect::getInstance();
         $SQL = "SELECT pa.slug as area, pc.* FROM pos_cursos pc LEFT JOIN pos_areas pa ON pa.id = pc.id_area";
         $cursos = ($connect->query($SQL))->fetchAll();
@@ -65,7 +67,8 @@ class Web extends Controller
             "noticias" => $noticias,
             "agendas" => $agendas,
             "parceiros" => $parceiros,
-            "head" => $head
+            "head" => $head,
+            "sobre" => $sobre
         ]);
     }
 

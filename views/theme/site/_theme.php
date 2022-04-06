@@ -149,6 +149,8 @@
 
   <?= $v->section("content"); ?>
 
+  <?= include('whatsapp.php') ?>
+
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">

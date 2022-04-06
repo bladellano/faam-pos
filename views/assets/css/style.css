@@ -332,3 +332,7 @@ a {
   padding: 22px 80px;
   text-transform: uppercase;
 }
+
+.back-to-top {
+  left: 15px;
+}

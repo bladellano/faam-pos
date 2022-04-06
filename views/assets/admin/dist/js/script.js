@@ -75,7 +75,7 @@ $(function () {
         "paging": true,
         "lengthChange": false,
         "searching": true,
-        // "order": [[0, "desc"]],
+        "order": [[0, "desc"]],
         "ordering": true,
         "info": true,
         "autoWidth": false,
