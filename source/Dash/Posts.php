@@ -96,11 +96,18 @@ class Posts extends DashController
 
         $post = (new \Source\Models\Post())->findById($data['id']);
 
+        /** Somente para o "Fique por dentro" */
+        $disabled = "";
+        if ($post->id == 30)
+            $disabled = "style='pointer-events: none;background-color: #ddd;color: #999;'";
+
+
         echo $this->view->render("theme/admin/posts-create", [
             "title" => "Posts",
             "titleHeader" => "Edição",
             "post" => $post,
-            "categories" => $this->categories
+            "categories" => $this->categories,
+            "disabled" =>  $disabled
         ]);
     }
 

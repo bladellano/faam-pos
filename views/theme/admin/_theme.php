@@ -307,6 +307,15 @@
             </li>
 
             <li class="nav-item">
+              <a href="<?= SITE['root'] ?>/admin/posts/edit/30" class="nav-link">
+                <i class="nav-icon far fa-newspaper"></i>
+                <p>
+                  Fique por dentro
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
               <a href="<?= SITE['root'] ?>/admin/banners" class="nav-link">
                 <i class="nav-icon far fa-images"></i>
                 <p>

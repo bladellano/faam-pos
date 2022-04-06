@@ -58,7 +58,7 @@
 
                                  <div class="form-group">
                                      <label for="title">Título</label>
-                                     <input maxlength="100" value="<?= isset($post->title) ? $post->title : "" ?>" type="text" class="form-control" id="title" name="title">
+                                     <input <?= ( isset($disabled) && !empty($disabled) ? $disabled : "") ?> maxlength="100" value="<?= isset($post->title) ? $post->title : "" ?>" type="text" class="form-control" id="title" name="title">
                                  </div>
 
                                  <div class="form-group">
@@ -71,7 +71,7 @@
                                      <div class="form-group col-md-6">
 
                                          <label for="type">Tipo</label>
-                                         <select name="type" id="type" class="form-control">
+                                         <select <?= ( isset($disabled) && !empty($disabled) ? $disabled : "") ?> name="type" id="type" class="form-control">
                                              <option value="">--</option>
                                              <option value="post" <?= (isset($post->type) && $post->type == 'post') ? 'selected' : '' ?>>Notícia</option>
                                              <option value="page" <?= (isset($post->type) && $post->type == 'page') ? 'selected' : '' ?>>Página</option>
@@ -93,7 +93,6 @@
                                      </div>
 
                                  </div>
-
 
                                  <div class="form-group">
                                      <label for="content">Conteúdo</label>

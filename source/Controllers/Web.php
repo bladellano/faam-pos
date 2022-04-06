@@ -48,6 +48,7 @@ class Web extends Controller
         $parceiros = (new Parceiro())->find()->fetch(true);
 
         $sobre = (new Post())->find("slug = :slug", "slug=sobre")->fetch();
+        $fiquePorDentro = (new Post())->find("id = :id", "id=30")->fetch();
 
         $connect = Connect::getInstance();
         $SQL = "SELECT pa.slug as area, pc.* FROM pos_cursos pc LEFT JOIN pos_areas pa ON pa.id = pc.id_area";
@@ -68,7 +69,8 @@ class Web extends Controller
             "agendas" => $agendas,
             "parceiros" => $parceiros,
             "head" => $head,
-            "sobre" => $sobre
+            "sobre" => $sobre,
+            "fiquePorDentro" => $fiquePorDentro,
         ]);
     }
 

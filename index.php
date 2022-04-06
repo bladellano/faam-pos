@@ -58,8 +58,6 @@ $app->post("/attachments", "Admin:attachments", "admin.attachments");
 $app->get("/attachments", "Admin:getAttachments", "admin.getattachments");
 $app->get("/attachments/{id}", "Admin:deleteAttachments", "admin.deleteattachments");
 
-
-
 /** Login */
 $app->get("/login", "Auth:home", "auth.home");
 $app->post("/login", "Auth:login", "auth.login");
@@ -115,7 +113,7 @@ $app->post("/banners/update/{id}", "Banners:update", "banners.update");
 $app->get("/banners/delete/{id}", "Banners:delete", "banners.delete");
 $app->get("/banners/edit/{id}", "Banners:edit", "banners.edit");
 /** Banners - Métodos internos */
-$app->get("/banners/change-order-banner/{id}", "Banners:changeOrderBanner", "banners.changeorderbanner");
+    $app->get("/banners/change-order-banner/{id}", "Banners:changeOrderBanner", "banners.changeorderbanner");
 
 /** Users */
 $app->get("/users", "Users:home", "users.home");

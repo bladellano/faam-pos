@@ -112,7 +112,10 @@
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-notification"></i></div>
                         <h4 class="title"><a href="">FIQUE POR DENTRO</a></h4>
-                        <img src="http://portal.faam.com.br/storage/images/fique-por-dentro/2021/12/bec8dd84fb.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+                        <a href="<?= SITE['root'] . DS . $fiquePorDentro->slug?>">
+                        <img src="<?= SITE['root'] . DS . $fiquePorDentro->cover ?>" 
+                        class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="<?=$fiquePorDentro->title?>">
+                        </a>
                     </div>
                 </div>
             </div>
