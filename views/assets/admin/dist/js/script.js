@@ -117,7 +117,7 @@ table = $('#anexos-ativos').DataTable({
             "fnCreatedCell": function (nTd, data, dt) {
              
 
-                $(nTd).html(` <input type="text" value="${$('#anexos-ativos').data('url')}/${dt.arquivo}'">`);
+                $(nTd).html(` <input type="text" value="${$('#anexos-ativos').data('url')}/${dt.arquivo}">`);
             }
         },
         { "data": "created_at" },
