@@ -112,9 +112,8 @@
                     <div class="icon-box">
                         <div class="icon"><i class="bx bx-notification"></i></div>
                         <h4 class="title"><a href="">FIQUE POR DENTRO</a></h4>
-                        <a href="<?= SITE['root'] . DS . $fiquePorDentro->slug?>">
-                        <img src="<?= SITE['root'] . DS . $fiquePorDentro->cover ?>" 
-                        class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="<?=$fiquePorDentro->title?>">
+                        <a href="<?= SITE['root'] . DS . $fiquePorDentro->slug ?>">
+                            <img src="<?= SITE['root'] . DS . $fiquePorDentro->cover ?>" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="<?= $fiquePorDentro->title ?>">
                         </a>
                     </div>
                 </div>
@@ -166,7 +165,11 @@
     <!-- ======= Cta Section ======= -->
     <section id="cta" class="cta">
         <div class="container">
-
+            <div class="row">
+                <div class="col-md-12 text-center mb-3">
+                    <img style="width: 348px;" src="<?= asset('images/logo-esex.png') ?>" alt="SEM LOGO">
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-4 text-center">
                     <a class="cta-btn align-middle" href="<?= SITE['root'] . "/cursos-de-extensao?ensino=EXTENSÃO" ?>">Cursos de Extensão</a>
