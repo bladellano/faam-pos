@@ -194,12 +194,11 @@
                 <h2>Sobre</h2>
             </div>
             <div class="row">
-                <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="<?= SITE['root'] . DS . $sobre->cover ?>" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+
+                <div class="col-lg-12 pt-4 pt-lg-0 order-2 order-lg-1 content">
                     <h3><?= $sobre->description ?></h3>
                     <p style="text-align:justify">
+                        <img src="<?= SITE['root'] . DS . $sobre->cover ?>" alt="SEM IMAGEM" style="float: right; padding-left: 16px; width:50%">
                         <?= $sobre->content ?>
                     </p>
                 </div>
@@ -214,7 +213,6 @@
 
             <div class="section-title">
                 <h2>Parceiros</h2>
-                <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
             </div>
 
             <div class="clients-slider swiper">

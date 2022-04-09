@@ -26,7 +26,7 @@ $(function () {
 
     //Date and time picker
     $('#reservationdatetime').datetimepicker({
-        format: 'DD/MM/YYYY H:m',
+        format: 'DD/MM/YYYY H:mm',
         icons: { time: 'far fa-clock' }
     });
     /**

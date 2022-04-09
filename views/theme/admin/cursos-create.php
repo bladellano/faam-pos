@@ -163,15 +163,25 @@
 
                                                          <div class="form-group">
 
-                                                             <div class="form-group">
-                                                                 <label for="nome">Ensino</label>
-                                                                 <select name="ensino" id="ensino" class="form-control">
-                                                                     <option value="">--Selecione--</option>
-                                                                     <option value="PÓS-GRADUAÇÃO">PÓS-GRADUAÇÃO</option>
-                                                                     <option value="EXTENSÃO">EXTENSÃO</option>
-                                                                 </select>
-                                                             </div>
+                                                             <div class="row">
+                                                                 <div class="form-group col-md-3">
 
+                                                                     <label for="nome">Ensino</label>
+                                                                     <select name="ensino" id="ensino" class="form-control">
+                                                                         <option value="">--Selecione--</option>
+                                                                         <option <?= ($curso->ensino == "PÓS-GRADUAÇÃO") ? "selected" : "" ?> value="PÓS-GRADUAÇÃO">PÓS-GRADUAÇÃO</option>
+                                                                         <option <?= ($curso->ensino == "EXTENSÃO") ? "selected" : "" ?> value="EXTENSÃO">EXTENSÃO</option>
+
+                                                                     </select>
+                                                                 </div>
+
+                                                                 <div class="form-group col-md-9">
+                                                                     <label for="nome">Link de Inscrição</label>
+                                                                     <input placeholder="Url da inscrição: https://" value="<?= isset($curso->link_inscricao) ? $curso->link_inscricao : "" ?>" type="text" class="form-control" id="link_inscricao" name="link_inscricao">
+
+                                                                 </div>
+
+                                                             </div>
                                                              <label for="habilidades_competencias">Habilidades e Competências</label>
                                                              <textarea name="habilidades_competencias" id="habilidades_competencias" class="summernote"><?= isset($curso->habilidades_competencias) ? $curso->habilidades_competencias : "" ?></textarea>
 

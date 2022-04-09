@@ -33,6 +33,11 @@ class Mailer
 		
 		$this->mail->addAddress(Mailer::INBOX, Mailer::NAME_FROM);
 		$this->mail->addAddress($fromAdress, $fromName);
+
+		/** E-mails da Faam Pós */
+		$this->mail->addAddress("seacpos@faam.com.br", $fromName);
+		$this->mail->addAddress("nti@faam.com.br", $fromName);
+
 		$this->mail->Subject = utf8_decode($subject);
 		$this->mail->msgHTML($body);
 		$this->mail->AltBody = 'This is a plain-text message body';

@@ -20,6 +20,8 @@
     <hr>
     <div class="content_page">
         <?= $parceiro->description ?>
+        <hr>
+        Acesse o link do parceiro: <a href="<?= $parceiro->url ?>" class="btn btn-sm btn-primary" target="_blank">Clique aqui</a>
     </div>
 </div>
 <!-- ./container -->

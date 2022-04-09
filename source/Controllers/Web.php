@@ -103,7 +103,6 @@ class Web extends Controller
             "head" => $head
         ]);
     }
-
     
     public function cursos(): void
     {
@@ -132,7 +131,7 @@ class Web extends Controller
 
         $paginator->pager($curso->find($terms, $params)->count(), $limit, $page, 2);
 
-        $cursos = $curso->find($terms, $params)->limit($paginator->limit())->offset($paginator->offset())->fetch(true);
+        $cursos = $curso->find($terms, $params)->limit($paginator->limit())->offset($paginator->offset())->fetch(true) ?? [];
 
         echo $this->view->render("theme/site/cursos", [
             "head" => "",

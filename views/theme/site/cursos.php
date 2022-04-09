@@ -17,6 +17,12 @@
     <hr>
     <div class="content_page">
 
+        <?php if (!count($cursos)) : ?>
+            <div class="alert alert-danger" role="alert">
+                Oops! Nenhum curso encontrado.
+            </div>
+        <?php endif; ?>
+        
         <ul class="list-group">
             <?php foreach ($cursos as $c) : ?>
                 <li class="list-group-item"> <a href="<?= SITE['root'] . "/cursos/" . $c->slug ?>"> <?= mb_strtoupper($c->nome) ?> </a></li>

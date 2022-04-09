@@ -151,12 +151,12 @@
                     </div>
                 </div>
                 <div class="login_form_callback"> <?= flash(); ?></div>
-                <form action="<?=SITE['root']?>/form-submission" method="POST">
+                <form action="<?= SITE['root'] ?>/form-submission" method="POST">
 
-                <input type="hidden" name="typeForm" value="Matrícula">
+                    <input type="hidden" name="typeForm" value="Matrícula">
 
-                
-                <div class="mb-3">
+
+                    <div class="mb-3">
                         <label class="form-label">Curso</label>
                         <input type="text" style="pointer-events:none" class="form-control" name="curso" value="<?= mb_strtoupper($curso->nome) ?>">
                     </div>
@@ -178,7 +178,11 @@
                         <label class="form-check-label" for="ciente">Li e aceito os <a href="#">termos de política de privacidade e responsabilidade</a> da Pós-Graduação FAAM.</label>
                     </div>
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-success">Matricula-se já</button>
+                        <a href="<?= !empty($curso->link_inscricao) ? $curso->link_inscricao : "#" ?>" target="_blank" class="btn btn-lg btn-warning text-success"><b>INSCREVA-SE</b></a>
+                    </div>
+                    <br>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success">Receba mais informações</button>
                     </div>
                     <p class="text-center"><a href="#"> <i class="bx bxl-whatsapp"></i> Dúvidas ? Fale com a gente pelo Whatsapp</a></p>
                 </form>
