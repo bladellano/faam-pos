@@ -11,14 +11,34 @@
     </div>
 </div>
 
+<?php if (!empty($curso->cover)) : ?>
+    <div class="wrapInternalImage">
+        <img class="img-responsive" src="<?= SITE['root'] . DS . $curso->cover ?>" alt="SEM IMAGEM">
+    </div>
+<?php endif; ?>
+
 <div class="container">
 
     <div class="row mt-4">
 
         <div class="col-md-8 curso">
 
-            <h3 class="nomeCurso"><?= mb_strtoupper($curso->nome) ?></h3>
-            <p><?= $curso->sobre_o_curso ?></p>
+            <div class="row">
+
+                <div class="col-md-2 text-center">
+                    <?php if (!empty($curso->logo)) : ?>
+                        <img class="img-fluid" src="<?= SITE['root'] . DS . $curso->logo ?>" alt="">
+                    <?php else : ?>
+                        <img class="img-fluid" src="<?= asset('images/favicon.png') ?>" alt="">
+                    <?php endif; ?>
+                </div>
+
+                <div class="col-md-10">
+                    <h3 class="nomeCurso"><?= mb_strtoupper($curso->nome) ?></h3>
+                    <p><?= $curso->sobre_o_curso ?></p>
+                </div>
+            </div>
+
             <h2> <i class="bx bxs-bookmark"></i> O QUE VOCÊ VAI APRENDER</h2>
 
             <!--  -->

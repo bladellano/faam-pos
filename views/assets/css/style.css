@@ -220,7 +220,7 @@ a {
 /* Paginas internas */
 .wrapInternalImage::before {
   content: "";
-  background-color: rgba(45, 103, 60, 0.8);
+  background-color: rgba(45, 103, 60, 0.5);
   width: 100%;
   position: absolute;
   height: 138px;
