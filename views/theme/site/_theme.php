@@ -131,7 +131,7 @@
             </ul>
           </li> -->
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/como-ingressar">Como Ingressar</a></li>
-          <li class="dropdown"><a href="#"><span>Vantages e Benefícios</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>Vantagens e Benefícios</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="<?= SITE['root'] . DS ?>convenios">Convênios</a></li>
               <li><a href="<?= SITE['root'] . DS ?>descontos">Descontos</a></li>

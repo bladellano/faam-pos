@@ -204,7 +204,11 @@
                     <div class="d-grid">
                         <button type="submit" class="btn btn-success">Receba mais informações</button>
                     </div>
-                    <p class="text-center"><a href="#"> <i class="bx bxl-whatsapp"></i> Dúvidas ? Fale com a gente pelo Whatsapp</a></p>
+                    <p class="text-center mt-2">
+                        <a href="https://api.whatsapp.com/send?phone=5591991436058" target="_blank">
+                            <i class="bx bxl-whatsapp"></i> Dúvidas ? Fale com a gente pelo Whatsapp
+                        </a>
+                    </p>
                 </form>
             </div>
         </div>
