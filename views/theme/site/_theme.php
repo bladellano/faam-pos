@@ -85,8 +85,9 @@
         <ul>
           <li><a class="nav-link scrollto active" href="<?= SITE['root'] ?>#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>#about">Sobre</a></li>
-
-          <li class="dropdown"><a href="#"><span>Pos-Graduação</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" href="#cta">Escola de Extensão</a></li>
+          <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/cursos">Pos-Graduação</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Pos-Graduação</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li class="dropdown"><a href="#"><span>Conheça</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
@@ -101,9 +102,8 @@
               </li>
 
             </ul>
-          </li>
-
-          <li class="dropdown"><a href="#"><span>Conheça</span> <i class="bi bi-chevron-down"></i></a>
+          </li> -->
+          <!-- <li class="dropdown"><a href="#"><span>Conheça</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li class="dropdown"><a href="#"><span>Institucional</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
@@ -129,15 +129,15 @@
                 </ul>
               </li>
             </ul>
-          </li>
-
-          <li class="dropdown"><a href="<?= SITE['root'] . DS ?>como-ingressar"><span>Como ingressar</span> <i class="bi bi-chevron-down"></i></a>
+          </li> -->
+          <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/como-ingressar">Como Ingressar</a></li>
+          <li class="dropdown"><a href="#"><span>Vantages e Benefícios</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="<?= SITE['root'] . DS ?>cursos">Pós-Graduação</a></li>
-              <li><a href="<?= SITE['root'] . DS ?>reabertura-de-matricula">Reabertura de Matrícula</a></li>
+              <li><a href="<?= SITE['root'] . DS ?>convenios">Convênios</a></li>
+              <li><a href="<?= SITE['root'] . DS ?>descontos">Descontos</a></li>
             </ul>
           </li>
-
+          <!-- <li><a class="nav-link scrollto" href="#">Área do Candidato</a></li> -->
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>#contact">Contato</a></li>
           <li><a class="getstarted scrollto" href="<?= SITE['root'] ?>#contact">INSCREVA-SE</a></li>
         </ul>
