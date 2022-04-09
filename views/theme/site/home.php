@@ -252,6 +252,7 @@
                             <h4>E-mail:</h4>
                             <p>Coordenação: posgraduacao@faam.com.br
                                 <br />Secretaria: seacpos@faam.com.br</br>
+                                Extensão: coord.extensao@faam.com.br
                         </div>
 
                         <div class="phone">
