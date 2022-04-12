@@ -83,9 +83,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="<?= SITE['root'] ?>#hero">Home</a></li>
+          <!-- <li><a class="nav-link scrollto active" href="<?= SITE['root'] ?>#hero">Home</a></li> -->
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>#about">Sobre</a></li>
-          <li><a class="nav-link scrollto" href="#cta">Escola de Extensão</a></li>
+          <li><a class="nav-link scrollto" href=""<?= SITE['root'] ?>#cta">Escola de Extensão</a></li>
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/cursos">Pos-Graduação</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Pos-Graduação</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

@@ -42,6 +42,7 @@
                                      <th>Descrição</th>
                                      <th>Slug</th>
                                      <th>Tipo</th>
+                                     <th>Ordenar</th>
                                      <th>Criado</th>
                                      <th>Atualizado</th>
                                      <th style="width: 70px"></th>
@@ -57,6 +58,12 @@
                                          <td><?= $p->description ?></td>
                                          <td><?= $p->slug ?></td>
                                          <td><?= $p->type ?></td>
+                                         <td style="text-align:center"> 
+                                            <input 
+                                                type="radio" name="changeOrder" 
+                                                onChange='window.location.href = "<?=SITE['root']?>/admin/posts/change-order/<?= $p->id ?>"'
+                                            > 
+                                        </td>
                                          <td><?= convertDatePtbr($p->created_at)?></td>
                                          <td><?= convertDatePtbr($p->updated_at)?></td>
                                          <td>

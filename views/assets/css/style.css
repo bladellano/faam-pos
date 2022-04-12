@@ -108,7 +108,7 @@ a {
 }
 
 #header .logo img {
-  max-height: 64px;
+  max-height: 50px;
 }
 
 .portfolio .portfolio-wrap .portfolio-info {
@@ -258,6 +258,10 @@ a {
 .content_page {
   min-height: 350px;
   line-height: 40px;
+}
+.content_page img {
+    margin: 4px;
+    border: 1px solid #ddd;
 }
 
 #hero .carousel-indicators li.active {

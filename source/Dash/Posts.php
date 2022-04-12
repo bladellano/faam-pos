@@ -111,6 +111,31 @@ class Posts extends DashController
         ]);
     }
 
+    public function changeOrder($data)
+    {
+        $post = (new \Source\Models\Post())->findById($data['id']);
+
+        if($post){
+
+            $post->updated_at = date('Y-m-d H:m:s');
+
+            if (!$post->save()) {
+                echo $this->ajaxResponse("message", [
+                    "type" => "error",
+                    "message" => $post->fail()->getMessage()
+                ]);
+                return;
+            }
+
+            flash("success", "Ordem alterada com sucesso!");
+
+            header("Location: " . SITE['root'] . "/admin/posts");
+    
+            return;
+        }
+
+    }
+
     public function update($data): void
     {
         $post = (new \Source\Models\Post())->findById($data['id']);

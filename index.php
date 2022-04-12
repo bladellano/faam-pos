@@ -77,6 +77,8 @@ $app->post("/posts/update/{id}", "Posts:update", "posts.update");
 $app->get("/posts/delete/{id}", "Posts:delete", "posts.delete");
 $app->get("/posts/edit/{id}", "Posts:edit", "posts.edit");
 $app->get("/posts/remove-cover/{id}", "Posts:removeCover", "posts.removecover");
+    $app->get("/posts/change-order/{id}", "Posts:changeOrder", "posts.changeorder");
+
 
 /** Parceiros */
 $app->get("/parceiros", "Parceiros:home", "parceiros.home");

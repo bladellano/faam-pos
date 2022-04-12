@@ -175,27 +175,22 @@
 
                     <input type="hidden" name="typeForm" value="Matrícula">
 
+                    <!-- <div class="mb-3"> -->
+                        <input type="hidden" style="pointer-events:none" class="form-control" name="curso" value="<?= mb_strtoupper($curso->nome) ?>">
+                    <!-- </div> -->
 
                     <div class="mb-3">
-                        <label class="form-label">Curso</label>
-                        <input type="text" style="pointer-events:none" class="form-control" name="curso" value="<?= mb_strtoupper($curso->nome) ?>">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Nome</label>
-                        <input type="text" class="form-control" name="nome">
+                        <input type="text" class="form-control" name="nome" placeholder="Nome">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">E-mail</label>
-                        <input type="email" class="form-control" name="email">
+                        <input type="email" class="form-control" name="email" placeholder="E-mail">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Telefone</label>
-                        <input type="phone" class="form-control" name="telefone">
+                        <input type="phone" class="form-control" name="telefone" placeholder="Telefone">
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="ciente" name="ciente">
-                        <label class="form-check-label" for="ciente">Li e aceito os <a href="#">termos de política de privacidade e responsabilidade</a> da Pós-Graduação FAAM.</label>
+                        <label class="form-check-label" for="ciente" style="font-size:12px">Li e aceito os <a href="#">termos de política de privacidade e responsabilidade</a> da Pós-Graduação FAAM.</label>
                     </div>
                     <div class="d-grid">
                         <a href="<?= !empty($curso->link_inscricao) ? $curso->link_inscricao : "#" ?>" target="_blank" class="btn btn-lg btn-warning text-success"><b>INSCREVA-SE</b></a>

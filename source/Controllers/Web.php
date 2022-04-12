@@ -43,8 +43,8 @@ class Web extends Controller
     {
         $banners = (new Banner)->find()->order("updated_at DESC")->fetch(true) ?? [];
         $areas = (new Area)->find()->order("nome ASC")->fetch(true) ?? [];
-        $noticias = (new Post())->find("type = :type", "type=post")->limit(3)->fetch(true);
-        $agendas = (new Post())->find("type = :type", "type=schedule")->limit(3)->fetch(true);
+        $noticias = (new Post())->find("type = :type", "type=post")->order("updated_at DESC")->limit(3)->fetch(true);
+        $agendas = (new Post())->find("type = :type", "type=schedule")->order("updated_at DESC")->limit(3)->fetch(true);
         $parceiros = (new Parceiro())->find()->fetch(true);
 
         $sobre = (new Post())->find("slug = :slug", "slug=sobre")->fetch();
