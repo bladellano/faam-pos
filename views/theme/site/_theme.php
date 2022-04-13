@@ -75,7 +75,8 @@
 
       <h1 class="logo me-auto"><a href="<?= SITE['root'] ?>">
           <img src="<?= asset('images/logo-faam-pos.png') ?>" alt="">
-        </a></h1>
+        </a>
+      </h1>
 
       <h1 class="logo me-auto"><a href="index.html">
           <link rel="icon" type="image/x-icon" href="<?= asset("images/favicon.png"); ?>">
@@ -85,7 +86,7 @@
         <ul>
           <!-- <li><a class="nav-link scrollto active" href="<?= SITE['root'] ?>#hero">Home</a></li> -->
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>#about">Sobre</a></li>
-          <li><a class="nav-link scrollto" href=""<?= SITE['root'] ?>#cta">Escola de Extensão</a></li>
+          <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/#cta">Escola de Extensão</a></li>
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/cursos">Pos-Graduação</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Pos-Graduação</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -131,7 +132,7 @@
             </ul>
           </li> -->
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/como-ingressar">Como Ingressar</a></li>
-          <li class="dropdown"><a href="#"><span>Vantagens e Benefícios</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span style="text-align:center">Vantagens e<br> Benefícios</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="<?= SITE['root'] . DS ?>convenios">Convênios</a></li>
               <li><a href="<?= SITE['root'] . DS ?>descontos">Descontos</a></li>

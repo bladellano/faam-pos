@@ -20,7 +20,7 @@ By Caio Dellano
   color: var(--cor-primary);
   font-weight: 700;
   font-family: "Poppins";
-  font-size: 16px;
+  font-size: 14px;
 }
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
@@ -108,7 +108,7 @@ a {
 }
 
 #header .logo img {
-  max-height: 50px;
+  max-height: 44px;
 }
 
 .portfolio .portfolio-wrap .portfolio-info {
