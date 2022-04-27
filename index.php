@@ -71,6 +71,7 @@ $app->post("/forgot/reset", "Auth:forgotReset", "auth.forgotreset");
 
 /** Posts */
 $app->get("/posts", "Posts:home", "posts.home");
+$app->get("/posts/list", "Posts:list", "posts.list");
 $app->get("/posts/create", "Posts:create", "posts.create");
 $app->post("/posts/register", "Posts:register", "posts.register");
 $app->post("/posts/update/{id}", "Posts:update", "posts.update");

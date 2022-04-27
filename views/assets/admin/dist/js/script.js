@@ -96,8 +96,57 @@ $(function () {
             }
         }
     });
-});
 
+    /** Datables Filter Posts */
+    _tableFilterPosts = tableFilterPosts();
+
+    $("#btnFilterPosts").click(function (e) {
+        const formData = $(e.currentTarget.form).serializeArray();
+        _tableFilterPosts.destroy();
+        _tableFilterPosts = tableFilterPosts({ form_filter: formData });
+
+    });
+
+
+}); //End
+
+ /** Function - Datables Filter Posts */
+function tableFilterPosts(data = {}) {
+
+    return $('#filter-posts').DataTable({
+        order: [[0, 'desc']],
+        "searching": true,
+        "processing": true,
+        "serverSide": true,
+
+        "ajax": {
+            "url": "/admin/posts/list",
+            type: "GET",
+            data: data,
+        },
+        "language": {
+            "sLengthMenu": "Mostrar _MENU_ registros",
+            "sZeroRecords": "Nenhum registro encontrado",
+            "sEmptyTable": "Nenhum registro encontrado",
+            "sInfo": "Exibindo registros de _START_ até _END_ de um total de _TOTAL_ registros",
+            "sInfoEmpty": "Exibindo registros de 0 a 0 de um total de 0 registros",
+            "sInfoFiltered": "(filtrado de um total de _MAX_ registros)",
+            "sInfoPostFix": "",
+            "sSearch": "Buscar: ",
+            "sUrl": "",
+            "sInfoThousands": ",",
+            "sLoadingRecords": "Carregando...",
+            "sProcessing": "Processando...",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Próximo",
+                "sPrevious": "Anterior"
+            },
+        },
+
+    });
+}
 //Datatables
 table = $('#anexos-ativos').DataTable({
     "processing": true,
@@ -115,7 +164,7 @@ table = $('#anexos-ativos').DataTable({
         {
             "data": "arquivo",
             "fnCreatedCell": function (nTd, data, dt) {
-             
+
 
                 $(nTd).html(` <input type="text" value="${$('#anexos-ativos').data('url')}/${dt.arquivo}">`);
             }

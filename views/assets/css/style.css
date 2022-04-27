@@ -260,8 +260,8 @@ a {
   line-height: 40px;
 }
 .content_page img {
-    margin: 4px;
-    border: 1px solid #ddd;
+  margin: 4px;
+  border: 1px solid #ddd;
 }
 
 #hero .carousel-indicators li.active {
@@ -275,24 +275,31 @@ a {
   margin: 0;
 }
 #footer ul li {
-  line-height: 30px;
+    line-height: 36px;
+    font-size: 16px;
 }
 #footer ul li a {
-  color: white;
+  color: black;
   font-weight: unset;
 }
 #footer ul li a:hover {
   color: var(--cor-primary);
 }
 #footer h4 {
-  color: white;
+  color: black;
   font-weight: 700;
   font-family: "Poppins";
   font-size: 18px;
+  margin: 14px 0;
 }
 
+#footer img{
+  width: 80%;
+  filter: brightness(0);
+}
 #footer {
-  background: #160c4a;
+  background: #ffc600;
+  padding: 48px 0;
 }
 
 #footer .social-links a:hover {
@@ -301,7 +308,17 @@ a {
 #footer .social-links a {
   background: var(--cor-primary);
 }
+.socials--footer {
+  display: flex;
+  justify-content: space-around;
+}
 
+.socials--footer li a i {
+  font-size: 28px;
+  border-radius: 50%;
+  border: 1px solid black;
+  padding: 10px;
+}
 /* Custom Paginação */
 
 .paginator {

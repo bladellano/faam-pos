@@ -157,64 +157,85 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <h4>Institucional</h4>
+          <img src="<?= SITE['root'] . "/views/assets/" ?>images/logo-pb.png" alt="Logo" class="img-fluid">
           <ul>
-            <li> <a href="#"> Blog</a></li>
-            <li> <a href="#"> Contrato</a></li>
-            <li> <a href="#"> Aviso de Privacidade</a></li>
-            <li> <a href="#"> Regulamentos</a></li>
-            <li> <a href="#"> Perguntas Frequentes</a></li>
+            <li> <a target="_blank" href="http://portal.faam.com.br/a-faculdade"> A Faculdade</a></li>
+            <li> <a target="_blank" href="http://portal.faam.com.br/seja-nosso-parceiro"> Seja nosso Parceiro</a></li>
+            <li> <a target="_blank" href="http://portal.faam.com.br/trabalhe-conosco"> Trabalhe Conosco</a></li>
+            <li> <a target="_blank" href="http://portal.faam.com.br/assessoria-de-imprensa"> Assessoria de imprensa</a></li>
+          </ul>
+          <br>
+          <ul class="socials--footer">
+
+            <li><a href="https://www.facebook.com/faculdadedaamazonia" target="_blank"><i data-width="133" class="bx bxl-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/faamoficial/" target="_blank"><i data-width="133" class="bx bxl-instagram"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCMgSVAJpxjBDh5ttG2bhU0Q" target="_blank"><i data-width="133" class="bx bxl-youtube"></i></a></li>
+            <li><a href="https://www.linkedin.com/school/faam---faculdade-da-amaz%C3%B4nia/" target="_blank"><i data-width="133" class="bx bxl-linkedin"></i></a></li>
           </ul>
         </div>
         <div class="col-md-3">
-          <h4>Áreas de Estudo</h4>
+          <h4>Institucional/Ensino</h4>
           <ul>
-            <li> <a href="#"> Blog</a></li>
-            <li> <a href="#"> Contrato</a></li>
-            <li> <a href="#"> Aviso de Privacidade</a></li>
-            <li> <a href="#"> Regulamentos</a></li>
-            <li> <a href="#"> Perguntas Frequentes</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Quem Somos</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Modalidade de Ensino</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Cursos de Pós-graduação</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Manual do Professor</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Manual do Aluno</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Formas de Ingresso</a></li>
+          </ul>
+          <h4>Atendimento ao Aluno</h4>
+          <ul>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Secretaria Acadêmica</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Fale com a Coordenação</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"><i class="bi bi-person-circle"></i> Aluno On-line</a></li>
+          </ul>
+
+        </div>
+        <div class="col-md-3">
+          <h4>Extensão</h4>
+          <ul>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Regulamento</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Portaria</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Cursos</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Pesquisa Acadêmica</a></li>
+          </ul>
+          <h4>Links Úteis</h4>
+          <ul>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Biblioteca</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Fale Conosco</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Política de Privacidade</a></li>
+            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Pesquisa acadêmica</a></li>
           </ul>
         </div>
         <div class="col-md-3">
-          <h4>Acesso Rápido</h4>
+          <h4>Atendimento</h4>
           <ul>
-            <li> <a href="#"> Blog</a></li>
-            <li> <a href="#"> Contrato</a></li>
-            <li> <a href="#"> Aviso de Privacidade</a></li>
-            <li> <a href="#"> Regulamentos</a></li>
-            <li> <a href="#"> Perguntas Frequentes</a></li>
+            <li><a href="#">Telefone: (91) 9 9143-6058</a></li>
+            <li><a href="#">E-mail: posgraduacao@faam.com.br </a></li>
+          </ul>
+          <h4>Bolsas, Parcerias e Convênios</h4>
+          <ul>
+            <li><a href="<?= SITE['root'] ?>/quem-somos">Saiba mais</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
-          <h4>Endereço</h4>
-          <ul>
-            <li> <a href="#"> BR-010, 590 - Levilândia, Ananindeua - PA, 67000-000</a></li>
-          </ul>
-          <h4>Telefone</h4>
-          <ul>
-            <li> <a href="#"> (91) 9 9143-6058</a></li>
-          </ul>
-        </div>
+
       </div>
 
-      <img style="width: 146px;" src="<?= asset('images/logo-pb.png') ?>" alt="SEM LOGO">
-      <p>A Faculdade FAAM tem como missão ensinar e formar profissionais de valor para atuarem em todas as áreas.</p>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span><?= SITE['name'] ?></span></strong>. Todos os direitos reservados
-      </div>
-      <div class="credits">
-        Desenvolvido por <a href="https://www.dellanosites.com.br/" target="_blank">DellanoSites</a>
-      </div>
     </div>
   </footer><!-- End Footer -->
+
+  <div class="container-fluid pb-2 pt-2 text-center" style="background-color:#006f23">
+    <a class="btn btn-warning getstarted scrollto" href="<?= SITE['root'] ?>#contact"><b>INSCREVA-SE</b></a>
+  </div>
+
+  <div class="container-fluid bg-warning pb-2 pt-4 text-center text-black">
+    <div class="copyright">
+      &copy; Copyright <strong><span><?= SITE['name'] ?></span></strong>. Todos os direitos reservados
+    </div>
+    <div class="credits">
+      Desenvolvido por <a href="https://www.dellanosites.com.br/" target="_blank">DellanoSites</a>
+    </div>
+  </div>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
