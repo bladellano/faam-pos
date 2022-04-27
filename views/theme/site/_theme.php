@@ -84,53 +84,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <!-- <li><a class="nav-link scrollto active" href="<?= SITE['root'] ?>#hero">Home</a></li> -->
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>#about">Sobre</a></li>
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/#cta">Escola de Extensão</a></li>
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/cursos">Pos-Graduação</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Pos-Graduação</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li class="dropdown"><a href="#"><span>Conheça</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="<?= SITE['root'] . DS . 'diferenciais-e-beneficios' ?>">Diferencias e Benefícios</a></li>
-                </ul>
-              </li>
-
-              <li class="dropdown"><a href="#"><span>Para Empresas</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="<?= SITE['root'] . DS ?>solucoes-coorporativas">Soluções Corporativas</a></li>
-                </ul>
-              </li>
-
-            </ul>
-          </li> -->
-          <!-- <li class="dropdown"><a href="#"><span>Conheça</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li class="dropdown"><a href="#"><span>Institucional</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="<?= SITE['root'] . DS ?>quem-somos">Quem somos</a></li>
-                  <li><a href="<?= SITE['root'] . DS ?>nossa-infraestrutura">Nossa Infraestrutura</a></li>
-                  <li><a href="<?= SITE['root'] . DS ?>tour-360">Tour 360º</a></li>
-                </ul>
-              </li>
-
-              <li class="dropdown"><a href="#"><span>Diferenciais</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="<?= SITE['root'] . DS ?>suporte-ao-aluno">Suporte ao Aluno</a></li>
-                  <li><a href="<?= SITE['root'] . DS ?>qualidade-academica">Qualidade Acadêmica</a></li>
-                  <li><a href="<?= SITE['root'] . DS ?>beneficios-internacionais">Benefícios Internacionais</a></li>
-                </ul>
-              </li>
-
-              <li class="dropdown"><a href="#"><span>Mais Serviços</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="<?= SITE['root'] . DS ?>perguntas-frequentes">Perguntas Frequentes</a></li>
-                  <li><a href="<?= SITE['root'] . DS ?>sala-de-imprensa">Sala de Imprensa</a></li>
-                  <li><a href="<?= SITE['root'] . DS ?>trabalhe-conosco">Trabalhe Conosco</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li> -->
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/como-ingressar">Como Ingressar</a></li>
           <li class="dropdown"><a href="#"><span style="text-align:center">Vantagens e<br> Benefícios</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -138,7 +94,6 @@
               <li><a href="<?= SITE['root'] . DS ?>descontos">Descontos</a></li>
             </ul>
           </li>
-          <!-- <li><a class="nav-link scrollto" href="#">Área do Candidato</a></li> -->
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>#contact">Contato</a></li>
           <li><a class="getstarted scrollto" href="<?= SITE['root'] ?>#contact">INSCREVA-SE</a></li>
         </ul>
@@ -198,7 +153,7 @@
           <ul>
             <li> <a href="<?= SITE['root'] ?>/regulamento"> Regulamento</a></li>
             <li> <a href="<?= SITE['root'] ?>/portaria"> Portaria</a></li>
-            <li> <a href="<?= SITE['root'] ?>/cursos"> Cursos</a></li>
+            <li> <a href="<?= SITE['root'] ?>/cursos-de-extensao?ensino=EXTENSÃO"> Cursos</a></li>
             <li> <a href="<?= SITE['root'] ?>/pesquisa-academica"> Pesquisa Acadêmica</a></li>
           </ul>
           <h4>Links Úteis</h4>
