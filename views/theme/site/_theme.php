@@ -157,7 +157,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
+          <a href="http://portal.faam.com.br/" target="_blank">
           <img src="<?= SITE['root'] . "/views/assets/" ?>images/logo-pb.png" alt="Logo" class="img-fluid">
+          </a>
           <ul>
             <li> <a target="_blank" href="http://portal.faam.com.br/a-faculdade"> A Faculdade</a></li>
             <li> <a target="_blank" href="http://portal.faam.com.br/seja-nosso-parceiro"> Seja nosso Parceiro</a></li>

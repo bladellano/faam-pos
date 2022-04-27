@@ -279,14 +279,14 @@ a {
     font-size: 16px;
 }
 #footer ul li a {
-  color: black;
+  color: white;
   font-weight: unset;
 }
 #footer ul li a:hover {
   color: var(--cor-primary);
 }
 #footer h4 {
-  color: black;
+  color: white;
   font-weight: 700;
   font-family: "Poppins";
   font-size: 18px;
@@ -295,10 +295,10 @@ a {
 
 #footer img{
   width: 80%;
-  filter: brightness(0);
 }
 #footer {
-  background: #ffc600;
+  /* background: #ffc600; */
+  background-image: linear-gradient(to right, #013334, #004c00);
   padding: 48px 0;
 }
 
@@ -316,7 +316,7 @@ a {
 .socials--footer li a i {
   font-size: 28px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 10px;
 }
 /* Custom Paginação */
