@@ -179,34 +179,34 @@
           <h4>Institucional/Ensino</h4>
           <ul>
             <li> <a href="<?= SITE['root'] ?>/quem-somos"> Quem Somos</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Modalidade de Ensino</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Cursos de Pós-graduação</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Manual do Professor</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Manual do Aluno</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Formas de Ingresso</a></li>
+            <li> <a href="<?= SITE['root'] ?>/modalidade-de-ensino"> Modalidade de Ensino</a></li>
+            <li> <a href="<?= SITE['root'] ?>/cursos"> Cursos de Pós-graduação</a></li>
+            <li> <a href="<?= SITE['root'] ?>/manual-do-professor"> Manual do Professor</a></li>
+            <li> <a href="<?= SITE['root'] ?>/manual-do-aluno"> Manual do Aluno</a></li>
+            <li> <a href="<?= SITE['root'] ?>/formas-de-ingresso"> Formas de Ingresso</a></li>
           </ul>
           <h4>Atendimento ao Aluno</h4>
           <ul>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Secretaria Acadêmica</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Fale com a Coordenação</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"><i class="bi bi-person-circle"></i> Aluno On-line</a></li>
+            <li> <a href="<?= SITE['root'] ?>/secretaria-academica"> Secretaria Acadêmica</a></li>
+            <li> <a class="getstarted scrollto" href="<?= SITE['root'] ?>#contact">Fale com a Coordenação</a></li>
+            <li> <a href="#"><i class="bi bi-person-circle"></i> Aluno On-line</a></li>
           </ul>
 
         </div>
         <div class="col-md-3">
           <h4>Extensão</h4>
           <ul>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Regulamento</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Portaria</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Cursos</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Pesquisa Acadêmica</a></li>
+            <li> <a href="<?= SITE['root'] ?>/regulamento"> Regulamento</a></li>
+            <li> <a href="<?= SITE['root'] ?>/portaria"> Portaria</a></li>
+            <li> <a href="<?= SITE['root'] ?>/cursos"> Cursos</a></li>
+            <li> <a href="<?= SITE['root'] ?>/pesquisa-academica"> Pesquisa Acadêmica</a></li>
           </ul>
           <h4>Links Úteis</h4>
           <ul>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Biblioteca</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Fale Conosco</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Política de Privacidade</a></li>
-            <li> <a href="<?= SITE['root'] ?>/quem-somos"> Pesquisa acadêmica</a></li>
+            <li> <a href="<?= SITE['root'] ?>/biblioteca"> Biblioteca</a></li>
+            <li> <a class="getstarted scrollto" href="<?= SITE['root'] ?>#contact">Fale Conosco</a></li>
+            <li> <a href="<?= SITE['root'] ?>/politica-de-privacidade"> Política de Privacidade</a></li>
+            <li> <a href="<?= SITE['root'] ?>/pesquisa-academica"> Pesquisa acadêmica</a></li>
           </ul>
         </div>
         <div class="col-md-3">
@@ -217,7 +217,7 @@
           </ul>
           <h4>Bolsas, Parcerias e Convênios</h4>
           <ul>
-            <li><a href="<?= SITE['root'] ?>/quem-somos">Saiba mais</a></li>
+            <li><a href="<?= SITE['root'] ?>/bolsas-parcerias-e-convenios">Saiba mais</a></li>
           </ul>
         </div>
 
