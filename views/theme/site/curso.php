@@ -35,7 +35,6 @@
 
                 <div class="col-md-10">
                     <h3 class="nomeCurso"><?= mb_strtoupper($curso->nome) ?></h3>
-                    <p><?= $curso->sobre_o_curso ?></p>
                 </div>
             </div>
 
