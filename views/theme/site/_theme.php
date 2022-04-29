@@ -61,10 +61,8 @@
         <i class="bi bi-phone-fill phone-icon"></i> (91) 9 9143-6058
       </div>
       <div class="social-links d-none d-md-block">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="https://posfaam.paineldoaluno.com.br/" target="_blank" class="twitter"><i class="bi bi-person-circle"></i> Aluno On-line</a>
+        <a href="https://posfaam.paineldoaluno.com.br/professor_login" target="_blank" class="twitter"><i class="bi bi-person-circle"></i> Professor On-line</a>
       </div>
     </div>
   </section>
@@ -144,7 +142,7 @@
           <ul>
             <li> <a href="<?= SITE['root'] ?>/secretaria-academica"> Secretaria Acadêmica</a></li>
             <li> <a class="getstarted scrollto" href="<?= SITE['root'] ?>#contact">Fale com a Coordenação</a></li>
-            <li> <a href="#"><i class="bi bi-person-circle"></i> Aluno On-line</a></li>
+           
           </ul>
 
         </div>
@@ -158,6 +156,8 @@
           </ul>
           <h4>Links Úteis</h4>
           <ul>
+          <li> <a href="https://posfaam.paineldoaluno.com.br/" target="_blank"><i class="bi bi-person-circle"></i> Aluno On-line</a></li>
+          <li> <a href="https://posfaam.paineldoaluno.com.br/professor_login" target="_blank"><i class="bi bi-person-circle"></i> Professor On-line</a></li>
             <li> <a href="<?= SITE['root'] ?>/biblioteca"> Biblioteca</a></li>
             <li> <a class="getstarted scrollto" href="<?= SITE['root'] ?>#contact">Fale Conosco</a></li>
             <li> <a href="<?= SITE['root'] ?>/politica-de-privacidade"> Política de Privacidade</a></li>

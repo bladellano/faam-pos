@@ -44,7 +44,7 @@ class Cursos extends DashController
         $user = \Source\Session\Session::get('user');
         $slug = new \Ausi\SlugGenerator\SlugGenerator();
 
-        if (empty($data['objetivo_geral']) || empty($data['nome']) || empty($data['sobre_o_curso'])) {
+        if (empty($data['nome']) || empty($data['sobre_o_curso']) ) {
             echo $this->ajaxResponse("message", [
                 "type" => "error",
                 "message" => "Preencha todos os campos!"

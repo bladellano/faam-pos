@@ -8,6 +8,6 @@ class Curso extends DataLayer
 {
     public function __construct()
     {
-        parent::__construct("pos_cursos", ["nome", "objetivo_geral"]);
+        parent::__construct("pos_cursos", ["nome", "sobre_o_curso"]);
     }
 }

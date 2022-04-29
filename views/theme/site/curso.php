@@ -42,76 +42,69 @@
             <h2> <i class="bx bxs-bookmark"></i> O QUE VOCÊ VAI APRENDER</h2>
 
             <!--  -->
-            <?php if (!empty($curso->objetivo_geral)) : ?>
-                <h4 data-bs-toggle="collapse" href="#collapseObjetivoGeral" role="button" aria-expanded="true" aria-controls="collapseObjetivoGeral">OBJETIVO GERAL</h4>
-                <div class="collapse show" id="collapseObjetivoGeral">
+            <?php if (!empty($curso->sobre_o_curso)) : ?>
+                <h4 data-bs-toggle="collapse" href="#cSobreCurso" role="button" aria-expanded="true" aria-controls="cSobreCurso">SOBRE O CURSO</h4>
+                <div class="collapse show" id="cSobreCurso">
                     <div class="card card-body">
-                        <?= $curso->objetivo_geral ?>
+                        <?= $curso->sobre_o_curso ?>
                     </div>
                 </div>
             <?php endif; ?>
 
-            <!--  -->
-            <?php if (!empty($curso->objetivos_especificos)) : ?>
-                <h4 data-bs-toggle="collapse" href="#collapseObjetivosEspecifico" role="button" aria-expanded="true" aria-controls="collapseObjetivosEspecifico">OBJETIVO ESPECÍFICOS</h4>
-                <div class="collapse show" id="collapseObjetivosEspecifico">
+            <?php if (!empty($curso->publico_alvo)) : ?>
+                <h4 data-bs-toggle="collapse" href="#cPublicoAlvo" role="button" aria-expanded="true" aria-controls="cPublicoAlvo">PÚBLICO ALVO</h4>
+                <div class="collapse show" id="cPublicoAlvo">
                     <div class="card card-body">
-                        <?= $curso->objetivos_especificos ?>
+                        <?= $curso->publico_alvo ?>
                     </div>
                 </div>
             <?php endif; ?>
 
-            <!--  -->
-            <?php if (!empty($curso->habilidades_competencias)) : ?>
-                <h4 data-bs-toggle="collapse" href="#collapseHabilidadesCompetencias" role="button" aria-expanded="true" aria-controls="collapseHabilidadesCompetencias">HABILIDADES E COMPETÊNCIAS</h4>
-                <div class="collapse show" id="collapseHabilidadesCompetencias">
+            <?php if (!empty($curso->horarios)) : ?>
+                <h4 data-bs-toggle="collapse" href="#cHorarios" role="button" aria-expanded="true" aria-controls="cHorarios">HORÁRIOS</h4>
+                <div class="collapse show" id="cHorarios">
                     <div class="card card-body">
-                        <?= $curso->habilidades_competencias ?>
+                        <?= $curso->horarios ?>
                     </div>
                 </div>
             <?php endif; ?>
 
-            <!--  -->
-            <?php if (!empty($curso->competencias_profissionalizantes)) : ?>
-                <h4 data-bs-toggle="collapse" href="#collapseCompetenciasProfissionalizantes" role="button" aria-expanded="true" aria-controls="collapseCompetenciasProfissionalizantes">COMPETÊNCIAS PROFISSIONALIZANTES</h4>
-                <div class="collapse show" id="collapseCompetenciasProfissionalizantes">
+            <?php if (!empty($curso->duracao_do_curso)) : ?>
+                <h4 data-bs-toggle="collapse" href="#cDuracaoCurso" role="button" aria-expanded="true" aria-controls="cDuracaoCurso">DURAÇÃO DO CURSO</h4>
+                <div class="collapse show" id="cDuracaoCurso">
                     <div class="card card-body">
-                        <?= $curso->competencias_profissionalizantes ?>
+                        <?= $curso->duracao_do_curso ?>
                     </div>
                 </div>
             <?php endif; ?>
 
-            <!--  -->
-            <?php if (!empty($curso->area_atuacao)) : ?>
-                <h4 data-bs-toggle="collapse" href="#collapseAreaDeAtuacao" role="button" aria-expanded="true" aria-controls="collapseAreaDeAtuacao">ÁREA DE ATUAÇÃO</h4>
-                <div class="collapse show" id="collapseAreaDeAtuacao">
-                    <div class="card card-body">
-                        <?= $curso->area_atuacao ?>
-                    </div>
-                </div>
-            <?php endif; ?>
-
-            <!--  -->
-            <?php if (!empty($curso->perfil_profissional)) : ?>
-                <h4 data-bs-toggle="collapse" href="#collapsePerfilProfissional" role="button" aria-expanded="true" aria-controls="collapsePerfilProfissional">PERFIL PROFISSIONAL</h4>
-                <div class="collapse show" id="collapsePerfilProfissional">
-                    <div class="card card-body">
-                        <?= $curso->perfil_profissional ?>
-                    </div>
-                </div>
-            <?php endif; ?>
-
-            <!--  -->
             <?php if (!empty($curso->investimento)) : ?>
-                <h4 data-bs-toggle="collapse" href="#collapseInvestimento" role="button" aria-expanded="true" aria-controls="collapseInvestimento">INVESTIMENTO</h4>
-                <div class="collapse show" id="collapseInvestimento">
+                <h4 data-bs-toggle="collapse" href="#cInvestimento" role="button" aria-expanded="true" aria-controls="cInvestimento">INVESTIMENTO</h4>
+                <div class="collapse show" id="cInvestimento">
                     <div class="card card-body">
                         <?= $curso->investimento ?>
                     </div>
                 </div>
             <?php endif; ?>
 
-            <!--  -->
+            <?php if (!empty($curso->parcerias)) : ?>
+                <h4 data-bs-toggle="collapse" href="#cParcerias" role="button" aria-expanded="true" aria-controls="cParcerias">PARCERIAS</h4>
+                <div class="collapse show" id="cParcerias">
+                    <div class="card card-body">
+                        <?= $curso->parcerias ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <?php if (!empty($curso->documentacao_necessaria)) : ?>
+                <h4 data-bs-toggle="collapse" href="#cDocNecessaria" role="button" aria-expanded="true" aria-controls="cDocNecessaria">DOCUMENTAÇÃO NECESSÁRIA</h4>
+                <div class="collapse show" id="cDocNecessaria">
+                    <div class="card card-body">
+                        <?= $curso->documentacao_necessaria ?>
+                    </div>
+                </div>
+            <?php endif; ?>
+
             <?php if (!empty($curso->coordenacao)) : ?>
                 <h4 data-bs-toggle="collapse" href="#collapseCoordenacao" role="button" aria-expanded="true" aria-controls="collapseCoordenacao">COORDENAÇÃO</h4>
                 <div class="collapse show" id="collapseCoordenacao">
@@ -120,35 +113,16 @@
                     </div>
                 </div>
             <?php endif; ?>
-
-            <!--  -->
-            <?php if (!empty($curso->diferenciais)) : ?>
-                <h4 data-bs-toggle="collapse" href="#collapseDiferenciais" role="button" aria-expanded="true" aria-controls="collapseDiferenciais">DIFERENCIAIS</h4>
-                <div class="collapse show" id="collapseDiferenciais">
-                    <div class="card card-body">
-                        <?= $curso->diferenciais ?>
-                    </div>
-                </div>
-            <?php endif; ?>
-            <!--  -->
-            <?php if (!empty($curso->publico_alvo)) : ?>
-                <h4 data-bs-toggle="collapse" href="#collapsePublicoAlvo" role="button" aria-expanded="true" aria-controls="collapsePublicoAlvo">PÚBLICO ALVO</h4>
-                <div class="collapse show" id="collapsePublicoAlvo">
-                    <div class="card card-body">
-                        <?= $curso->publico_alvo ?>
-                    </div>
-                </div>
-            <?php endif; ?>
-            <!--  -->
+           
             <?php if (!empty($curso->matriz)) : ?>
-                <h4 data-bs-toggle="collapse" href="#collapseMatriz" role="button" aria-expanded="true" aria-controls="collapseMatriz">MATRIZ</h4>
-                <div class="collapse show" id="collapseMatriz">
+                <h4 data-bs-toggle="collapse" href="#cMatriz" role="button" aria-expanded="true" aria-controls="cMatriz">MATRIZ CURRICULAR</h4>
+                <div class="collapse show" id="cMatriz">
                     <div class="card card-body">
                         <?= $curso->matriz ?>
                     </div>
                 </div>
             <?php endif; ?>
-            <!--  -->
+
             <h4 data-bs-toggle="collapse" href="#collapseDocNormas" role="button" aria-expanded="true" aria-controls="collapseDocNormas">DOCUMENTOS E NORMAS</h4>
             <div class="collapse show" id="collapseDocNormas">
                 <div class="card card-body">
@@ -174,10 +148,7 @@
                 <form action="<?= SITE['root'] ?>/form-submission" method="POST">
 
                     <input type="hidden" name="typeForm" value="Matrícula">
-
-                    <!-- <div class="mb-3"> -->
-                        <input type="hidden" style="pointer-events:none" class="form-control" name="curso" value="<?= mb_strtoupper($curso->nome) ?>">
-                    <!-- </div> -->
+                    <input type="hidden" style="pointer-events:none" class="form-control" name="curso" value="<?= mb_strtoupper($curso->nome) ?>">
 
                     <div class="mb-3">
                         <input type="text" class="form-control" name="nome" placeholder="Nome">

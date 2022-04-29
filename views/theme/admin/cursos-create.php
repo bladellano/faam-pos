@@ -105,37 +105,29 @@
                                                      <div class="col-md-6">
 
                                                          <div class="row">
-                                                             <div class="form-group col-md-6">
+                                                             <div class="form-group col-md-12">
                                                                  <label for="nome">Nome do Curso</label>
                                                                  <input value="<?= isset($curso->nome) ? $curso->nome : "" ?>" type="text" class="form-control" id="nome" name="nome">
                                                              </div>
 
-                                                             <div class="form-group col-md-6">
-                                                                 <label for="nome">Área</label>
+                                                             <div class="form-group col-md-12">
+                                                                 <label for="nome">Área de Atuação</label>
                                                                  <select name="id_area" id="id_area" class="form-control">
-                                                                     <option value="0">Nenhuma</option>
+                                                                     <option value="0">--Selecione--</option>
                                                                      <?php foreach ($areas as $a) : ?>
                                                                          <option <?= (isset($curso->id_area) && $curso->id_area == $a->id) ? 'selected' : '' ?> value="<?= $a->id ?>"><?= $a->nome ?></option>
                                                                      <?php endforeach ?>
                                                                  </select>
                                                              </div>
-
-                                                             <div class="col-md-12">
-                                                                 <div class="form-group">
-                                                                     <label for="sobre_o_curso">Sobre o Curso</label>
-                                                                     <input maxlength="150" value="<?= isset($curso->sobre_o_curso) ? $curso->sobre_o_curso : "" ?>" type="text" class="form-control" id="sobre_o_curso" name="sobre_o_curso">
-                                                                 </div>
-                                                             </div>
-
                                                          </div>
 
                                                          <div class="form-group">
 
-                                                             <label for="objetivo_geral">Objetivo Geral</label>
-                                                             <textarea name="objetivo_geral" id="objetivo_geral" class="summernote"><?= isset($curso->objetivo_geral) ? $curso->objetivo_geral : "" ?></textarea>
+                                                             <label for="sobre_o_curso">Sobre o Curso</label>
+                                                             <textarea name="sobre_o_curso" id="sobre_o_curso" class="summernote"><?= isset($curso->sobre_o_curso) ? $curso->sobre_o_curso : "" ?></textarea>
 
-                                                             <label for="objetivos_especificos">Objetivo Específicos</label>
-                                                             <textarea name="objetivos_especificos" id="objetivos_especificos" class="summernote"><?= isset($curso->objetivos_especificos) ? $curso->objetivos_especificos : "" ?></textarea>
+                                                             <label for="publico_alvo">Público Alvo</label>
+                                                             <textarea name="publico_alvo" id="publico_alvo" class="summernote"><?= isset($curso->publico_alvo) ? $curso->publico_alvo : "" ?></textarea>
 
                                                          </div>
 
@@ -169,8 +161,8 @@
                                                                      <label for="nome">Ensino</label>
                                                                      <select name="ensino" id="ensino" class="form-control">
                                                                          <option value="">--Selecione--</option>
-                                                                         <option <?= ($curso->ensino == "PÓS-GRADUAÇÃO") ? "selected" : "" ?> value="PÓS-GRADUAÇÃO">PÓS-GRADUAÇÃO</option>
-                                                                         <option <?= ($curso->ensino == "EXTENSÃO") ? "selected" : "" ?> value="EXTENSÃO">EXTENSÃO</option>
+                                                                         <option <?= ( isset($curso->ensino) && $curso->ensino == "PÓS-GRADUAÇÃO") ? "selected" : "" ?> value="PÓS-GRADUAÇÃO">PÓS-GRADUAÇÃO</option>
+                                                                         <option <?= ( isset($curso->ensino) && $curso->ensino == "EXTENSÃO") ? "selected" : "" ?> value="EXTENSÃO">EXTENSÃO</option>
 
                                                                      </select>
                                                                  </div>
@@ -178,15 +170,14 @@
                                                                  <div class="form-group col-md-9">
                                                                      <label for="nome">Link de Inscrição</label>
                                                                      <input placeholder="Url da inscrição: https://" value="<?= isset($curso->link_inscricao) ? $curso->link_inscricao : "" ?>" type="text" class="form-control" id="link_inscricao" name="link_inscricao">
-
                                                                  </div>
 
                                                              </div>
-                                                             <label for="habilidades_competencias">Habilidades e Competências</label>
-                                                             <textarea name="habilidades_competencias" id="habilidades_competencias" class="summernote"><?= isset($curso->habilidades_competencias) ? $curso->habilidades_competencias : "" ?></textarea>
+                                                             <label for="horarios">Horários</label>
+                                                             <textarea name="horarios" id="horarios" class="summernote"><?= isset($curso->horarios) ? $curso->horarios : "" ?></textarea>
 
-                                                             <label for="competencias_profissionalizantes">Competências Profissionalizantes</label>
-                                                             <textarea name="competencias_profissionalizantes" id="competencias_profissionalizantes" class="summernote"><?= isset($curso->competencias_profissionalizantes) ? $curso->competencias_profissionalizantes : "" ?></textarea>
+                                                             <label for="duracao_do_curso">Duração do Curso</label>
+                                                             <textarea name="duracao_do_curso" id="duracao_do_curso" class="summernote"><?= isset($curso->duracao_do_curso) ? $curso->duracao_do_curso : "" ?></textarea>
 
                                                          </div>
 
@@ -202,17 +193,14 @@
 
                                                          <div class="form-group">
 
-                                                             <label for="area_atuacao">Área de Atuação</label>
-                                                             <textarea name="area_atuacao" id="area_atuacao" class="summernote"><?= isset($curso->area_atuacao) ? $curso->area_atuacao : "" ?></textarea>
-
-                                                             <label for="perfil_profissional">Perfil Profissional</label>
-                                                             <textarea name="perfil_profissional" id="perfil_profissional" class="summernote"><?= isset($curso->perfil_profissional) ? $curso->perfil_profissional : "" ?></textarea>
-
-                                                             <label for="investimento">Investimento</label>
+                                                         <label for="investimento">Investimento</label>
                                                              <textarea name="investimento" id="investimento" class="summernote"><?= isset($curso->investimento) ? $curso->investimento : "" ?></textarea>
 
-                                                             <label for="publico_alvo">Público Alvo</label>
-                                                             <textarea name="publico_alvo" id="publico_alvo" class="summernote"><?= isset($curso->publico_alvo) ? $curso->publico_alvo : "" ?></textarea>
+                                                             <label for="documentacao_necessaria">Documentação Necessária</label>
+                                                             <textarea name="documentacao_necessaria" id="documentacao_necessaria" class="summernote"><?= isset($curso->documentacao_necessaria) ? $curso->documentacao_necessaria : "" ?></textarea> 
+
+                                                             <label for="parcerias">Parcerias</label>
+                                                             <textarea name="parcerias" id="parcerias" class="summernote"><?= isset($curso->parcerias) ? $curso->parcerias : "" ?></textarea>
 
                                                          </div>
 
@@ -225,12 +213,7 @@
                                                              <label for="coordenacao">Coordenação</label>
                                                              <textarea name="coordenacao" id="coordenacao" class="summernote"><?= isset($curso->coordenacao) ? $curso->coordenacao : "" ?></textarea>
 
-                                                             <label for="diferenciais">Diferenciais</label>
-                                                             <textarea name="diferenciais" id="diferenciais" class="summernote"><?= isset($curso->diferenciais) ? $curso->diferenciais : "" ?></textarea>
-
-
-
-                                                             <label for="matriz">Matriz</label>
+                                                             <label for="matriz">Matriz Curricular</label>
                                                              <textarea name="matriz" id="matriz" class="summernote"><?= isset($curso->matriz) ? $curso->matriz : "" ?></textarea>
 
                                                          </div>
@@ -238,7 +221,6 @@
                                                      </div>
 
                                                  </div>
-
 
                                              </div>
                                              <div class="tab-pane fade" id="custom-tabs-one-messages" role="tabpanel" aria-labelledby="custom-tabs-one-messages-tab">
