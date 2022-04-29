@@ -215,7 +215,9 @@
 
                                                              <label for="matriz">Matriz Curricular</label>
                                                              <textarea name="matriz" id="matriz" class="summernote"><?= isset($curso->matriz) ? $curso->matriz : "" ?></textarea>
-
+                                                            
+                                                             <label for="professores">Professores</label>
+                                                             <textarea name="professores" id="professores" class="summernote"><?= isset($curso->professores) ? $curso->professores : "" ?></textarea>
                                                          </div>
 
                                                      </div>

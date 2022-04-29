@@ -112,6 +112,15 @@
                     </div>
                 </div>
             <?php endif; ?>
+
+            <?php if (!empty($curso->professores)) : ?>
+                <h4 data-bs-toggle="collapse" href="#cProfessores" role="button" aria-expanded="true" aria-controls="cProfessores">PROFESSORES</h4>
+                <div class="collapse show" id="cProfessores">
+                    <div class="card card-body">
+                        <?= $curso->professores ?>
+                    </div>
+                </div>
+            <?php endif; ?>
            
             <?php if (!empty($curso->matriz)) : ?>
                 <h4 data-bs-toggle="collapse" href="#cMatriz" role="button" aria-expanded="true" aria-controls="cMatriz">MATRIZ CURRICULAR</h4>
