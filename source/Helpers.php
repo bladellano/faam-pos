@@ -30,6 +30,10 @@ function money($param): string
 {
     return number_format($param, '2', ',', '.');
 }
+function resume(string $string, $chars = 180)
+{
+    return strip_tags(mb_strimwidth($string, 0, $chars + 3, "..."));
+}
 
 /**
  * @param $param

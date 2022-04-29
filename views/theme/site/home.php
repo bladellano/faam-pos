@@ -151,7 +151,7 @@
                     <div data-url="<?= SITE['root'] . DS . 'cursos' . DS . $c->slug ?>" class="col-lg-4 col-md-6 content-item portfolio-item filter-<?= $c->area ?>">
                         <span><?= mb_strtoupper($c->nome) ?></span>
                         <h4><i class="bi bi-calendar4-week"></i> <?= $c->duracao ?> meses | <i class="bx bx-medal"></i> Reconhecido pelo MEC</h4>
-                        <p><?= $c->sobre_o_curso ?></p>
+                        <p><?= resume($c->sobre_o_curso,150) ?></p>
                     </div>
 
                 <?php endforeach; ?>
