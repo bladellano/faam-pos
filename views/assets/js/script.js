@@ -31,7 +31,8 @@ $(function () {
 
     /** Form em movimento */
 
-    let elWrapForm = $('.wrapForm');
+    // let elWrapForm = $('.wrapForm');
+    let elWrapForm = $('.wrapForm_');
 
     $(window).scroll(function (e) {
 
