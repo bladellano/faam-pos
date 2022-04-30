@@ -21,7 +21,7 @@
 
 <section class="content">
     <div class="container-fluid">
-      
+
         <div class="row">
             <!-- <div class="col-lg-3 col-6">
 
@@ -65,9 +65,40 @@
                 </div>
             </div>
 
-            <!-- <div class="col-lg-3 col-6">
+            <div class="col-lg-3 col-6">
 
                 <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3><?= $scheduleQtd ?></h3>
+                        <p>Agendas</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="<?= SITE['root'] ?>/admin/posts" class="small-box-footer">Mais info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h3><?= $pagesQtd ?></h3>
+                        <p>Páginas</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="<?= SITE['root'] ?>/admin/posts" class="small-box-footer">Mais info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-6">
+
+                <div class="small-box bg-orange">
                     <div class="inner">
                         <h3><?= $bannersQtd ?></h3>
                         <p>Banners</p>
@@ -81,9 +112,52 @@
 
             <div class="col-lg-3 col-6">
 
-                <div class="small-box bg-danger">
+                <div class="small-box bg-gray">
                     <div class="inner">
-                        <h3><?= $usersQtd ?></h3>
+                        <h3><?= $leadsQtd ?></h3>
+                        <p>Leads</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="<?= SITE['root'] ?>/admin/leads" class="small-box-footer">Mais info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+
+                <div class="small-box bg-cyan">
+                    <div class="inner">
+                        <h3><?= $cursosQtd ?></h3>
+                        <p>Cursos</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="<?= SITE['root'] ?>/admin/cursos" class="small-box-footer">Mais info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-6">
+
+                <div class="small-box bg-purple">
+                    <div class="inner">
+                        <h3><?= $parceirosQtd ?></h3>
+                        <p>Parceiros</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="<?= SITE['root'] ?>/admin/parceiros" class="small-box-footer">Mais info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+
+                <div class="small-box bg-navy">
+                    <div class="inner">
+                        <h3><?= $usuariosQtd ?></h3>
                         <p>Usuários</p>
                     </div>
                     <div class="icon">
@@ -91,39 +165,21 @@
                     </div>
                     <a href="<?= SITE['root'] ?>/admin/users" class="small-box-footer">Mais info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-            </div> -->
-
-        </div>
-        <h5 class="mb-2">Info Box</h5>
-
-        <div class="row">
-            <div class="col-md-3 col-sm-6 col-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-info"> <a href="https://titan.hostgator.com.br/mail/" target="_blank"> <i class="far fa-envelope"></i></a> </span>
-                    <div class="info-box-content">
-                        <span class="info-box-text">Messages</span>
-                        <!-- <span class="info-box-number">1,410</span> -->
-                    </div>
-
-                </div>
-
             </div>
+            <div class="col-lg-3 col-6">
 
-            <div class="col-md-3 col-sm-6 col-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-success">
-                        <a href="https://vegakia.com.br:2083/" target="_blank"><i class="far fa-flag"></i></a>
-                    </span>
-                    <div class="info-box-content">
-                        <span class="info-box-text">Cpanel</span>
-                        <small>Hostgator</small>
-                        <!-- <span class="info-box-number">410</span> -->
+                <div class="small-box bg-olive">
+                    <div class="inner">
+                        <h3><?= $areasQtd ?></h3>
+                        <p>Áreas de Curso</p>
                     </div>
-
+                    <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                    </div>
+                    <a href="<?= SITE['root'] ?>/admin/areas" class="small-box-footer">Mais info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-
             </div>
-
         </div>
+
     </div>
 </section>

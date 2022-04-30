@@ -6,10 +6,14 @@ use Source\Models\Car;
 use Source\Models\Lead;
 use Source\Models\Post;
 use Source\Models\User;
+use Source\Dash\Banners;
 use Source\Models\Anexo;
 use Source\Models\Banner;
 use CoffeeCode\DataLayer\Connect;
 use Source\Dash\Controller as DashController;
+use Source\Models\Area;
+use Source\Models\Curso;
+use Source\Models\Parceiro;
 
 class Admin extends DashController
 {
@@ -21,13 +25,30 @@ class Admin extends DashController
 
     public function home(): void
     {
-        $postsQtd = (new Post())->find()->count();
+
+        $postsQtd = (new Post())->find("type = :type", "type=post")->count();
+        $scheduleQtd = (new Post())->find("type = :type", "type=schedule")->count();
+        $pagesQtd = (new Post())->find("type = :type", "type=page")->count();
+        $bannersQtd = (new Banner())->find()->count();
+        $leadsQtd = (new Lead())->find()->count();
+        $cursosQtd = (new Curso())->find()->count();
+        $parceirosQtd = (new Parceiro())->find()->count();
+        $usuariosQtd = (new User())->find()->count();
+        $areasQtd = (new Area())->find()->count();
 
         echo $this->view->render("theme/admin/home", [
             "title" => "Dash",
             "products" =>  [],
             "titleHeader" => "Home",
             "postsQtd" => $postsQtd,
+            "scheduleQtd" => $scheduleQtd,
+            "pagesQtd" => $pagesQtd,
+            "bannersQtd" => $bannersQtd,
+            "leadsQtd" => $leadsQtd,
+            "cursosQtd" => $cursosQtd,
+            "parceirosQtd" => $parceirosQtd,
+            "usuariosQtd" => $usuariosQtd,
+            "areasQtd" => $areasQtd,
         ]);
     }
 

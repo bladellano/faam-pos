@@ -1,25 +1,29 @@
 /** Custom Css */
-#anexos-ativos,#filter-posts {
+#anexos-ativos,
+#filter-posts {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-#anexos-ativos,#filter-posts td,
-#anexos-ativos,#filter-posts th {
+#anexos-ativos td,#filter-posts td,
+#anexos-ativos th,#filter-posts th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#anexos-ativos,#filter-posts tr:nth-child(even) {
+#anexos-ativos tr:nth-child(even),
+#filter-posts tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-#anexos-ativos,#filter-posts tr:hover {
+#anexos-ativos tr:hover,
+#filter-posts tr:hover {
   background-color: #ddd;
 }
 
-#anexos-ativos,#filter-posts th {
+#anexos-ativos th,
+#filter-posts th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
