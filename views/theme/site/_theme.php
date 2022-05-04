@@ -93,7 +93,7 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>#contact">Contato</a></li>
-          <li><a class="getstarted scrollto" href="<?= SITE['root'] ?>#contact">INSCREVA-SE</a></li>
+          <li><a class="getstarted" href="https://matricula.ischolar.app/?posfaam">INSCREVA-SE</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -182,7 +182,7 @@
   </footer><!-- End Footer -->
 
   <div class="container-fluid pb-2 pt-2 text-center" style="background-color:#006f23">
-    <a class="btn btn-warning getstarted scrollto" href="<?= SITE['root'] ?>#contact"><b>INSCREVA-SE</b></a>
+    <a class="btn btn-warning getstarted" href="https://matricula.ischolar.app/?posfaam"><b>INSCREVA-SE</b></a>
   </div>
 
   <div class="container-fluid bg-warning pb-2 pt-4 text-center text-black">
