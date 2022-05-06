@@ -2,7 +2,7 @@
 By Caio Dellano
  */
 
-@media (max-width: 400px) {
+@media (max-width: 560px) {
   .contact-info {
     display: block !important;
   }
