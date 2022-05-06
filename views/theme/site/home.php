@@ -42,7 +42,7 @@
         </div>
         <form id="form-pesquisa-curso" action="<?= SITE['root'] . '/busca' ?>" method="GET">
             <div class="row">
-                <div class="col-md-10 col-9">
+                <div class="col-md-10 col-8">
                     <div class="form-group">
                         <input type="search" class="form-control" name="search" id="search" placeholder="Digite o nome do Curso">
                     </div>
@@ -123,6 +123,7 @@
     </section><!-- End Featured Services Section -->
 
     <!-- ======= Portfolio Section ======= -->
+    <!-- ======= TODOS OS CURSOS DE POS-GRADUAÇÃO ======= -->
     <section id="portfolio" class="portfolio">
         <div class="container">
 
@@ -167,7 +168,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center mb-3">
-                    <img style="width: 348px;" src="<?= asset('images/logo-esex.png') ?>" alt="SEM LOGO">
+                    <img class="img-fluid" src="<?= asset('images/logo-esex.png') ?>" alt="SEM LOGO">
                 </div>
             </div>
             <div class="row">

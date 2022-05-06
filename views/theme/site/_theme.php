@@ -40,6 +40,7 @@
   <link href="<?= SITE['root'] . "/views/assets" ?>/css/load.css" rel="stylesheet">
 
   <link href="<?= SITE['root'] . "/views/assets" ?>/css/style.css" rel="stylesheet">
+  <link href="<?= SITE['root'] . "/views/assets" ?>/css/style-mobile.css" rel="stylesheet">
 
 </head>
 
@@ -58,7 +59,7 @@
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">seacpos@faam.com.br</a>
-        <i class="bi bi-phone-fill phone-icon"></i> (91) 9 9143-6058
+         <span> <i class="bi bi-phone-fill phone-icon"></i> (91) 9 9143-6058 </span>
       </div>
       <div class="social-links d-none d-md-block">
         <a href="https://posfaam.paineldoaluno.com.br/" target="_blank" class="twitter"><i class="bi bi-person-circle"></i> Aluno On-line</a>

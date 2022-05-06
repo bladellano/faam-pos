@@ -1,0 +1,76 @@
+/** Desenvolvido para Faculdade Faam Pós-Graduação em 28-03-2022
+By Caio Dellano
+ */
+
+@media (max-width: 400px) {
+  .contact-info {
+    display: block !important;
+  }
+  .contact-info span {
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  #hero {
+    height: unset;
+  }
+
+  #pesquisar-curso h3 {
+    font-size: 22px;
+  }
+  #pesquisar-curso {
+    padding: 20px;
+  }
+  .featured-services .icon-box {
+    padding: 2px;
+  }
+  #featured-services h5 {
+    font-size: 16px;
+  }
+  .section-title h2 {
+    font-size: 22px;
+  }
+  /* FOCO */
+  #portfolio {
+    padding: 10px;
+    display: none;
+  }
+  .cta .cta-btn {
+    margin: 6px 0;
+    width: 98%;
+  }
+  .cta {
+    padding: 20px;
+  }
+  #about {
+    padding: 28px 0;
+  }
+  .section-title {
+    padding-bottom: 4px;
+  }
+  .about .content h3 {
+    font-size: 22px;
+  }
+  #clients {
+    padding: 4px 0;
+  }
+  .contact .info {
+    padding: 6px;
+  }
+  .contact .php-email-form {
+    padding: 14px;
+  }
+  #contact {
+    padding: 4px 0;
+  }
+  .navbar a, .navbar a:focus {
+    color: #006f23;
+  }
+  .navbar-mobile ul {
+    display: block;
+    height: 500px;
+  }
+  .navbar-mobile .dropdown ul {
+    height: 110px;
+  }
+}
