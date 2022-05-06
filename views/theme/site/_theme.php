@@ -39,8 +39,8 @@
   <link href="<?= SITE['root'] . "/views/assets" ?>/css/message.css" rel="stylesheet">
   <link href="<?= SITE['root'] . "/views/assets" ?>/css/load.css" rel="stylesheet">
 
-  <link href="<?= SITE['root'] . "/views/assets" ?>/css/style.css" rel="stylesheet">
-  <link href="<?= SITE['root'] . "/views/assets" ?>/css/style-mobile.css" rel="stylesheet">
+  <link href="<?= SITE['root'] . "/views/assets" ?>/css/style.css?v=1" rel="stylesheet">
+  <link href="<?= SITE['root'] . "/views/assets" ?>/css/style-mobile.css?v=1" rel="stylesheet">
 
 </head>
 
