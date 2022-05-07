@@ -299,6 +299,8 @@ class Web extends Controller
 
         $res = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".reCAPTCHA['servidor']."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']));
 
+        unset($data['g-recaptcha-response']);
+
         if (in_array("", $data) || $data['ciente'] == "NÃO" || !$res->success) {
             echo $this->ajaxResponse("message", [
                 "type" => "error",

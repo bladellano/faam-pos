@@ -97,7 +97,7 @@
             </ul>
           </li>
 
-          <li class="dropdown"><a href="#"><span style="text-align:center">Vantagens e<br> Benefícios</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span style="text-align:center">Vantagens e Benefícios</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="<?= SITE['root'] . DS ?>convenios">Convênios</a></li>
               <li><a href="<?= SITE['root'] . DS ?>descontos">Descontos</a></li>
