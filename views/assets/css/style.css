@@ -48,7 +48,7 @@ By Caio Dellano
 }
 
 #pesquisar-curso {
-  background: radial-gradient(circle, rgba(148,255,8,1) 0%, rgba(0,111,35,1) 100%); 
+  background: radial-gradient(circle, rgb(126, 177, 60) 0%, rgba(0,111,35,1) 100%); 
   border-bottom: 1px solid var(--cor-primary) ;
   border-top: 2px solid var(--cor-primary);
  }
