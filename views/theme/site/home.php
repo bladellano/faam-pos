@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="col-md-2 col-2 d-grid">
-                    <button type="submit" class="btn btn-warning">Buscar</button>
+                    <button type="submit" class="btn btn-outline-light">Buscar</button>
                 </div>
             </div>
         </form>
