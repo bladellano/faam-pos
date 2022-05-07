@@ -295,10 +295,14 @@ class Web extends Controller
     {
         $data['ciente'] = (isset($data['ciente'])) ? "SIM" : "NÃO";
 
-        if (in_array("", $data) || $data['ciente'] == "NÃO") {
+        $captcha = $data['g-recaptcha-response'];
+
+        $res = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".reCAPTCHA['servidor']."&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']));
+
+        if (in_array("", $data) || $data['ciente'] == "NÃO" || !$res->success) {
             echo $this->ajaxResponse("message", [
                 "type" => "error",
-                "message" => "Preencha todos os campos"
+                "message" => "Preencha todos os campos ou marque corretament o reCAPTCHA"
             ]);
             return;
         }

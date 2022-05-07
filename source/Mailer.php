@@ -36,7 +36,7 @@ class Mailer
 
 		/** E-mails da Faam Pós */
 		$this->mail->addAddress("seacpos@faam.com.br", $fromName);
-		$this->mail->addAddress("nti@faam.com.br", $fromName);
+		// $this->mail->addAddress("nti@faam.com.br", $fromName);
 
 		$this->mail->Subject = utf8_decode($subject);
 		$this->mail->msgHTML($body);

@@ -42,6 +42,8 @@
   <link href="<?= SITE['root'] . "/views/assets" ?>/css/style.css?v=1" rel="stylesheet">
   <link href="<?= SITE['root'] . "/views/assets" ?>/css/style-mobile.css?v=1" rel="stylesheet">
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 
 <body>
@@ -59,7 +61,8 @@
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">seacpos@faam.com.br</a>
-         <span> <i class="bi bi-phone-fill phone-icon"></i> (91) 9 9143-6058 </span>
+          <i class="bi bi-phone-fill phone-icon"></i> 
+          <a href="https://api.whatsapp.com/send?phone=5591991436058" target="_blank"> (91) 9 9143-6058</a> 
       </div>
       <div class="social-links d-none d-md-block">
         <a href="https://posfaam.paineldoaluno.com.br/" target="_blank" class="twitter"><i class="bi bi-person-circle"></i> Aluno On-line</a>
@@ -86,14 +89,27 @@
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>#about">Sobre</a></li>
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/#cta">Escola de Extensão</a></li>
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/cursos">Pos-Graduação</a></li>
-          <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/como-ingressar">Como Ingressar</a></li>
+
+          <li class="dropdown"><a href="#"><span style="text-align:center">Como Ingressar</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+            <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/como-ingressar">Como Ingressar</a></li>
+            <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>/como-voce-vai-estudar">Como você vai estudar</a></li>
+            </ul>
+          </li>
+
           <li class="dropdown"><a href="#"><span style="text-align:center">Vantagens e<br> Benefícios</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="<?= SITE['root'] . DS ?>convenios">Convênios</a></li>
               <li><a href="<?= SITE['root'] . DS ?>descontos">Descontos</a></li>
             </ul>
           </li>
+
+            <li><a class="nav-link scrollto showMenuMobile" href="https://posfaam.paineldoaluno.com.br/" target="_blank"><i class="bi bi-person-circle"></i> Aluno On-line</a></li>
+
+            <li><a class="nav-link scrollto showMenuMobile" href="https://posfaam.paineldoaluno.com.br/professor_login" target="_blank"><i class="bi bi-person-circle"></i> Professor On-line</a></li>
+
           <li><a class="nav-link scrollto" href="<?= SITE['root'] ?>#contact">Contato</a></li>
+
           <li><a class="getstarted" href="https://matricula.ischolar.app/?posfaam">INSCREVA-SE</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -115,8 +131,8 @@
           <img src="<?= SITE['root'] . "/views/assets/" ?>images/logo-pb.png" alt="Logo" class="img-fluid">
           </a>
           <ul>
-            <li> <a target="_blank" href="http://portal.faam.com.br/a-faculdade"> A Faculdade</a></li>
-            <li> <a target="_blank" href="http://portal.faam.com.br/seja-nosso-parceiro"> Seja nosso Parceiro</a></li>
+            <li> <a target="_blank" href="http://portal.faam.com.br"> A Faculdade</a></li>
+            <li> <a href="<?= SITE['root'] . "/convenios" ?>"> Seja nosso Parceiro</a></li>
             <li> <a target="_blank" href="http://portal.faam.com.br/trabalhe-conosco"> Trabalhe Conosco</a></li>
             <li> <a target="_blank" href="http://portal.faam.com.br/assessoria-de-imprensa"> Assessoria de imprensa</a></li>
           </ul>
@@ -138,6 +154,7 @@
             <li> <a href="<?= SITE['root'] ?>/manual-do-professor"> Manual do Professor</a></li>
             <li> <a href="<?= SITE['root'] ?>/manual-do-aluno"> Manual do Aluno</a></li>
             <li> <a href="<?= SITE['root'] ?>/formas-de-ingresso"> Formas de Ingresso</a></li>
+            <li> <a href="<?= SITE['root'] ?>/regulamento-educacional"> Regulamento Educacional</a></li>
           </ul>
           <h4>Atendimento ao Aluno</h4>
           <ul>
@@ -150,10 +167,10 @@
         <div class="col-md-3">
           <h4>Extensão</h4>
           <ul>
-            <li> <a href="<?= SITE['root'] ?>/regulamento"> Regulamento</a></li>
-            <li> <a href="<?= SITE['root'] ?>/portaria"> Portaria</a></li>
+            <li> <a href="<?= SITE['root'] ?>/resolucao"> Resolução</a></li>
+            <!-- <li> <a href="<?= SITE['root'] ?>/portaria"> Portaria</a></li> -->
             <li> <a href="<?= SITE['root'] ?>/cursos-de-extensao?ensino=EXTENSÃO"> Cursos</a></li>
-            <li> <a href="<?= SITE['root'] ?>/pesquisa-academica"> Pesquisa Acadêmica</a></li>
+            <!-- <li> <a href="<?= SITE['root'] ?>/pesquisa-academica"> Pesquisa Acadêmica</a></li> -->
           </ul>
           <h4>Links Úteis</h4>
           <ul>
@@ -162,14 +179,15 @@
             <li> <a href="<?= SITE['root'] ?>/biblioteca"> Biblioteca</a></li>
             <li> <a class="getstarted scrollto" href="<?= SITE['root'] ?>#contact">Fale Conosco</a></li>
             <li> <a href="<?= SITE['root'] ?>/politica-de-privacidade"> Política de Privacidade</a></li>
-            <li> <a href="<?= SITE['root'] ?>/pesquisa-academica"> Pesquisa acadêmica</a></li>
+            <!-- <li> <a href="<?= SITE['root'] ?>/pesquisa-academica"> Pesquisa acadêmica</a></li> -->
           </ul>
         </div>
         <div class="col-md-3">
           <h4>Atendimento</h4>
           <ul>
-            <li><a href="#">Telefone: (91) 9 9143-6058</a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=5591991436058" target="_blank">Telefone: (91) 9 9143-6058</a></li>
             <li><a href="#">E-mail: posgraduacao@faam.com.br </a></li>
+            <li><a href="#">E-mail: coord.extensao@faam.com.br </a></li>
           </ul>
           <h4>Bolsas, Parcerias e Convênios</h4>
           <ul>

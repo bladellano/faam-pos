@@ -198,10 +198,10 @@
                     <a class="cta-btn align-middle" href="<?= SITE['root'] . "/cursos-de-extensao?ensino=EXTENSÃO" ?>">Cursos de Extensão</a>
                 </div>
                 <div class="col-md-4 text-center">
-                    <a class="cta-btn align-middle" href="<?= SITE['root'] . "/extensao-inscricoes" ?>">Inscrições</a>
+                    <a class="cta-btn align-middle" target="_blank" href="https://matricula.ischolar.app/?posfaam">Inscrições</a>
                 </div>
                 <div class="col-md-4 text-center">
-                    <a class="cta-btn align-middle" href="<?= SITE['root'] . "/extensao-eventos" ?>">Eventos</a>
+                    <a class="cta-btn align-middle" href="<?= SITE['root'] . "/agendas" ?>">Eventos</a>
                 </div>
             </div>
 
@@ -321,7 +321,7 @@
                             <label for="name">Mensagem</label>
                             <textarea class="form-control" name="mensagem" rows="10" required></textarea>
                         </div>
-
+                        <div class="g-recaptcha" data-sitekey="<?=reCAPTCHA['cliente']?>"></div>
                         <div class="text-center"><button type="submit">Enviar mensagem</button></div>
                     </form>
                 </div>

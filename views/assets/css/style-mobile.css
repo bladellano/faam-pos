@@ -69,12 +69,18 @@ By Caio Dellano
   }
   .navbar-mobile ul {
     display: block;
-    height: 500px;
+    height: 618px;
   }
   .navbar-mobile .dropdown ul {
     height: 110px;
   }
   #cursosPorArea {
+    display: block!important;
+  }
+  #footer ul li {
+    text-align: center;
+  }
+  .showMenuMobile{
     display: block!important;
   }
 }

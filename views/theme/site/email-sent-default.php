@@ -6,7 +6,7 @@
             <?= SITE['root'] ?></b>.</h4>
     <?php foreach ($data as $k => $d) : ?>
 
-        <?php if ($k != 'typeForm') : ?>
+        <?php if ($k != 'typeForm' || $k != 'G-recaptcha-response') : ?>
             <p><b><?= ucfirst(str_replace("_", " ", $k)) ?></b>: <?= $d ?></p>
         <?php endif; ?>
 

@@ -9,6 +9,12 @@ By Caio Dellano
   --cor-fifth: #ffc600;
 }
 
+.g-recaptcha {
+	display: flex;
+	justify-content: center;
+	margin: 10px 0;
+}
+
 #hero .carousel-item::before {
   background-color: unset;
 }
