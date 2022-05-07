@@ -179,7 +179,7 @@
             <li> <a href="<?= SITE['root'] ?>/biblioteca"> Biblioteca</a></li>
             <li> <a class="getstarted scrollto" href="<?= SITE['root'] ?>#contact">Fale Conosco</a></li>
             <li> <a href="<?= SITE['root'] ?>/politica-de-privacidade"> Política de Privacidade</a></li>
-            <!-- <li> <a href="<?= SITE['root'] ?>/pesquisa-academica"> Pesquisa acadêmica</a></li> -->
+            <li> <a href="<?= SITE['root'] ?>/pesquisa-academica"> Pesquisa acadêmica</a></li>
           </ul>
         </div>
         <div class="col-md-3">
