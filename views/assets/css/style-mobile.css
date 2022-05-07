@@ -63,7 +63,8 @@ By Caio Dellano
   #contact {
     padding: 4px 0;
   }
-  .navbar a, .navbar a:focus {
+  .navbar a,
+  .navbar a:focus {
     color: #006f23;
   }
   .navbar-mobile ul {
@@ -72,5 +73,8 @@ By Caio Dellano
   }
   .navbar-mobile .dropdown ul {
     height: 110px;
+  }
+  #cursosPorArea {
+    display: block!important;
   }
 }

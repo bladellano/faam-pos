@@ -30,6 +30,7 @@ $app->get("/busca", "Web:search", "web.search");
 $app->get("/cursos-de-extensao", "Web:cursos", "web.cursos");
 
 $app->get("/cursos", "Web:cursos", "web.cursos");
+$app->get("/cursos-area/{slug}", "Web:cursosArea", "web.cursosarea");
 $app->get("/cursos/{slug}", "Web:getCurso", "web.getcurso");
 $app->get("/banner/{slug}", "Web:showBanner", "web.showbanner");
 $app->get("/parceiros/{slug}", "Web:showParceiros", "web.showparceiros");

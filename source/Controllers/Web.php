@@ -103,7 +103,45 @@ class Web extends Controller
             "head" => $head
         ]);
     }
-    
+
+    public function cursosArea($data): void
+    {
+        $limit = 8;
+
+        $page = filter_input(INPUT_GET, "page", FILTER_VALIDATE_INT);
+        $search = filter_input(INPUT_GET, "search", FILTER_DEFAULT);
+
+        $connect = Connect::getInstance();
+
+        $SQL = "SELECT
+        pa.nome as area,
+        pc.id as id,
+        pc.slug as slug,
+        pc.nome as nome
+        FROM pos_areas pa INNER JOIN pos_cursos pc ON pa.id = pc.id_area 
+        WHERE TRUE 
+        AND pa.slug = '{$data['slug']}' ";
+
+        $statement = $connect->query($SQL);
+        $count = $statement->rowCount();
+
+        $paginator = new Paginator(SITE['root'] . "/cursos-area/{$data['slug']}?search={$search}&page=", "Página", ["Primeira página", "«"], ["Última página", "»"]);
+
+        $paginator->pager($count, $limit, $page, 2);
+
+        $SQL .= " LIMIT {$paginator->limit()} OFFSET {$paginator->offset()} ";
+
+        $statement = $connect->query($SQL);
+        $cursos =  $statement->fetchAll();
+
+        echo $this->view->render("theme/site/cursos-area", [
+            "head" => "",
+            "title" => 'Todos os cursos por área - '. (isset($cursos[0]->area) ?$cursos[0]->area : '*') ,
+            "cursos" => $cursos,
+            "pages" => $paginator->render()
+        ]);
+    }
+
     public function cursos(): void
     {
 
