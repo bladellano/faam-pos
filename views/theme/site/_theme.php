@@ -61,8 +61,8 @@
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope-fill"></i><a href="mailto:contact@example.com">seacpos@faam.com.br</a>
-          <i class="bi bi-phone-fill phone-icon"></i> 
-          <a href="https://api.whatsapp.com/send?phone=5591991436058" target="_blank"> (91) 9 9143-6058</a> 
+          <i class="bi bi-phone-fill phone-icon"></i>
+          <a href="https://api.whatsapp.com/send?phone=5591991436058" target="_blank"> (91) 9 9143-6058</a>
       </div>
       <div class="social-links d-none d-md-block">
         <a href="https://posfaam.paineldoaluno.com.br/" target="_blank" class="twitter"><i class="bi bi-person-circle"></i> Aluno On-line</a>
@@ -151,23 +151,23 @@
             <li> <a href="<?= SITE['root'] ?>/quem-somos"> Quem Somos</a></li>
             <li> <a href="<?= SITE['root'] ?>/modalidade-de-ensino"> Modalidade de Ensino</a></li>
             <li> <a href="<?= SITE['root'] ?>/cursos"> Cursos de Pós-graduação</a></li>
-            <li> <a href="<?= SITE['root'] ?>/manual-do-professor"> Manual do Professor</a></li>
-            <li> <a href="<?= SITE['root'] ?>/manual-do-aluno"> Manual do Aluno</a></li>
+            <li> <a target="_blank" href="https://pos.faam.com.br/storage/attachments/site/2022/05/debb665027b7929fe6651870386c5557.pdf"> Manual do Professor</a></li>
+            <li> <a target="_blank" href="https://pos.faam.com.br/storage/attachments/site/2022/05/691ae56ac6916c09692a21874f49bbc4.pdf"> Manual do Aluno</a></li>
             <li> <a href="<?= SITE['root'] ?>/formas-de-ingresso"> Formas de Ingresso</a></li>
-            <li> <a href="<?= SITE['root'] ?>/regulamento-educacional"> Regulamento Educacional</a></li>
+            <li> <a target="_blank" href="https://pos.faam.com.br/storage/attachments/site/2022/05/181341ecf43e469afad416de80266bdd.pdf"> Regulamento Educacional</a></li>
           </ul>
           <h4>Atendimento ao Aluno</h4>
           <ul>
             <li> <a href="<?= SITE['root'] ?>/secretaria-academica"> Secretaria Acadêmica</a></li>
             <li> <a class="getstarted scrollto" href="<?= SITE['root'] ?>#contact">Fale com a Coordenação</a></li>
-           
+
           </ul>
 
         </div>
         <div class="col-md-3">
           <h4>Extensão</h4>
           <ul>
-            <li> <a href="<?= SITE['root'] ?>/resolucao"> Resolução</a></li>
+            <li> <a target="_blank" href="https://pos.faam.com.br/storage/attachments/site/2022/05/785ba8473b8480fb518d379ef816933a.pdf"> Resolução</a></li>
             <!-- <li> <a href="<?= SITE['root'] ?>/portaria"> Portaria</a></li> -->
             <li> <a href="<?= SITE['root'] ?>/cursos-de-extensao?ensino=EXTENSÃO"> Cursos</a></li>
             <!-- <li> <a href="<?= SITE['root'] ?>/pesquisa-academica"> Pesquisa Acadêmica</a></li> -->
